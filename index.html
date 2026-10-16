@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Química · ENEM</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F0F7F6;--cd:#fff;--tx:#0F2624;--mu:#4F6C69;--ac:#0D9488;--am:#E58B00;--hi:#D7F0EE;--ht:#065F55;--ln:#CFE5E2;--gl:#E1EFED;--A:#C72A1B;--M:#9A5600;--B:#3E6A65;--ok:#0F7A3A;--er:#C72A1B;--lm:44%;--bt:#fff;--hd:rgba(240,247,246,.88);--sh:0 3px 0 var(--ln);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#071414;--cd:#0F2120;--tx:#E2F1EF;--mu:#8FB0AD;--ac:#4DD4C6;--am:#F5C04A;--hi:#123A36;--ht:#A8F0E7;--ln:#1E3836;--gl:#0D1E1D;--A:#FF897D;--M:#F5B041;--B:#9DBAB7;--ok:#4ADE80;--er:#F87171;--lm:62%;--bt:#071414;--hd:rgba(7,20,20,.88)}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#071414;--cd:#0F2120;--tx:#E2F1EF;--mu:#8FB0AD;--ac:#4DD4C6;--am:#F5C04A;--hi:#123A36;--ht:#A8F0E7;--ln:#1E3836;--gl:#0D1E1D;--A:#FF897D;--M:#F5B041;--B:#9DBAB7;--ok:#4ADE80;--er:#F87171;--lm:62%;--bt:#071414;--hd:rgba(7,20,20,.88)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) linear-gradient(var(--gl) 1px,transparent 1px) 0 0/30px 30px;background-image:linear-gradient(var(--gl) 1px,transparent 1px),linear-gradient(90deg,var(--gl) 1px,transparent 1px);background-size:30px 30px;color:var(--tx);font:15px/1.6 Figtree,system-ui,sans-serif;padding-bottom:96px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:30}
+h1,h2,h3,.lg,.bt,.bd,.nm,.rg b,.stat b,.ch,.pt-el{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.1;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:26px 0 10px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--am);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--hd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1.5px solid var(--ln)}
+.lg{font-size:20px;font-weight:800;letter-spacing:-.02em}.lg em{font-style:normal;color:var(--ac)}.sp{flex:1}
+.ib{border:1.5px solid var(--ln);background:var(--cd);border-radius:99px;padding:6px 13px;font-weight:600;font-size:13px;cursor:pointer;transition:transform .15s,border-color .2s}
+.ib:hover{border-color:var(--ac)}.ib:active{transform:scale(.94)}
+.w{max-width:1120px;margin:0 auto;padding:18px 16px}
+.mu{color:var(--mu)}.k{font-size:13px;font-weight:600;color:var(--mu)}
+.a{animation:up .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*45ms)}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes pop{50%{transform:scale(1.025)}}
+.hero{display:flex;gap:22px;align-items:center;flex-wrap:wrap;background:var(--cd);border:1.5px solid var(--ln);border-radius:20px;padding:22px;box-shadow:var(--sh)}
+.hero p{margin:0 0 14px;color:var(--mu)}
+.rg{position:relative;width:118px;height:118px;flex:none}.rg.big{width:150px;height:150px;margin:0 auto 10px}
+.rg svg{width:100%;height:100%;transform:rotate(-90deg)}
+.r0,.r1{fill:none;stroke-width:10}.r0{stroke:var(--ln)}.r1{stroke:var(--ac);stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1)}
+.rg b{position:absolute;inset:0;display:grid;place-items:center;font-size:26px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.bt{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--ac);background:var(--ac);color:var(--bt);border-radius:99px;padding:10px 20px;font-weight:700;font-size:14px;cursor:pointer;transition:transform .15s,box-shadow .2s}
+.bt:hover{box-shadow:0 4px 0 var(--ht);transform:translateY(-2px)}.bt:active{transform:none;box-shadow:none}
+.bt.gh{background:var(--cd);color:var(--tx);border-color:var(--ln)}.bt.gh:hover{border-color:var(--ac);box-shadow:0 4px 0 var(--ln)}
+.srch input{width:100%;margin:18px 0 4px;padding:13px 16px;border-radius:14px;border:1.5px solid var(--ln);background:var(--cd);color:var(--tx);font:inherit;transition:border-color .2s}
+.srch input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 18%,transparent)}
+.chs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}
+.ch{border:1.5px solid var(--ln);background:var(--cd);border-radius:99px;padding:6px 14px;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s}
+.ch.on{background:var(--tx);border-color:var(--tx);color:var(--bg)}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cd,.hu{--c:hsl(var(--h,230) 70% var(--lm))}
+.cd{position:relative;background:var(--cd);border:1.5px solid var(--ln);border-radius:16px;padding:18px;cursor:pointer;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden}
+.cd::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--c)}
+.cd:hover{transform:translate(-2px,-4px);border-color:var(--c);box-shadow:0 7px 0 color-mix(in srgb,var(--c) 30%,var(--ln))}
+.ci{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:23px;background:color-mix(in srgb,var(--c) 16%,transparent);margin-bottom:8px}.ci.big{width:64px;height:64px;font-size:32px;flex:none}
+.cd h3{margin:8px 0 4px;font-size:17px}
+.cd p{color:var(--mu);font-size:13.5px;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ft{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--mu);margin-bottom:6px}
+.pb{height:8px;background:var(--ln);border-radius:9px;overflow:hidden}
+.pb i{display:block;height:100%;width:0;border-radius:9px;background:var(--c,var(--ac));transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.bd{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:99px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.bd.A{--c:var(--A)}.bd.M{--c:var(--M)}.bd.B{--c:var(--B)}
+.bc{font-size:13px;color:var(--mu);margin-bottom:6px}.bc a{color:var(--ac);font-weight:600}
+.mh,.hd{display:flex;gap:16px;align-items:center;justify-content:space-between}.mh{justify-content:flex-start}.mh p{margin:8px 0 0;color:var(--mu)}
+.rw{display:flex;align-items:center;gap:12px;background:var(--cd);border:1.5px solid var(--ln);padding:11px 14px;border-radius:14px;margin-bottom:9px;cursor:pointer;transition:transform .2s,border-color .2s}
+.rw:hover{transform:translateX(5px);border-color:var(--ac)}
+.rt{flex:1;font-weight:600;display:flex;flex-direction:column;line-height:1.3}.rt small{font-weight:400;color:var(--mu);font-size:12px}
+.nm{width:30px;height:30px;border-radius:9px;background:var(--hi);color:var(--ht);display:grid;place-items:center;font-size:13px;font-weight:700;flex:none}
+.rw em{color:var(--ok);font-style:normal;font-weight:800}
+.fv{border:0;background:none;font-size:20px;color:var(--ln);cursor:pointer;padding:0 4px;transition:transform .2s,color .2s}.fv.big{font-size:30px}
+.fv.on{color:var(--am);transform:scale(1.15)}.fv:hover{transform:scale(1.3) rotate(12deg)}
+.bx{background:var(--cd);border:1.5px solid var(--ln);border-radius:16px;padding:20px;margin:14px 0;box-shadow:var(--sh)}
+.bx h2{margin:0 0 10px;font-size:17px;color:var(--ac)}
+.fm{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+code{font-family:"Bricolage Grotesque",system-ui,sans-serif;background:color-mix(in srgb,var(--ac) 10%,transparent);border-left:4px solid var(--ac);padding:7px 12px;border-radius:8px;font-size:15px;font-weight:600}
+.dc{background:color-mix(in srgb,var(--am) 18%,transparent);border-left:4px solid var(--am);padding:10px 14px;border-radius:8px;font-size:14px}
+.fig{margin:12px 0;padding:12px;background:var(--bg);border-radius:12px;border:1px dashed var(--ln)}
+.fig svg{display:block;width:100%;height:auto;max-height:280px;margin:0 auto}
+.fig figcaption{text-align:center;font-size:12.5px;color:var(--mu);margin-top:6px}
+.op{display:flex;gap:12px;width:100%;text-align:left;background:var(--bg);border:2px solid var(--ln);border-radius:12px;padding:10px 14px;margin:8px 0;cursor:pointer;transition:transform .15s,border-color .2s}
+.op b{flex:none;width:26px;height:26px;border-radius:50%;background:var(--hi);color:var(--ht);display:grid;place-items:center;font-size:13px}
+.op:not(:disabled):hover{border-color:var(--ac);transform:translateX(4px)}.op:disabled{cursor:default}
+.op.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent);animation:pop .4s}
+.op.er{border-color:var(--er);background:color-mix(in srgb,var(--er) 12%,transparent);animation:shake .4s}
+.op.ok b{background:var(--ok);color:var(--bt)}.op.er b{background:var(--er);color:var(--bt)}
+.fb{margin-top:14px;padding:14px;border-radius:12px;border-left:5px solid var(--ok);background:color-mix(in srgb,var(--ok) 10%,transparent);animation:up .4s both}
+.fb.erb{border-color:var(--er);background:color-mix(in srgb,var(--er) 9%,transparent)}.fb p{margin:6px 0 0}
+.dn{background:var(--cd);color:var(--ac);border:1.5px solid var(--ac);border-radius:99px;padding:11px 24px;font:700 14px "Bricolage Grotesque",sans-serif;cursor:pointer;transition:all .25s}
+.dn.on{background:var(--ok);border-color:var(--ok);color:var(--bt)}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:18px 0;flex-wrap:wrap}
+.qh{display:flex;gap:14px;align-items:center;justify-content:space-between;margin:8px 0}
+.res{text-align:center;padding:10px 0}
+.stat{text-align:center;margin:0}.stat span{font-size:22px}.stat b{display:block;font-size:26px}.stat small{color:var(--mu)}
+.mr{display:grid;grid-template-columns:minmax(120px,1.2fr) 2fr minmax(90px,.8fr);gap:10px;align-items:center;padding:7px 0;font-size:13.5px}
+.mr small,.mr2 small{color:var(--mu);text-align:right}.mr2{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--ln);font-size:13.5px}
+.sb{display:flex;height:10px;background:var(--ln);border-radius:9px;overflow:hidden}.sb i{display:block;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}.sb .g1{background:var(--ok)}.sb .e1{background:var(--er)}
+.sm{text-align:center;display:flex;flex-direction:column;gap:2px;font:inherit}.sm b{font-family:"Bricolage Grotesque",sans-serif;font-size:28px}
+.empty{text-align:center;font-size:40px}.empty p{font-size:15px;color:var(--mu)}
+.fcnt{text-align:center;color:var(--mu);font-size:13px;margin:4px 0 8px}.fcb{justify-content:center}
+.fcw{perspective:1200px}.fcard{position:relative;height:300px;transition:transform .6s cubic-bezier(.3,.8,.3,1);transform-style:preserve-3d;cursor:pointer}.fcard.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center;align-items:center;text-align:center;background:var(--cd);border:1.5px solid var(--ln);box-shadow:var(--sh);overflow:auto}
+.face.bk2{transform:rotateY(180deg);background:var(--hi)}.face h2{font-size:26px;margin:0}
+nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;z-index:20;width:min(100%,720px);display:flex;gap:2px;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));background:var(--hd);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid var(--ln);border-bottom:0;border-radius:20px 20px 0 0}
+nav a{flex:1;display:flex;flex-direction:column;align-items:center;font-size:19px;line-height:1.25;padding:5px 2px;border-radius:12px;color:var(--mu);transition:all .25s}
+nav i{font-style:normal}nav a span{font-size:10.5px;font-weight:700}nav a.on{background:var(--hi);color:var(--ht);transform:translateY(-3px)}
+.nt{font-size:12px;color:var(--mu);margin:28px 0 0}
+.gl{border-left:4px solid var(--ac);padding:8px 12px;margin:8px 0;background:color-mix(in srgb,var(--ac) 6%,transparent);border-radius:6px;font-size:14px;position:relative}
+.gl b{color:var(--ac)}
+.gl button{position:absolute;right:6px;top:6px;font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid var(--ln);background:var(--cd);cursor:pointer}
+.node{fill:var(--cd);stroke:var(--ac);stroke-width:2;cursor:pointer;transition:fill .2s}
+.node:hover{fill:var(--hi)}
+.edge{stroke:var(--ln);stroke-width:2;marker-end:url(#arr)}
+/* ====== Tabela Periódica completa ====== */
+.pt-wrap{overflow-x:auto;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.pt{display:grid;grid-template-columns:repeat(18,minmax(30px,1fr));grid-template-rows:repeat(9,auto);gap:2px;min-width:600px;font-size:9px}
+@media(max-width:520px){.pt{min-width:560px;font-size:8px}}
+.pt-el{aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:5px;cursor:pointer;padding:1px;line-height:1;border:1px solid;transition:transform .15s;position:relative;overflow:hidden}
+.pt-el:hover{transform:scale(1.18);z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.pt-el b{font-size:12px;font-weight:800}
+.pt-el small{font-size:6.5px;font-weight:500;opacity:.85;margin-top:1px;text-align:center;line-height:1.05;max-width:100%;overflow:hidden}
+.pt-el i{font-size:6px;font-style:normal;position:absolute;top:2px;left:3px;opacity:.8;font-weight:600}
+.pt-el.ph{border-style:dashed;cursor:default;background:transparent!important;font-size:8px;color:var(--mu)}
+.pt-legend{display:flex;flex-wrap:wrap;gap:6px;font-size:11px;margin:10px 0 6px}
+.pt-legend span{padding:3px 9px;border-radius:6px;border:1px solid;font-weight:600;font-size:11px}
+/* cores (funcionam em tema claro e escuro) */
+.pt-ma{background:hsl(45 92% 62% / .40);border-color:hsl(45 92% 55%)}
+.pt-at{background:hsl(28 92% 62% / .40);border-color:hsl(28 92% 55%)}
+.pt-tr{background:hsl(270 70% 68% / .40);border-color:hsl(270 70% 58%)}
+.pt-mn{background:hsl(215 20% 62% / .40);border-color:hsl(215 20% 52%)}
+.pt-sm{background:hsl(150 70% 60% / .40);border-color:hsl(150 70% 45%)}
+.pt-nm{background:hsl(120 60% 62% / .40);border-color:hsl(120 60% 45%)}
+.pt-hl{background:hsl(205 85% 68% / .40);border-color:hsl(205 85% 55%)}
+.pt-gn{background:hsl(280 70% 72% / .40);border-color:hsl(280 70% 60%)}
+.pt-ln{background:hsl(330 70% 72% / .40);border-color:hsl(330 70% 60%)}
+.pt-ac{background:hsl(350 80% 72% / .40);border-color:hsl(350 80% 60%)}
+.pt-detail{margin-top:14px}
+.pt-detail .grid{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px;margin:8px 0}
+.pt-detail .grid b{color:var(--mu);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;padding-top:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><a class="lg" href="#/">🧪 Química<em>·ENEM</em></a><span class="sp"></span><button class="ib" id="tm" onclick="tmT()" title="Cronômetro">⏱ 00:00</button><button class="ib" onclick="th()" aria-label="Alternar tema" title="Tema">🌓</button></header>
+<div class="w"><main id="app"></main><p class="nt">* As porcentagens de incidência são estimativas baseadas no histórico das provas anteriores do ENEM (parcela aproximada das questões de Química) e podem variar a cada edição. Massas atômicas aproximadas; para elementos sintéticos usa-se o isótopo mais estável.</p></div>
+<nav>
+<a href="#/" data-r=""><i>🏠</i><span>Início</span></a>
+<a href="#/sim" data-r="sim"><i>📝</i><span>Simulado</span></a>
+<a href="#/mapa" data-r="mapa"><i>🗺️</i><span>Mapa</span></a>
+<a href="#/tp" data-r="tp"><i>⚗️</i><span>Tabela</span></a>
+<a href="#/glos" data-r="glos"><i>📖</i><span>Glossário</span></a>
+<a href="#/erros" data-r="erros"><i>⚠️</i><span>Erros</span></a>
+<a href="#/fc" data-r="fc"><i>🃏</i><span>Fórmulas</span></a>
+<a href="#/st" data-r="st"><i>📊</i><span>Stats</span></a>
+</nav>
+<script>
+/* ======================= DADOS: módulos ======================= */
+var M=[
+{n:"Soluções e Concentração",p:15,l:"A",d:"Solubilidade, concentrações, diluição e titulação: base da química quantitativa.",s:"Solubilidade e coeficiente|A;Curvas de solubilidade|M;Concentração comum|A;Molaridade|A;Diluição de soluções|A;Mistura de soluções|M;Titulação|M"},
+{n:"Orgânica — Funções e Reações",p:14,l:"A",d:"Hidrocarbonetos, funções oxigenadas e nitrogenadas, reações e polímeros.",s:"Hidrocarbonetos|A;Álcoois|A;Ácidos carboxílicos|M;Ésteres|M;Aminas e amidas|B;Polímeros|M;Reações de substituição|M;Reações de adição|M;Reações de eliminação|B;Saponificação|M;Esterificação|M"},
+{n:"Termoquímica e Cinética",p:10,l:"A",d:"Entalpia, Lei de Hess, energia de ligação e velocidade das reações.",s:"Entalpia e variação de entalpia|A;Lei de Hess|A;Energia de ligação|M;Entalpia de formação|M;Entalpia de combustão|M;Velocidade de reação|M;Fatores que afetam a velocidade|A;Catalisadores|M"},
+{n:"Estequiometria",p:10,l:"A",d:"Mol, massa molar, Avogadro, cálculos estequiométricos e rendimento.",s:"Conceito de mol|A;Massa molar|A;Número de Avogadro|M;Cálculo estequiométrico|A;Reagente limitante|A;Rendimento de reação|M;Pureza de reagentes|B"},
+{n:"Equilíbrio Químico",p:9,l:"A",d:"Kc, Kp, Le Chatelier, pH, pOH, Kw, hidrólise e tampão.",s:"Lei de ação das massas (Kc)|A;Constante Kp|M;Deslocamento de equilíbrio (Le Chatelier)|A;pH e pOH|A;Produto iônico da água (Kw)|A;Hidrólise salina|M;Solução-tampão|M;Grau de equilíbrio|B"},
+{n:"Atomística e Tabela Periódica",p:8,l:"A",d:"Modelos atômicos, distribuição eletrônica e propriedades periódicas.",s:"Modelos atômicos (Dalton a Bohr)|A;Números quânticos|M;Distribuição eletrônica|A;Raio atômico|M;Eletronegatividade|A;Energia de ionização|M;Afinidade eletrônica|B"},
+{n:"Ligações Químicas",p:7,l:"A",d:"Iônica, covalente, metálica, polaridade, geometria e forças intermoleculares.",s:"Ligação iônica|A;Ligação covalente|A;Ligação metálica|M;Polaridade das ligações|M;Geometria molecular|M;Forças dipolo e London|M;Ligação de hidrogênio|A"},
+{n:"Funções Inorgânicas",p:6,l:"A",d:"Ácidos, bases, sais e óxidos: nomenclatura, propriedades e neutralização.",s:"Ácidos — conceitos e nomenclatura|A;Bases — conceitos e nomenclatura|A;Sais — conceitos e nomenclatura|M;Óxidos — conceitos e nomenclatura|M;Reações de neutralização|A;Indicadores ácido-base|B"},
+{n:"Eletroquímica",p:6,l:"A",d:"Pilhas, baterias, eletrólise e corrosão: energia química e elétrica.",s:"Pilhas e potenciais de redução|A;Baterias e acumuladores|M;Eletrólise ígnea|M;Eletrólise aquosa|M;Corrosão e proteção catódica|B;Espontaneidade e ddp|A"},
+{n:"Radioatividade e Nuclear",p:4,l:"M",d:"Emissões radioativas, meia-vida, fissão e fusão nuclear.",s:"Emissões alfa, beta e gama|A;Leis de Soddy|M;Meia-vida|A;Fissão nuclear|M;Fusão nuclear|M;Datação radioativa|B"},
+{n:"Química Ambiental",p:4,l:"M",d:"Poluição, chuva ácida, efeito estufa, tratamento de água e química verde.",s:"Poluição atmosférica|A;Chuva ácida|M;Efeito estufa e CO₂|A;Tratamento de água|M;Reciclagem e resíduos|B;Química verde|B;Combustíveis e biocombustíveis|M"},
+{n:"Isomeria e Bioquímica",p:3,l:"M",d:"Isomeria plana e espacial, e as grandes moléculas da vida.",s:"Isomeria plana|A;Isomeria espacial (geométrica)|M;Carbono assimétrico e enantiômeros|M;Carboidratos|M;Lipídios|M;Proteínas e aminoácidos|A;Ácidos nucleicos|B"},
+{n:"Gases e Propriedades",p:2,l:"M",d:"Leis dos gases, equação de Clapeyron e teoria cinética.",s:"Leis dos gases (Boyle, Charles, Gay-Lussac)|M;Equação de Clapeyron|A;Misturas gasosas|M;Teoria cinética dos gases|M;Efusão e difusão|B"},
+{n:"Métodos de Separação e Análise",p:1,l:"B",d:"Técnicas de separação de misturas e análise química.",s:"Filtração e decantação|A;Destilação|M;Extração e cromatografia|M;Análise qualitativa e quantitativa|B"},
+{n:"Propriedades Coligativas",p:1,l:"B",d:"Efeito do soluto nas propriedades físicas do solvente.",s:"Tonoscopia e ebuliometria|M;Criometria|M;Osmometria|A;Efeito do soluto nas propriedades|M"}
+];
+/* C[k] = [resumo, [conceitos], dica, textoBase, enunciado, [alternativas], idxCorreto, resolucao] */
+var C={
+"Solubilidade e coeficiente":[
+"Solubilidade é a quantidade máxima de soluto que se dissolve em certa quantidade de solvente, a dada temperatura. O coeficiente de solubilidade (CS) costuma ser expresso em g de soluto por 100 g de água. Soluções podem ser insaturadas (abaixo do CS), saturadas (no limite) ou supersaturadas (acima, instáveis). A solubilidade depende da temperatura e da natureza das substâncias.",
+["CS em g/100 g de água","Insaturada < saturada < supersaturada","Temperatura altera o CS"],
+"Cuidado com a regra geral: para gases, o aumento de temperatura REDUZ a solubilidade; para a maioria dos sais, AUMENTA.",
+"Em um laboratório escolar, um aluno dissolve 36 g de NaCl em 100 g de água a 20 °C. Sabe-se que o coeficiente de solubilidade do NaCl nessa temperatura é 36 g/100 g de água.",
+"Como se classifica essa solução?",
+["Insaturada","Saturada","Supersaturada","Concentrada em massa","Diluída"],1,
+"Se foram dissolvidos exatamente 36 g em 100 g de água, a solução está saturada (no limite do CS) a 20 °C. A insaturada teria menos de 36 g; a supersaturada, mais; as opções D e E se referem a outra classificação (concentrada/diluída) e não à saturação."],
+"Curvas de solubilidade":[
+"As curvas de solubilidade relacionam o CS de uma substância com a temperatura. Curvas ascendentes indicam que o sal fica mais solúvel com o aquecimento (caso do KNO₃). Curvas quase horizontais ou descendentes indicam pouca variação ou redução da solubilidade (caso do Ce₂(SO₄)₃ e do NaCl). A leitura do gráfico permite prever se haverá corpo de fundo ao resfriar ou aquecer uma solução.",
+["Curva ascendente: CS aumenta com T","Curva quase plana: pouca variação (NaCl)","Curva descendente: CS diminui (Ce₂(SO₄)₃)"],
+"Ao esfriar uma solução saturada de um sal de curva ascendente, o excesso precipita (forma corpo de fundo). Com sais de curva quase plana, o efeito é pequeno; com sais de curva descendente, o comportamento se inverte.",
+"Um frasco contém 100 g de água a 60 °C com 110 g de KNO₃ dissolvidos. O gráfico abaixo compara as curvas do KNO₃ (ascendente) e do NaCl (quase plana).<figure class='fig'><svg viewBox='0 0 340 220'><line x1='40' y1='180' x2='320' y2='180' stroke='var(--ln)' stroke-width='1.5'/><line x1='40' y1='15' x2='40' y2='180' stroke='var(--ln)' stroke-width='1.5'/><polyline points='40,168 100,132 170,80 240,48 310,28' fill='none' stroke='var(--ac)' stroke-width='2.5'/><polyline points='40,140 100,136 170,132 240,128 310,124' fill='none' stroke='var(--am)' stroke-width='2.5'/><circle cx='170' cy='80' r='4' fill='var(--ac)'/><circle cx='70' cy='138' r='4' fill='var(--ac)'/><text x='176' y='76' font-size='10' fill='var(--tx)'>60°C, 110 g</text><text x='76' y='134' font-size='10' fill='var(--tx)'>20°C, 30 g</text><text x='270' y='22' font-size='11' fill='var(--ac)'>KNO₃</text><text x='270' y='118' font-size='11' fill='var(--am)'>NaCl</text><text x='180' y='200' font-size='10' text-anchor='middle' fill='var(--mu)'>Temperatura (°C) →</text><text x='14' y='100' font-size='10' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 14 100)'>CS (g/100g) →</text></svg><figcaption>Comparação das curvas de solubilidade: KNO₃ (cresce rápido) e NaCl (quase plana).</figcaption></figure>",
+"Ao resfriar a solução até 20 °C, qual massa de KNO₃ precipita como corpo de fundo?",
+["0 g","30 g","80 g","110 g","140 g"],2,
+"A 60 °C, 110 g saturam 100 g de água. A 20 °C, só 30 g permanecem dissolvidos. Precipitam 110 − 30 = 80 g. As demais opções confundem os valores do CS, não subtraem ou somam incorretamente."],
+"Concentração comum":[
+"Concentração comum (C) é a razão entre a massa do soluto e o volume da solução. É expressa em g/L (ou mg/L, g/mL). Não confundir com densidade: a densidade relaciona a massa e o volume da SOLUÇÃO inteira; a concentração comum, apenas a massa do soluto. É usada em rótulos e análises de água.",
+["C = m/V (g/L)","1 g/L = 1 mg/mL","Não confundir com densidade"],
+"Antes de dividir, converta mL para L (÷ 1000). Rótulos de água mineral costumam trazer concentrações em mg/L.",
+"Uma amostra de 500 mL de água mineral contém 20 mg de íons cálcio (Ca²⁺) dissolvidos, conforme o rótulo.",
+"Qual é a concentração de cálcio, em mg/L?",
+["10 mg/L","20 mg/L","40 mg/L","100 mg/L","500 mg/L"],2,
+"V = 500 mL = 0,5 L. C = 20 mg / 0,5 L = 40 mg/L. A opção A inverte a razão; a B ignora a conversão; a D e a E erram potência de dez."],
+"Molaridade":[
+"Molaridade (M) é a razão entre o número de mols do soluto e o volume da solução em litros. É a concentração mais usada em cálculos estequiométricos. Relaciona-se com a concentração comum por M = C / MM (massa molar).",
+["M = n/V = m/(MM·V)","n = m/MM","Unidade: mol/L"],
+"Converta massa em gramas, massa molar em g/mol e volume em L. Nunca esqueça: M é mol/L, não mol/mL.",
+"Prepara-se uma solução dissolvendo 5,85 g de NaCl (MM = 58,5 g/mol) em água suficiente para 500 mL de solução.",
+"Qual a molaridade da solução?",
+["0,1 mol/L","0,2 mol/L","0,5 mol/L","1,0 mol/L","2,0 mol/L"],1,
+"n = 5,85/58,5 = 0,1 mol. V = 0,5 L. M = 0,1/0,5 = 0,2 mol/L. A opção A esquece o volume; a C e a D erram a divisão; a E dobra o valor."],
+"Diluição de soluções":[
+"Diluir é adicionar solvente a uma solução, mantendo a quantidade de soluto. Por isso a molaridade e o volume são inversamente proporcionais. O produto M·V permanece constante. É o princípio do soro caseiro e das soluções de limpeza.",
+["M₁·V₁ = M₂·V₂","m₁ = m₂ (soluto conservado)","Diluir: M diminui, V aumenta"],
+"A quantidade de soluto é a mesma antes e depois; só a concentração muda. Trabalhe sempre com as mesmas unidades de volume.",
+"Em um laboratório, 100 mL de uma solução de HCl 0,5 mol/L são diluídos com água até o volume final de 500 mL.<figure class='fig'><svg viewBox='0 0 340 150'><rect x='30' y='50' width='60' height='80' fill='none' stroke='var(--ac)' stroke-width='2'/><rect x='30' y='90' width='60' height='40' fill='var(--ac)' fill-opacity='0.4'/><text x='60' y='42' font-size='10' text-anchor='middle' fill='var(--mu)'>Antes</text><text x='60' y='143' font-size='10' text-anchor='middle' fill='var(--tx)'>100 mL · 0,5 M</text><text x='170' y='88' font-size='16' text-anchor='middle' fill='var(--ac)'>+ H₂O →</text><rect x='250' y='50' width='60' height='80' fill='none' stroke='var(--ac)' stroke-width='2'/><rect x='250' y='105' width='60' height='25' fill='var(--ac)' fill-opacity='0.4'/><text x='280' y='42' font-size='10' text-anchor='middle' fill='var(--mu)'>Depois</text><text x='280' y='143' font-size='10' text-anchor='middle' fill='var(--tx)'>500 mL · 0,1 M</text><text x='60' y='115' font-size='10' text-anchor='middle' fill='var(--tx)'>0,05 mol</text><text x='280' y='121' font-size='10' text-anchor='middle' fill='var(--tx)'>0,05 mol</text></svg><figcaption>A diluição conserva a quantidade de soluto (M·V constante).</figcaption></figure>",
+"Qual a nova molaridade da solução?",
+["0,05 mol/L","0,1 mol/L","0,25 mol/L","0,5 mol/L","2,5 mol/L"],1,
+"M₂ = M₁·V₁/V₂ = 0,5 × 0,1/0,5 = 0,1 mol/L. A opção A erra a razão; a C mantém a metade sem considerar o volume; a D considera que a diluição não altera; a E inverte."],
+"Mistura de soluções":[
+"Ao misturar soluções do mesmo soluto, sem reação, a quantidade final é a soma dos solutos e o volume final, a soma dos volumes. A nova molaridade é Mf = (M₁V₁ + M₂V₂)/(V₁+V₂). Se houver reação, é preciso primeiro determinar o reagente limitante.",
+["Mf = (M₁V₁ + M₂V₂)/(V₁+V₂)","Soluto final = soma dos solutos","Com reação: ver limitante"],
+"Em mistura sem reação, some os mols e divida pelo volume total. Em mistura com reação, primeiro descubra o que sobra.",
+"Misturam-se 200 mL de NaCl 0,1 mol/L com 300 mL de NaCl 0,2 mol/L, sem reação.",
+"Qual a molaridade da solução resultante?",
+["0,10 mol/L","0,15 mol/L","0,16 mol/L","0,20 mol/L","0,30 mol/L"],2,
+"n₁ = 0,1 × 0,2 = 0,02 mol; n₂ = 0,2 × 0,3 = 0,06 mol; total = 0,08 mol. Vf = 0,5 L. Mf = 0,08/0,5 = 0,16 mol/L. A opção A é a média errada; a B e a D são concentrações iniciais; a E soma as molaridades."],
+"Titulação":[
+"Titulação é uma técnica de análise quantitativa em que se adiciona, gota a gota, uma solução de concentração conhecida (titulante) a outra de concentração desconhecida (titulado), até o ponto de equivalência, indicado por um indicador. Na neutralização, vale Ma·Va = Mb·Vb.",
+["Ma·Va = Mb·Vb (1:1)","Ponto de viragem: indicador","Fenolftaleína: rosa em meio básico"],
+"Fenolftaleína é incolor em meio ácido e rosa em meio básico. A conta Ma·Va = Mb·Vb só vale para ácido e base com 1 H⁺ e 1 OH⁻.",
+"Em uma titulação, 25 mL de solução de HCl foram neutralizados por 20 mL de NaOH 0,5 mol/L, usando fenolftaleína. A curva abaixo representa o pH em função do volume de base adicionado.<figure class='fig'><svg viewBox='0 0 340 200'><line x1='40' y1='170' x2='320' y2='170' stroke='var(--ln)' stroke-width='1.5'/><line x1='40' y1='15' x2='40' y2='170' stroke='var(--ln)' stroke-width='1.5'/><path d='M45,30 Q150,45 190,60 Q210,75 220,120 Q230,155 300,165' fill='none' stroke='var(--ac)' stroke-width='2.5'/><line x1='220' y1='15' x2='220' y2='170' stroke='var(--am)' stroke-width='1' stroke-dasharray='4,4'/><text x='224' y='30' font-size='10' fill='var(--am)'>ponto de equivalência</text><text x='180' y='188' font-size='10' text-anchor='middle' fill='var(--mu)'>Volume de base (mL) →</text><text x='14' y='95' font-size='10' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 14 95)'>pH →</text></svg><figcaption>Curva de titulação ácido forte × base forte. O salto ocorre no ponto de equivalência.</figcaption></figure>",
+"Qual a molaridade do HCl?",
+["0,20 mol/L","0,25 mol/L","0,40 mol/L","0,50 mol/L","1,00 mol/L"],2,
+"Ma·Va = Mb·Vb → Ma × 25 = 0,5 × 20 → Ma = 10/25 = 0,4 mol/L. As demais opções vêm de inverter a razão, usar a molaridade da base ou dobrar o resultado."],
+"Hidrocarbonetos":[
+"Hidrocarbonetos são compostos formados apenas por carbono e hidrogênio. Classificam-se em alcanos (ligações simples, CnH2n+2), alcenos (uma dupla, CnH2n), alcinos (uma tripla, CnH2n−2), cicloalcanos e aromáticos (anel benzênico). São a base do petróleo e do gás natural.",
+["Alcano: CnH2n+2","Alceno: CnH2n","Alcino: CnH2n−2","Aromático: anel benzênico"],
+"Cuidado com a fórmula geral: cada insaturação ou ciclo reduz 2 H. O benzeno (C₆H₆) é aromático, não alceno.",
+"O gás de cozinha (GLP) é uma mistura de propano (C₃H₈) e butano (C₄H₁₀), ambos hidrocarbonetos saturados.",
+"A que classe de hidrocarbonetos pertencem essas substâncias?",
+["Alcenos","Alcinos","Alcanos","Aromáticos","Cicloalcanos"],2,
+"Propano e butano têm apenas ligações simples entre carbonos: são alcanos. As demais classes envolvem duplas (alcenos), triplas (alcinos), anel aromático ou ciclo saturado."],
+"Álcoois":[
+"Álcoois têm o grupo hidroxila (−OH) ligado a carbono saturado. O etanol (C₂H₅OH) é o mais conhecido, obtido por fermentação de açúcares. Metanol é tóxico e não pode ser ingerido. Álcoois podem ser primários, secundários ou terciários, conforme o carbono que sustenta a hidroxila.",
+["Grupo funcional: −OH","Etanol: C₂H₅OH","Fermentação: açúcar → etanol + CO₂"],
+"Não confunda álcool com fenol (OH ligado a anel aromático). O grupo funcional decide a função, não o nome comercial.",
+"O etanol combustível é produzido no Brasil pela fermentação de caldo de cana, seguida de destilação. Sua fórmula é C₂H₅OH.",
+"O grupo funcional característico do etanol é:",
+["Carboxila (−COOH)","Hidroxila (−OH)","Amina (−NH₂)","Éster (−COO−)","Carbonila (−CHO)"],1,
+"O etanol possui a hidroxila ligada a carbono saturado, típica dos álcoois. A carboxila caracteriza ácidos carboxílicos; a amina, aminas; o éster, ésteres; o aldeído, a carbonila em aldeídos."],
+"Ácidos carboxílicos":[
+"Ácidos carboxílicos possuem o grupo carboxila (−COOH). O ácido acético (CH₃COOH) está no vinagre; o ácido cítrico, nas frutas; o ácido oleico, nos óleos. São ácidos fracos e reagem com bases formando sais e água (neutralização).",
+["Grupo: −COOH","Ácido acético: CH₃COOH","Reagem com base → sal + água"],
+"A carboxila é ácida; o álcool, neutro. Vinagre é solução diluída de ácido acético (~4%).",
+"O vinagre comercial é uma solução aquosa de ácido acético a 4% (m/v).",
+"A função orgânica presente no vinagre é:",
+["Álcool","Aldeído","Cetona","Ácido carboxílico","Éster"],3,
+"O ácido acético tem grupo −COOH, característico dos ácidos carboxílicos. Álcool tem −OH; aldeído, −CHO; cetona, C=O entre carbonos; éster, −COO−."],
+"Ésteres":[
+"Ésteres resultam da reação entre ácido carboxílico e álcool (esterificação), com eliminação de água. São responsáveis por aromas de frutas (acetato de isoamila → banana; butirato de etila → abacaxi) e estão presentes em óleos e gorduras. Sofrem hidrólise, produzindo ácido e álcool.",
+["R−COO−R′","Formação: ácido + álcool ⇌ éster + água","Aromas de frutas"],
+"Éster ≠ éter: éster tem carbonila (C=O) junto ao oxigênio; éter tem oxigênio entre dois carbonos.",
+"O aroma característico da banana é devido ao acetato de isoamila, um éster presente em pequena quantidade na fruta.",
+"A função orgânica responsável pelo aroma é:",
+["Álcool","Éter","Éster","Ácido","Cetona"],2,
+"Aroma de frutas é a marca dos ésteres, formados por ácido carboxílico + álcool. Éter tem apenas C−O−C; álcool, −OH; ácido, −COOH; cetona, C=O entre carbonos."],
+"Aminas e amidas":[
+"Aminas têm nitrogênio ligado a carbonos (−NH₂, −NHR, −NR₂). Amidas têm o grupo −CONH₂ (carbonila ligada a nitrogênio). Aminas são básicas (como a amônia); amidas são neutras. Aminoácidos têm os dois grupos e formam proteínas.",
+["Amina: R−NH₂","Amida: R−CO−NH₂","Amina é básica; amida é neutra"],
+"Não confunda: amina é base; amida é praticamente neutra. Aminoácidos têm −NH₂ e −COOH na mesma molécula.",
+"A ureia, principal componente nitrogenado da urina, tem fórmula CO(NH₂)₂.",
+"A função orgânica da ureia é:",
+["Amina","Amida","Ácido","Éster","Nitrila"],1,
+"A ureia tem o grupo −CONH₂ (carbonila ligada a nitrogênio): é uma amida. Amina teria apenas N ligado a C sem carbonila; nitrila tem −C≡N; ácido tem −COOH; éster, −COO−."],
+"Polímeros":[
+"Polímeros são macromoléculas formadas por repetição de unidades menores (monômeros). Naturais: celulose, amido, proteínas, borracha. Sintéticos: polietileno (PE), polipropileno (PP), PVC, PET, náilon. Podem ser de adição (a partir de alcenos) ou de condensação (com perda de molécula pequena).",
+["Adição: alceno → polímero","Condensação: perde H₂O etc.","Reciclagem: PET, PE, PP"],
+"Polímeros de adição vêm de alcenos. O PET é de condensação. Códigos de reciclagem no fundo das embalagens (1 a 7).",
+"O polietileno (PE), usado em sacolas e garrafas, é produzido a partir do eteno (C₂H₄).",
+"O tipo de polimerização do PE é:",
+["Adição","Condensação","Saponificação","Esterificação","Hidrólise"],0,
+"O PE é formado pela adição sucessiva de moléculas de eteno (alcenos), sem eliminação de subproduto. Condensação libera molécula pequena; saponificação e esterificação envolvem ácidos e álcoois."],
+"Reações de substituição":[
+"Na substituição, um átomo ou grupo de uma molécula é trocado por outro. Ocorre principalmente em alcanos e aromáticos. Exemplos: halogenação do metano (CH₄ + Cl₂ → CH₃Cl + HCl), nitração e sulfonação do benzeno.",
+["CH₄ + Cl₂ → CH₃Cl + HCl","Um átomo sai, outro entra","Típica de alcanos/aromáticos"],
+"Substituição ≠ adição. Se a molécula ganha átomos sem perder outros, é adição; se troca, é substituição.",
+"A reação entre metano e cloro gasoso, na presença de luz, produz cloreto de metila e ácido clorídrico.",
+"Essa reação é classificada como:",
+["Adição","Eliminação","Substituição","Saponificação","Esterificação"],2,
+"Um H do metano é trocado por Cl, formando HCl como subproduto: é substituição. Adição soma átomos sem retirar; eliminação retira; saponificação e esterificação envolvem ésteres."],
+"Reações de adição":[
+"Na adição, átomos se somam à molécula, quebrando uma insaturação. Ocorre tipicamente em alcenos e alcinos. Exemplo: hidrogenação de óleos (adição de H₂, formando gorduras saturadas) e halogenação (adição de Br₂, que descora a água de bromo).",
+["C=C + H₂ → C−C (hidrogenação)","C=C + Br₂ → dibrometo","Descora água de bromo (teste)"],
+"Teste de insaturação: água de bromo descora na presença de alceno/alcino (adição). Com alcano, não há reação visível.",
+"A margarina é produzida pela hidrogenação parcial de óleos vegetais, que são insaturados.",
+"A transformação química que ocorre é uma:",
+["Substituição","Adição","Eliminação","Neutralização","Saponificação"],1,
+"Hidrogenação é adição de H₂ às duplas ligações, saturando o óleo. Substituição troca átomos; eliminação retira; neutralização envolve ácido e base; saponificação produz sabão."],
+"Reações de eliminação":[
+"Na eliminação, átomos são retirados da molécula, formando uma insaturação. É a reação inversa da adição. Exemplo clássico: desidratação de álcool (com H₂SO₄ e calor), produzindo alceno; desidrohalogenação de haleto, produzindo alceno.",
+["Álcool → alceno + H₂O","Haleto → alceno + HX","Inversa da adição"],
+"Eliminação gera dupla ou tripla. Aquecimento + ácido sulfúrico = desidratação de álcool.",
+"O etanol, quando aquecido com ácido sulfúrico concentrado, produz eteno (C₂H₄) e água.",
+"Essa reação é uma:",
+["Adição","Substituição","Eliminação","Oxidação","Neutralização"],2,
+"Retira-se H₂O do etanol, formando uma dupla ligação (eteno): é eliminação (desidratação). Adição somaria átomos; substituição trocaria; oxidação envolveria perda de elétrons; neutralização, ácido + base."],
+"Saponificação":[
+"Saponificação é a hidrólise básica de um éster (triglicerídeo), produzindo sabão (sal de ácido graxo) e glicerol. Usa-se NaOH ou KOH. É uma reação clássica da química orgânica e da produção de sabão artesanal.",
+["Triglicerídeo + NaOH → sabão + glicerol","Sabão: sal de ácido graxo","Base: NaOH ou KOH"],
+"Não confunda com esterificação (que forma éster). Saponificação QUEBRA o éster; esterificação o forma.",
+"Uma receita caseira de sabão mistura óleo de cozinha usado com soda cáustica (NaOH), produzindo sabão e glicerol.",
+"A reação envolvida é uma:",
+["Esterificação","Saponificação","Hidrogenação","Neutralização simples","Polimerização"],1,
+"A reação de um éster (triglicerídeo do óleo) com base forte produzindo sabão é a saponificação. Esterificação forma éster; hidrogenação adiciona H₂; polimerização forma macromoléculas."],
+"Esterificação":[
+"Esterificação é a reação entre ácido carboxílico e álcool, com formação de éster e água. É reversível e catalisada por ácido (H₂SO₄). Exemplo: ácido acético + etanol → acetato de etila + água, responsável por aromas.",
+["Ácido + álcool ⇌ éster + água","Catalisador: H₂SO₄","Reação reversível"],
+"É a reação inversa da hidrólise de éster. O ácido sulfúrico atua como catalisador e desidratante.",
+"Em uma aula prática, ácido acético é misturado com etanol na presença de ácido sulfúrico concentrado, produzindo um líquido com aroma de fruta.",
+"A função orgânica obtida é:",
+["Éter","Éster","Aldeído","Cetona","Amida"],1,
+"Ácido + álcool produz éster (e água), com aroma característico: é a esterificação. Éter tem C−O−C sem carbonila; aldeído e cetona têm C=O em posições diferentes; amida tem N ligado a carbonila."],
+"Entalpia e variação de entalpia":[
+"Entalpia (H) é a energia térmica de um sistema a pressão constante. A variação de entalpia (ΔH) mede a energia trocada com o ambiente em uma reação. Reações exotérmicas liberam calor (ΔH < 0); endotérmicas absorvem (ΔH > 0). ΔH depende da temperatura, pressão e estado físico.",
+["ΔH = H_produtos − H_reagentes","Exotérmica: ΔH < 0","Endotérmica: ΔH > 0"],
+"Cuidado com o sinal. 'Libera calor' → ΔH negativo. 'Absorve calor' → ΔH positivo.",
+"A queima de 1 mol de metano libera 890 kJ. A equação é CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(l). O diagrama abaixo mostra a variação.<figure class='fig'><svg viewBox='0 0 320 200'><line x1='40' y1='30' x2='300' y2='30' stroke='var(--mu)' stroke-width='1' stroke-dasharray='4,4'/><line x1='40' y1='170' x2='300' y2='170' stroke='var(--mu)' stroke-width='1' stroke-dasharray='4,4'/><text x='45' y='24' font-size='10' fill='var(--mu)'>Reagentes: CH₄ + 2 O₂</text><text x='45' y='186' font-size='10' fill='var(--mu)'>Produtos: CO₂ + 2 H₂O</text><line x1='40' y1='30' x2='300' y2='170' stroke='var(--ac)' stroke-width='2.5'/><line x1='170' y1='30' x2='170' y2='170' stroke='var(--am)' stroke-width='1.5' stroke-dasharray='3,3'/><text x='178' y='100' font-size='11' fill='var(--am)'>ΔH = −890 kJ</text></svg><figcaption>Diagrama de energia: reação exotérmica (produtos abaixo dos reagentes).</figcaption></figure>",
+"Qual o valor e o sinal de ΔH para essa reação?",
+["ΔH = +890 kJ (endotérmica)","ΔH = −890 kJ (exotérmica)","ΔH = −445 kJ (exotérmica)","ΔH = +445 kJ (endotérmica)","ΔH = 0"],1,
+"Como há liberação de 890 kJ (combustão), a reação é exotérmica e ΔH = −890 kJ. As opções com sinal positivo indicam endotérmica (errado); as demais erram o valor."],
+"Lei de Hess":[
+"A Lei de Hess afirma que a variação de entalpia de uma reação depende apenas dos estados inicial e final, e não do caminho. Isso permite calcular ΔH de reações difíceis somando etapas conhecidas, invertendo equações (troca o sinal de ΔH) e multiplicando-as (multiplica ΔH).",
+["ΔH_total = soma dos ΔH das etapas","Inverter equação → trocar sinal","Multiplicar equação → multiplicar ΔH"],
+"Sempre ajuste as etapas para que o que não aparece na reação final se cancele. Cuide dos coeficientes e dos estados físicos.",
+"Deseja-se ΔH de: C(graf) + ½O₂(g) → CO(g). Dados: (I) C(graf) + O₂ → CO₂, ΔH = −393 kJ; (II) CO + ½O₂ → CO₂, ΔH = −283 kJ.",
+"Qual o ΔH da reação desejada?",
+["−676 kJ","−110 kJ","+110 kJ","+676 kJ","−220 kJ"],1,
+"Invertendo (II): CO₂ → CO + ½O₂, ΔH = +283. Somando com (I): ΔH = −393 + 283 = −110 kJ. A opção A soma direto sem inverter; a C erra o sinal; as demais são valores intermediários incorretos."],
+"Energia de ligação":[
+"A energia de ligação é a energia necessária para romper 1 mol de ligações no estado gasoso. Romper ligações consome energia (endotérmico, +); formar ligações libera energia (exotérmico, −). O ΔH da reação é a soma das energias rompidas menos as formadas.",
+["ΔH = Σ(rompidas) − Σ(formadas)","Romper: +E","Formar: −E"],
+"Só vale para substâncias gasosas. Prefira tabelas com valores tabelados; a conta é sempre rompidas − formadas.",
+"A reação H₂(g) + Cl₂(g) → 2 HCl(g) envolve: E(H−H) = 436; E(Cl−Cl) = 243; E(H−Cl) = 431 (kJ/mol).",
+"Qual o ΔH da reação?",
+["−183 kJ/mol","+183 kJ/mol","−431 kJ/mol","+431 kJ/mol","−679 kJ/mol"],0,
+"Rompidas: 436 + 243 = 679. Formadas: 2 × 431 = 862. ΔH = 679 − 862 = −183 kJ/mol. A B erra o sinal; a C usa só uma ligação; a E usa apenas as rompidas."],
+"Entalpia de formação":[
+"Entalpia de formação (ΔH°f) é a variação de entalpia na formação de 1 mol de substância a partir de seus elementos no estado-padrão. Substâncias simples no estado-padrão têm ΔH°f = 0 (O₂, H₂, C(graf), N₂). O ΔH de uma reação é dado por ΣΔH°f(produtos) − ΣΔH°f(reagentes).",
+["ΔH°f = 0 para substâncias simples","ΔH = ΣΔH°f(prod) − ΣΔH°f(reag)","Tabelado a 25 °C e 1 atm"],
+"Não esqueça de multiplicar cada ΔH°f pelo coeficiente estequiométrico da equação balanceada.",
+"Dados de ΔH°f (kJ/mol): CH₄(g) = −75; CO₂(g) = −394; H₂O(l) = −286; O₂(g) = 0. Reação: CH₄ + 2 O₂ → CO₂ + 2 H₂O.",
+"Qual o ΔH da reação?",
+["−605 kJ/mol","−755 kJ/mol","−891 kJ/mol","+891 kJ/mol","−394 kJ/mol"],2,
+"Produtos: (−394) + 2×(−286) = −966. Reagentes: (−75) + 2×0 = −75. ΔH = −966 − (−75) = −891 kJ/mol. As demais opções erram multiplicações ou sinais."],
+"Entalpia de combustão":[
+"Entalpia de combustão (ΔH°c) é o calor liberado na queima completa de 1 mol de combustível, sempre exotérmica (ΔH < 0). Para hidrocarbonetos, os produtos são CO₂ e H₂O. Quanto maior a cadeia carbônica, maior (em módulo) o ΔH de combustão.",
+["ΔH°c < 0","Combustão completa: CO₂ + H₂O","Compara combustíveis por kJ/g ou kJ/mol"],
+"Comparar combustíveis por kJ/g exige dividir ΔH pela massa molar. Etanol tem menor kJ/g que gasolina.",
+"A combustão do etanol (C₂H₅OH, MM = 46 g/mol) libera 1 368 kJ/mol. Considere a queima de 46 g de etanol.",
+"Qual a energia liberada, em kJ?",
+["684","1 368","2 736","68","13 680"],1,
+"46 g = 1 mol. Portanto libera 1 368 kJ, valor tabelado. As demais opções dividem, dobram ou erram potência de dez."],
+"Velocidade de reação":[
+"Velocidade de uma reação é a variação da concentração de reagente ou produto por unidade de tempo. Depende da natureza dos reagentes, concentração, temperatura, superfície de contato e presença de catalisador. É medida experimentalmente, por exemplo, pela variação de cor ou gás liberado.",
+["v = Δ[reagente]/Δt","Unidade: mol/(L·s)","Mais superfície → mais rápido"],
+"Gráficos de concentração por tempo: inclinação = velocidade. Quanto maior a inclinação, maior a velocidade.",
+"Em uma aula prática, dois comprimidos efervescentes idênticos são colocados em água a 20 °C: um inteiro e outro triturado. O triturado dissolve bem mais rápido.",
+"O fator que explica a diferença é:",
+["A concentração do reagente","A temperatura da água","A superfície de contato","A pressão do sistema","A presença de catalisador"],2,
+"Triturado aumenta a superfície de contato, expondo mais reagente à água: mais colisões efetivas por segundo. As outras opções permanecem iguais nos dois casos."],
+"Fatores que afetam a velocidade":[
+"A velocidade depende de: concentração (mais partículas → mais colisões), temperatura (mais energia → mais colisões eficazes), superfície de contato (mais área → mais colisões), catalisador (diminui a energia de ativação) e natureza dos reagentes. A teoria das colisões explica todos esses fatores.",
+["↑T → ↑v","↑[ ] → ↑v","↑superfície → ↑v","Catalisador → ↓Ea"],
+"O catalisador NÃO altera ΔH, nem o equilíbrio, só a velocidade. Temperatura alta acelera tanto reações exo quanto endo.",
+"Para conservar alimentos, a indústria utiliza refrigeração, atmosfera modificada e aditivos antioxidantes.",
+"A refrigeração conserva os alimentos porque:",
+["Aumenta a concentração dos reagentes","Aumenta a energia de ativação","Diminui a velocidade das reações de decomposição","Elimina completamente os micro-organismos","Aumenta a pressão interna"],2,
+"Temperatura baixa reduz a energia cinética média das partículas, diminuindo a frequência de colisões eficazes e a velocidade das reações de deterioração. Não elimina micro-organismos (isso é esterilização)."],
+"Catalisadores":[
+"Catalisador é uma substância que aumenta a velocidade da reação, diminuindo a energia de ativação, sem ser consumido. Não altera ΔH nem o equilíbrio: só faz a reação chegar mais rápido ao mesmo estado final. Enzimas são catalisadores biológicos.",
+["↓Ea","Não é consumido","Não altera ΔH nem Keq"],
+"Cuidado: catalisador NÃO desloca equilíbrio nem aumenta rendimento; só acelera a chegada ao equilíbrio.",
+"As enzimas digestivas, como a amilase salivar, quebram o amido em moléculas menores em segundos, enquanto a hidrólise sem enzima levaria muito mais tempo. O diagrama compara os caminhos com e sem catalisador.<figure class='fig'><svg viewBox='0 0 340 220'><line x1='40' y1='190' x2='320' y2='190' stroke='var(--ln)' stroke-width='1.5'/><line x1='40' y1='15' x2='40' y2='190' stroke='var(--ln)' stroke-width='1.5'/><path d='M50,150 Q100,40 170,40 Q230,40 300,150' fill='none' stroke='var(--ac)' stroke-width='2.5'/><path d='M50,150 Q100,90 170,90 Q230,90 300,150' fill='none' stroke='var(--am)' stroke-width='2.5' stroke-dasharray='5,3'/><text x='170' y='35' font-size='10' text-anchor='middle' fill='var(--ac)'>sem catalisador</text><text x='170' y='85' font-size='10' text-anchor='middle' fill='var(--am)'>com catalisador</text><text x='180' y='210' font-size='10' text-anchor='middle' fill='var(--mu)'>coordenada de reação →</text></svg><figcaption>Energia de ativação (Ea) sem e com catalisador: o catalisador reduz a barreira.</figcaption></figure>",
+"O papel da enzima na reação é:",
+["Aumentar a energia de ativação","Diminuir a energia de ativação","Aumentar o ΔH","Deslocar o equilíbrio","Aumentar a temperatura"],1,
+"Enzimas são catalisadores biológicos: reduzem a Ea, acelerando a reação. Não alteram ΔH, nem deslocam equilíbrio, nem mudam a temperatura do sistema."],
+"Conceito de mol":[
+"Mol é a unidade do SI para quantidade de matéria. 1 mol contém 6,02 × 10²³ entidades (átomos, moléculas, íons). Essa constante é o número de Avogadro (N_A). O mol é a ponte entre o mundo microscópico (átomos) e o macroscópico (gramas).",
+["1 mol = 6,02 × 10²³ entidades","n = m/MM","n = N/N_A"],
+"Mol não é massa nem volume: é quantidade. 1 mol de qualquer coisa tem 6,02 × 10²³ entidades.",
+"Uma amostra contém 3,01 × 10²³ moléculas de água.",
+"Quantos mols há na amostra?",
+["0,25 mol","0,5 mol","1 mol","2 mol","3 mol"],1,
+"n = N/N_A = 3,01 × 10²³ / 6,02 × 10²³ = 0,5 mol. As demais opções erram a razão."],
+"Massa molar":[
+"Massa molar (MM) é a massa de 1 mol de substância, expressa em g/mol. Numericamente coincide com a massa molecular (em u) ou com a massa atômica (em u). É obtida somando as massas atômicas dos átomos na fórmula.",
+["MM(H₂O) = 2×1 + 16 = 18 g/mol","MM(CO₂) = 12 + 2×16 = 44 g/mol","n = m/MM"],
+"Use a tabela periódica para as massas atômicas. Multiplique cada uma pelo número de átomos do elemento.",
+"Considere o gás carbônico, CO₂. Massas atômicas: C = 12; O = 16.",
+"Qual a massa molar do CO₂?",
+["12 g/mol","28 g/mol","32 g/mol","44 g/mol","48 g/mol"],3,
+"MM = 12 + 2 × 16 = 44 g/mol. A opção A usa só o carbono; a B, o CO; a C, o O₂; a E soma apenas os átomos sem considerar a fórmula."],
+"Número de Avogadro":[
+"O número de Avogadro (N_A = 6,02 × 10²³) é a quantidade de entidades em 1 mol de qualquer substância. Permite converter entre número de partículas e quantidade em mols (n = N/N_A). É um dos pilares da química quantitativa.",
+["N_A = 6,02 × 10²³","n = N/N_A","N = n × N_A"],
+"Sempre converta o número de partículas para mols ANTES de usar a estequiometria. A ordem é: N → mol → massa (ou volume).",
+"Um comprimido de vitamina C contém 0,01 mol de ácido ascórbico (C₆H₈O₆).",
+"Quantas moléculas há no comprimido?",
+["6,02 × 10²¹","6,02 × 10²³","6,02 × 10²⁵","0,01","1 × 10²³"],0,
+"N = n × N_A = 0,01 × 6,02 × 10²³ = 6,02 × 10²¹ moléculas. As demais erram expoente ou não multiplicam."],
+"Cálculo estequiométrico":[
+"Cálculo estequiométrico usa as proporções da equação balanceada para relacionar quantidades de reagentes e produtos. Os coeficientes indicam proporção em mols, que pode ser convertida em massa, volume (gases) ou número de partículas. Sempre comece balanceando a equação.",
+["Coeficientes = proporção em mol","Ordem: dado → mol → mol → pedido","Balanceie primeiro"],
+"Os coeficientes são a chave. Não confunda proporção mássica com proporção em mols: siga o caminho dado → mol → mol → pedido.",
+"A queima completa do metano segue: CH₄ + 2 O₂ → CO₂ + 2 H₂O. Queimam-se 4 mols de CH₄ com O₂ suficiente.",
+"Quantos mols de água são produzidos?",
+["2 mols","4 mols","8 mols","1 mol","6 mols"],2,
+"Proporção 1 mol CH₄ : 2 mol H₂O. Logo, 4 mols de CH₄ produzem 8 mols de H₂O. As demais opções erram a proporção."],
+"Reagente limitante":[
+"Reagente limitante é o que é consumido primeiro, determinando a quantidade máxima de produto formada. Nem sempre é o de menor massa: depende da proporção estequiométrica. O excesso é o que sobra. Para descobrir, divida os mols dados pelo coeficiente de cada reagente.",
+["mols/coeficiente: menor = limitante","Determina o rendimento máximo"],
+"Não escolha o limitante pela massa; divida mols pelo coeficiente. Esse erro cai muito no ENEM.",
+"Para a reação N₂ + 3 H₂ → 2 NH₃, misturam-se 2 mols de N₂ com 3 mols de H₂.",
+"Qual é o reagente limitante e quantos mols de NH₃ se formam?",
+["N₂; 4 mols","H₂; 2 mols","N₂; 6 mols","H₂; 3 mols","H₂; 6 mols"],1,
+"Razão N₂: 2/1 = 2; H₂: 3/3 = 1. O menor é H₂ (limitante). 3 mols H₂ → 2 mols NH₃. As demais opções trocam o limitante ou erram a proporção."],
+"Rendimento de reação":[
+"Rendimento é a razão entre a quantidade realmente obtida e a quantidade teórica prevista pela estequiometria, em porcentagem. Perdas ocorrem por reações paralelas, impurezas, manipulação. O cálculo: rendimento = (real/teórico) × 100.",
+["η = (real/teórico) × 100","Teórico: da estequiometria","Real: medido experimentalmente"],
+"Se o problema dá o rendimento, calcule primeiro o teórico pela estequiometria e depois aplique a porcentagem.",
+"A decomposição de 100 g de CaCO₃ (MM = 100 g/mol) deveria produzir 56 g de CaO. Na prática, obtiveram-se 42 g.",
+"Qual o rendimento da reação?",
+["42%","56%","75%","100%","25%"],2,
+"η = (42/56) × 100 = 75%. As demais opções usam massas isoladas ou 100%."],
+"Pureza de reagentes":[
+"A pureza de um reagente é a porcentagem da amostra que realmente é a substância de interesse; o resto é impureza inerte. Só a parte pura participa da reação, então é ela que entra nos cálculos estequiométricos.",
+["massa pura = pureza × massa da amostra","Só a parte pura reage"],
+"Se a amostra tem 90% de pureza, só 90% da massa reage. Calcule primeiro a massa pura e depois siga a estequiometria.",
+"Uma amostra de 200 g de calcário (CaCO₃, MM = 100 g/mol) tem 80% de pureza. Ela é decomposta por aquecimento: CaCO₃ → CaO + CO₂.",
+"Qual a massa de CaO (MM = 56 g/mol) obtida?",
+["44,8 g","56 g","80 g","89,6 g","112 g"],3,
+"Massa pura = 0,80 × 200 = 160 g de CaCO₃ = 1,6 mol. Proporção 1:1 → 1,6 mol CaO = 1,6 × 56 = 89,6 g. As demais usam a massa da amostra sem considerar a pureza."],
+"Lei de ação das massas (Kc)":[
+"A Lei de Ação das Massas (Guldberg e Waage) expressa que, no equilíbrio, a razão entre as concentrações dos produtos e reagentes, elevadas a seus coeficientes, é constante. Essa constante é Kc e depende só da temperatura. Equilíbrio é dinâmico: as reações direta e inversa continuam ocorrendo, com velocidades iguais.",
+["aA + bB ⇌ cC + dD","Kc = [C]^c[D]^d / ([A]^a[B]^b)","Kc só depende de T"],
+"Sólidos e líquidos puros NÃO entram no Kc. Se Kc > 1, o equilíbrio favorece produtos.",
+"Para a reação H₂ + I₂ ⇌ 2 HI, em equilíbrio a 445 °C: [H₂] = 0,2; [I₂] = 0,2; [HI] = 1,0 (mol/L).",
+"Qual o valor de Kc?",
+["0,04","5,0","25","1,0","0,2"],2,
+"Kc = [HI]²/([H₂][I₂]) = (1,0)² / (0,2 × 0,2) = 1/0,04 = 25. As demais vêm de inverter a razão ou usar concentrações iniciais."],
+"Constante Kp":[
+"Para reações gasosas, é comum expressar a constante em função das pressões parciais (Kp). Ela se relaciona com Kc por Kp = Kc·(R·T)^Δn, em que Δn é a variação do número de mols gasosos (produtos − reagentes). Só há Kp se houver gases na reação.",
+["Kp = Kc·(R·T)^Δn","Δn = mols gasosos (prod) − (reag)","R = 0,082 L·atm/(mol·K)"],
+"Se Δn = 0, então Kp = Kc. R sempre com T em K e R na unidade correspondente.",
+"Para a reação N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g), Δn = 2 − (1 + 3) = −2.",
+"Sobre a relação entre Kp e Kc, pode-se afirmar:",
+["Kp = Kc, pois Δn = 0","Kp = Kc·(R·T)^(−2), pois Δn = −2","Kp = Kc·(R·T)^2, pois Δn = +2","Kp e Kc não se relacionam","Kp > Kc sempre"],1,
+"Com Δn = 2 − 4 = −2, aplica-se Kp = Kc·(R·T)^(−2). As demais opções erram o sinal de Δn ou a fórmula."],
+"Deslocamento de equilíbrio (Le Chatelier)":[
+"O Princípio de Le Chatelier diz que, ao perturbar um sistema em equilíbrio, ele se desloca no sentido de minimizar a perturbação. Aumentar concentração de um lado desloca para o outro; aumentar pressão desloca para o lado de menor volume gasoso; aumentar temperatura desloca no sentido endotérmico. Catalisador não desloca.",
+["↑T → sentido endotérmico","↑P → menor volume gasoso","Catalisador NÃO desloca"],
+"Catalisador acelera a chegada ao equilíbrio, mas não muda as concentrações finais. Só temperatura altera o valor de Kc.",
+"Na reação N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g), ΔH < 0 (exotérmica). O esquema mostra o efeito de aumentar a pressão.<figure class='fig'><svg viewBox='0 0 340 160'><text x='80' y='25' font-size='11' text-anchor='middle' fill='var(--mu)'>Pressão baixa</text><rect x='30' y='40' width='60' height='80' fill='var(--ac)' fill-opacity='0.2'/><rect x='95' y='40' width='60' height='80' fill='var(--ac)' fill-opacity='0.5'/><text x='60' y='140' font-size='10' text-anchor='middle' fill='var(--tx)'>N₂ + H₂</text><text x='125' y='140' font-size='10' text-anchor='middle' fill='var(--tx)'>NH₃</text><text x='250' y='25' font-size='11' text-anchor='middle' fill='var(--mu)'>Pressão alta</text><rect x='200' y='40' width='40' height='80' fill='var(--ac)' fill-opacity='0.2'/><rect x='245' y='40' width='80' height='80' fill='var(--ac)' fill-opacity='0.5'/><text x='220' y='140' font-size='10' text-anchor='middle' fill='var(--tx)'>N₂ + H₂</text><text x='285' y='140' font-size='10' text-anchor='middle' fill='var(--tx)'>NH₃</text><text x='170' y='85' font-size='16' text-anchor='middle' fill='var(--am)'>→</text></svg><figcaption>Aumentar a pressão desloca o equilíbrio para o lado com menor número de mols gasosos (NH₃).</figcaption></figure>",
+"Qual alteração aumenta o rendimento de NH₃?",
+["Aumentar a temperatura","Diminuir a pressão","Aumentar a pressão","Adicionar catalisador","Adicionar NH₃"],2,
+"Como há menos mols gasosos do lado dos produtos (2 contra 4), aumentar a pressão desloca para a direita. Aumentar T deslocaria no sentido endotérmico (reagentes); catalisador não desloca; adicionar NH₃ desloca ao contrário."],
+"pH e pOH":[
+"pH mede a acidez de uma solução: pH = −log[H⁺]. pOH = −log[OH⁻]. Em água a 25 °C, pH + pOH = 14. Meio ácido: pH < 7; neutro: pH = 7; básico: pH > 7. As concentrações [H⁺] e [OH⁻] relacionam-se por Kw = 10⁻¹⁴.",
+["pH = −log[H⁺]","pOH = −log[OH⁻]","pH + pOH = 14 (25 °C)"],
+"Escala logarítmica: cada unidade de pH corresponde a fator 10 na concentração de H⁺. Solução 10× mais ácida → pH 1 unidade menor.",
+"Uma solução aquosa tem [H⁺] = 1 × 10⁻⁴ mol/L a 25 °C. A escala abaixo mostra faixas de pH.<figure class='fig'><svg viewBox='0 0 340 70'><rect x='20' y='20' width='80' height='20' fill='#f87171'/><rect x='100' y='20' width='40' height='20' fill='#fca5a5'/><rect x='140' y='20' width='60' height='20' fill='#a3e635'/><rect x='200' y='20' width='60' height='20' fill='#60a5fa'/><rect x='260' y='20' width='60' height='20' fill='#1e40af'/><text x='60' y='58' font-size='10' text-anchor='middle' fill='var(--tx)'>0–4 ácido</text><text x='170' y='58' font-size='10' text-anchor='middle' fill='var(--tx)'>~7 neutro</text><text x='290' y='58' font-size='10' text-anchor='middle' fill='var(--tx)'>8–14 básico</text><text x='170' y='15' font-size='10' text-anchor='middle' fill='var(--mu)'>pH</text></svg><figcaption>Escala de pH (25 °C).</figcaption></figure>",
+"Qual o pH e o caráter da solução?",
+["pH = 4; ácida","pH = 10; básica","pH = −4; ácida","pH = 14; neutra","pH = 4; básica"],0,
+"pH = −log(10⁻⁴) = 4 (< 7, ácida). pOH = 10. As demais opções erram o sinal, somam com 14 ou classificam mal."],
+"Produto iônico da água (Kw)":[
+"A água se autoioniza em pequena extensão: H₂O ⇌ H⁺ + OH⁻. A 25 °C, [H⁺] = [OH⁻] = 1 × 10⁻⁷ mol/L, então Kw = [H⁺][OH⁻] = 1 × 10⁻¹⁴. O valor de Kw depende da temperatura (aumenta com o aquecimento). É a base das escalas de pH e pOH.",
+["Kw = [H⁺][OH⁻] = 10⁻¹⁴ (25 °C)","Água pura: pH = pOH = 7","Kw aumenta com T"],
+"Se a temperatura não é 25 °C, Kw pode ser diferente. Leia o enunciado com atenção.",
+"Sabe-se que, em uma amostra de água pura a 60 °C, Kw = 1 × 10⁻¹³.",
+"Nessa temperatura, o pH da água pura é:",
+["7,0","6,5","5,0","13,0","0,5"],1,
+"[H⁺] = √Kw = √(10⁻¹³) ≈ 3,16 × 10⁻⁷. pH = −log(3,16 × 10⁻⁷) ≈ 6,5. Continua neutra (pH = pOH). As demais opções ignoram a mudança de Kw."],
+"Hidrólise salina":[
+"Hidrólise salina é a reação de íons provenientes de um sal com a água, alterando o pH. Sal de ácido forte + base forte (NaCl) → pH neutro. Ácido forte + base fraca (NH₄Cl) → pH ácido. Ácido fraco + base forte (CH₃COONa) → pH básico.",
+["Sal de ácido forte + base forte: neutro","Ácido forte + base fraca: ácido","Ácido fraco + base forte: básico"],
+"Pegue o 'forte' que vence: se o ácido é forte, o meio fica ácido; se a base é forte, básico; se ambos, neutro.",
+"O acetato de sódio (CH₃COONa) é o sal formado por ácido acético (fraco) e hidróxido de sódio (base forte).",
+"Uma solução aquosa desse sal terá:",
+["pH ácido","pH neutro","pH básico","pH = 7 exatamente","Comportamento imprevisível"],2,
+"Ânion de ácido fraco hidrolisa, liberando OH⁻ e tornando o meio básico. Como a base é forte (NaOH), o caráter básico predomina. As demais opções ignoram o caráter do ácido e da base."],
+"Solução-tampão":[
+"Solução-tampão resiste a variações de pH quando se adiciona ácido ou base, ou quando se dilui. É formada por ácido fraco + seu sal (ex.: CH₃COOH/CH₃COONa) ou base fraca + seu sal (NH₃/NH₄Cl). É essencial no sangue (tampão bicarbonato) e em processos industriais.",
+["Ácido fraco + sal do ácido","Base fraca + sal da base","pH varia pouco"],
+"Tampão só funciona com par fraco + sal correspondente. Ácido forte com sal não tampona.",
+"O sangue humano mantém pH em torno de 7,4 graças, principalmente, ao sistema tampão H₂CO₃/HCO₃⁻.",
+"Uma função essencial desse tampão é:",
+["Aumentar a temperatura do sangue","Impedir grandes variações de pH","Tornar o sangue ácido","Eliminar oxigênio","Produzir energia"],1,
+"Solução-tampão evita mudanças bruscas de pH. No sangue, ela é vital: pequenas variações já são graves. As demais opções não descrevem a função de um tampão."],
+"Grau de equilíbrio":[
+"Grau de equilíbrio (α) é a fração do reagente que efetivamente se converte em produto no equilíbrio. Varia de 0 a 1 (ou 0% a 100%). Depende da constante de equilíbrio e das condições. Não confundir com velocidade: uma reação pode ter α alto e ser lenta.",
+["α = quantidade que reagiu / quantidade inicial","0 ≤ α ≤ 1"],
+"Grau de equilíbrio é fração; rendimento é porcentagem. Cuidado com a diferença entre α e velocidade.",
+"Em um experimento, 2 mols de uma substância A foram colocados em um recipiente e, ao atingir o equilíbrio, 1,4 mol de A permanecia.",
+"Qual o grau de equilíbrio de A?",
+["0,3","0,5","0,7","1,0","1,4"],0,
+"Reagiu 2 − 1,4 = 0,6 mol. α = 0,6/2 = 0,30 = 30%. As demais opções usam a quantidade que sobrou ou valores absolutos."],
+"Modelos atômicos (Dalton a Bohr)":[
+"Dalton propôs o átomo indivisível (bola de bilhar). Thomson descobriu o elétron e propôs o modelo do pudim de passas. Rutherford, no experimento da lâmina de ouro, mostrou que o átomo tem núcleo pequeno, positivo, com eletrosfera ampla. Bohr propôs que os elétrons ocupam níveis quantizados de energia.",
+["Dalton: átomo maciço","Thomson: pudim de passas","Rutherford: núcleo + eletrosfera","Bohr: níveis quantizados"],
+"Nunca atribua a Bohr uma ideia de Rutherford. Cada modelo acrescentou algo, sem apagar os anteriores.",
+"A linha do tempo abaixo resume os modelos atômicos.<figure class='fig'><svg viewBox='0 0 340 100'><line x1='20' y1='60' x2='320' y2='60' stroke='var(--ln)' stroke-width='2'/><circle cx='50' cy='60' r='6' fill='var(--ac)'/><text x='50' y='82' font-size='9' text-anchor='middle' fill='var(--tx)'>Dalton</text><text x='50' y='94' font-size='8' text-anchor='middle' fill='var(--mu)'>~1803</text><circle cx='120' cy='60' r='6' fill='var(--ac)'/><text x='120' y='82' font-size='9' text-anchor='middle' fill='var(--tx)'>Thomson</text><text x='120' y='94' font-size='8' text-anchor='middle' fill='var(--mu)'>1897</text><circle cx='200' cy='60' r='6' fill='var(--ac)'/><text x='200' y='82' font-size='9' text-anchor='middle' fill='var(--tx)'>Rutherford</text><text x='200' y='94' font-size='8' text-anchor='middle' fill='var(--mu)'>1911</text><circle cx='280' cy='60' r='6' fill='var(--ac)'/><text x='280' y='82' font-size='9' text-anchor='middle' fill='var(--tx)'>Bohr</text><text x='280' y='94' font-size='8' text-anchor='middle' fill='var(--mu)'>1913</text></svg><figcaption>Evolução dos modelos atômicos.</figcaption></figure>",
+"No experimento de Rutherford, a maioria das partículas α atravessava a lâmina de ouro sem desviar; poucas desviavam muito. Esse resultado indicou que:",
+["O átomo é maciço e indivisível","O átomo tem núcleo pequeno, denso e positivo, com grandes espaços vazios","Os elétrons estão distribuídos uniformemente","Os elétrons ocupam níveis de energia","O átomo não tem carga"],1,
+"A maioria passa direto → átomo é majoritariamente vazio. Poucas desviam muito → existe um núcleo pequeno e positivo. As demais opções descrevem modelos anteriores (Dalton, Thomson) ou posteriores (Bohr)."],
+"Números quânticos":[
+"Cada elétron em um átomo é descrito por 4 números quânticos: principal (n, nível), secundário (l, subnível s/p/d/f), magnético (m, orbital) e de spin (s = ±½). O princípio de exclusão de Pauli diz que dois elétrons do mesmo átomo não podem ter os quatro números quânticos iguais.",
+["n = 1, 2, 3…","l = 0 a n−1 (s, p, d, f)","m = −l a +l","s = ±½"],
+"Pauli: no máximo 2 elétrons por orbital, com spins opostos. Não confunda número quântico com camada K, L, M.",
+"O subnível 3p pode acomodar no máximo quantos elétrons?",
+["2","4","6","10","14"],2,
+"p tem 3 orbitais (m = −1, 0, +1), 2 elétrons cada → 6. As demais opções correspondem a s (2), d (10) ou f (14)."],
+"Distribuição eletrônica":[
+"A distribuição eletrônica segue o diagrama de Linus Pauling (ordem crescente de energia): 1s 2s 2p 3s 3p 4s 3d 4p 5s... Cada subnível tem capacidade: s = 2, p = 6, d = 10, f = 14. O último subnível indica o grupo e o período na tabela.",
+["Ordem: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ ...","s=2; p=6; d=10; f=14"],
+"O 4s vem antes do 3d porque tem menor energia. Use o diagrama de Pauling, não a ordem numérica.",
+"Considere o elemento ferro (Z = 26).",
+"Qual a distribuição eletrônica do ferro no estado fundamental?",
+["1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁸","1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²","1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶","1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 4p⁶","1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s²"],2,
+"Somando os elétrons em 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶ = 2+2+6+2+6+2+6 = 26. A ordem correta é 4s antes de 3d. As demais erram a ordem ou o total."],
+"Raio atômico":[
+"Raio atômico é a distância do núcleo à camada eletrônica mais externa. Aumenta da direita para a esquerda em um período e de cima para baixo em um grupo. Cátions são menores que o átomo neutro; ânions são maiores.",
+["Na → maior que Cl","De cima para baixo: aumenta","Cátion < átomo < ânion"],
+"Comparação dentro de um período: mais prótons → nuvem atraída → menor raio. Comparação dentro de um grupo: mais camadas → maior raio.",
+"Compare os raios atômicos de Na (Z = 11), Mg (Z = 12) e Cl (Z = 17), todos do 3º período.",
+"A ordem crescente de raio é:",
+["Cl < Mg < Na","Na < Mg < Cl","Mg < Na < Cl","Na < Cl < Mg","Cl < Na < Mg"],0,
+"No mesmo período, o raio diminui da esquerda para a direita (mais prótons, mesma camada): Cl < Mg < Na. As demais opções invertem a tendência."],
+"Eletronegatividade":[
+"Eletronegatividade é a tendência de um átomo em atrair elétrons em uma ligação química. Aumenta da esquerda para a direita e de baixo para cima; o flúor é o mais eletronegativo. É útil para prever polaridade de ligações.",
+["F > O > N > Cl > ...","Aumenta em direção ao F","Ligação polar: Δeletronegatividade > 0"],
+"Escala de Pauling: F = 4,0; O = 3,5; N = 3,0. Diferença de eletronegatividade > 1,7 → iônica; < 1,7 → covalente polar.",
+"Considere as substâncias HCl, HBr e HI. Eletronegatividades: Cl = 3,0; Br = 2,8; I = 2,5; H = 2,1.",
+"Qual ligação é mais polar?",
+["H−I","H−Br","H−Cl","Todas com a mesma polaridade","Não se pode comparar"],2,
+"A polaridade cresce com a diferença de eletronegatividade. Δ(H−Cl) = 0,9; Δ(H−Br) = 0,7; Δ(H−I) = 0,4. A ligação H−Cl é a mais polar."],
+"Energia de ionização":[
+"Energia (ou potencial) de ionização é a energia necessária para retirar 1 elétron de um átomo isolado no estado gasoso. Aumenta da esquerda para a direita e de baixo para cima. Metais alcalinos têm EI baixa; gases nobres, alta.",
+["Aumenta em direção ao F","EI baixa: metais alcalinos","EI alta: gases nobres"],
+"Cada retirada subsequente exige mais energia (retirar 2º elétron > 1º). Compare elementos do mesmo período ou grupo.",
+"Considere Na (Z = 11) e Cl (Z = 17).",
+"Qual tem maior energia de ionização e por quê?",
+["Na, pois é metal","Cl, pois é mais eletronegativo e menor","Os dois têm a mesma","Cl, pois é maior","Na, pois tem menos prótons"],1,
+"Cl é menor e tem maior carga nuclear efetiva, atraindo mais fortemente seus elétrons: energia de ionização maior. As demais opções invertem ou justificam mal."],
+"Afinidade eletrônica":[
+"Afinidade eletrônica é a energia liberada quando um átomo isolado no estado gasoso recebe 1 elétron. Halogênios têm alta afinidade; gases nobres praticamente não têm. Aumenta em direção ao flúor em um período.",
+["Afinidade: átomo + e⁻ → ânion + energia","Halogênios: alta","Gases nobres: ~0"],
+"Cuidado: afinidade eletrônica é a energia LIBERADA; energia de ionização é a energia ABSORVIDA.",
+"Qual elemento tem maior afinidade eletrônica?",
+["Na","Ar","Cl","K","He"],2,
+"Cl é halogênio, com alta afinidade eletrônica. Na e K são metais alcalinos (baixa); Ar e He são gases nobres (praticamente nula)."],
+"Ligação iônica":[
+"Ligação iônica ocorre entre metal e ametal, com transferência definitiva de elétrons: o metal vira cátion e o ametal, ânion. Forma compostos cristalinos, com altos pontos de fusão e ebulição, solúveis em água e condutores quando fundidos ou em solução. Exemplo: NaCl.",
+["Metal + ametal","Transferência de elétrons","Alto PF e PE","Sólidos não conduzem; fundidos/solúveis sim"],
+"Não confunda ligação iônica (transferência) com covalente (compartilhamento). Δeletronegatividade > 1,7 sugere iônica.",
+"O cloreto de sódio (NaCl), sal de cozinha, é um sólido cristalino de alto ponto de fusão (801 °C).",
+"O tipo de ligação presente e a explicação da condutividade elétrica do NaCl fundido são:",
+["Covalente; conduz por elétrons livres","Metálica; conduz por elétrons livres","Iônica; conduz por íons livres no estado fundido","Iônica; conduz por elétrons livres","Covalente; não conduz"],2,
+"NaCl é iônico; no estado sólido os íons estão fixos e não conduz; fundido, os íons ficam livres e conduzem. As demais opções erram o tipo de ligação ou o mecanismo de condução."],
+"Ligação covalente":[
+"Ligação covalente é o compartilhamento de pares de elétrons entre átomos, geralmente ametais. Pode ser simples, dupla ou tripla. Compostos covalentes têm, em geral, baixos pontos de fusão e ebulição, são isolantes (exceto grafite) e podem ser polares ou apolares.",
+["Compartilhamento de elétrons","Ametal + ametal","Simples, dupla, tripla"],
+"Compostos covalentes moleculares não conduzem eletricidade. Grafite é exceção (elétrons livres entre camadas).",
+"A molécula de água (H₂O) tem dois pares de elétrons compartilhados entre o oxigênio e os hidrogênios.",
+"O tipo de ligação é:",
+["Iônica","Covalente","Metálica","Dativa pura","Não há ligação"],1,
+"H e O são ametais e compartilham elétrons: ligação covalente. Iônica ocorre com metal; metálica, entre metais."],
+"Ligação metálica":[
+"Ligação metálica ocorre entre átomos de metais: cátions fixos mergulhados em um 'mar' de elétrons livres. Explica a condutividade elétrica e térmica, o brilho, a maleabilidade e a ductilidade dos metais.",
+["Cátions + mar de elétrons","Condutores no estado sólido","Maleáveis e dúcteis"],
+"Metais conduzem no estado sólido; iônicos só fundidos ou em solução. Essa diferença é clássica no ENEM.",
+"O cobre é usado em fios elétricos por conduzir bem a corrente elétrica no estado sólido.",
+"A propriedade se explica pela:",
+["Ligação iônica, com íons livres","Ligação covalente, com pares compartilhados","Ligação metálica, com elétrons livres em movimento","Presença de prótons livres","Formação de moléculas discretas"],2,
+"A ligação metálica forma um 'mar' de elétrons deslocalizados, que se movem sob a ação de uma ddp: é a base da condutividade elétrica dos metais. As demais opções erram o modelo."],
+"Polaridade das ligações":[
+"Ligação covalente polar ocorre quando há diferença de eletronegatividade entre os átomos; a apolar, quando os átomos são iguais ou a diferença é muito pequena. Moléculas podem ser apolares mesmo com ligações polares (caso do CO₂, linear e simétrico).",
+["Δeletronegatividade > 0 → polar","Δ = 0 ou muito pequena → apolar","Molécula: depende da geometria"],
+"Molécula é polar se a soma vetorial dos dipolos não for zero. CO₂ é apolar (linear, dipolos se cancelam); H₂O é polar (angular).",
+"A molécula de CO₂ tem duas ligações C=O, cada uma polar. Contudo, a molécula como um todo é apolar. Compare no esquema abaixo com a H₂O.<figure class='fig'><svg viewBox='0 0 340 170'><text x='80' y='18' font-size='11' text-anchor='middle' fill='var(--tx)'>CO₂ (linear, apolar)</text><circle cx='40' cy='70' r='12' fill='var(--ac)' fill-opacity='0.3'/><circle cx='80' cy='70' r='16' fill='var(--am)' fill-opacity='0.4'/><circle cx='120' cy='70' r='12' fill='var(--ac)' fill-opacity='0.3'/><text x='40' y='75' font-size='10' text-anchor='middle' fill='var(--tx)'>O</text><text x='80' y='75' font-size='11' text-anchor='middle' fill='var(--tx)'>C</text><text x='120' y='75' font-size='10' text-anchor='middle' fill='var(--tx)'>O</text><text x='45' y='105' font-size='9' fill='var(--mu)'>dipolos se cancelam</text><text x='250' y='18' font-size='11' text-anchor='middle' fill='var(--tx)'>H₂O (angular, polar)</text><circle cx='250' cy='70' r='16' fill='var(--am)' fill-opacity='0.4'/><circle cx='215' cy='100' r='10' fill='var(--ac)' fill-opacity='0.3'/><circle cx='285' cy='100' r='10' fill='var(--ac)' fill-opacity='0.3'/><text x='250' y='75' font-size='11' text-anchor='middle' fill='var(--tx)'>O</text><text x='215' y='104' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><text x='285' y='104' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><text x='250' y='140' font-size='9' text-anchor='middle' fill='var(--mu)'>dipolos se somam</text></svg><figcaption>CO₂: dipolos opostos se cancelam (apolar). H₂O: dipolos se somam (polar).</figcaption></figure>",
+"Isso se explica porque:",
+["O CO₂ é apolar mas as ligações são apolares","A geometria linear faz os dipolos se cancelarem","Os átomos têm a mesma eletronegatividade","A molécula tem carga positiva","O oxigênio não atrai elétrons"],1,
+"As ligações C=O são polares, mas o CO₂ é linear e simétrico: os dipolos têm mesma intensidade e sentidos opostos, cancelando-se. As demais opções erram o modelo ou as propriedades."],
+"Geometria molecular":[
+"A geometria molecular depende do número de pares ligantes e não ligantes ao redor do átomo central (modelo VSEPR). Linear (2 ligantes, ex.: CO₂), angular (2 ligantes + pares livres, ex.: H₂O), trigonal plana (3 ligantes), piramidal (3 + par livre, ex.: NH₃) e tetraédrica (4 ligantes, ex.: CH₄).",
+["CO₂: linear","H₂O: angular","NH₃: piramidal","CH₄: tetraédrica"],
+"Pares livres empurram as ligações e mudam o ângulo. CH₄ e NH₃ têm 4 pares, mas NH₃ tem 1 par livre → piramidal (ângulo menor que 109,5°).",
+"O metano (CH₄) e a amônia (NH₃) têm quatro pares de elétrons ao redor do átomo central. As principais geometrias aparecem no esquema.<figure class='fig'><svg viewBox='0 0 340 200'><text x='60' y='18' font-size='10' text-anchor='middle' fill='var(--tx)'>Linear</text><circle cx='60' cy='40' r='6' fill='var(--am)'/><circle cx='35' cy='40' r='5' fill='var(--ac)'/><circle cx='85' cy='40' r='5' fill='var(--ac)'/><line x1='41' y1='40' x2='54' y2='40' stroke='var(--tx)' stroke-width='1.5'/><line x1='66' y1='40' x2='80' y2='40' stroke='var(--tx)' stroke-width='1.5'/><text x='60' y='62' font-size='9' text-anchor='middle' fill='var(--mu)'>CO₂</text><text x='170' y='18' font-size='10' text-anchor='middle' fill='var(--tx)'>Angular</text><circle cx='170' cy='45' r='7' fill='var(--am)'/><circle cx='150' cy='65' r='5' fill='var(--ac)'/><circle cx='190' cy='65' r='5' fill='var(--ac)'/><line x1='163' y1='51' x2='155' y2='60' stroke='var(--tx)' stroke-width='1.5'/><line x1='177' y1='51' x2='185' y2='60' stroke='var(--tx)' stroke-width='1.5'/><text x='170' y='86' font-size='9' text-anchor='middle' fill='var(--mu)'>H₂O</text><text x='280' y='18' font-size='10' text-anchor='middle' fill='var(--tx)'>Piramidal</text><circle cx='280' cy='40' r='7' fill='var(--am)'/><circle cx='280' cy='60' r='5' fill='var(--ac)'/><circle cx='258' cy='55' r='5' fill='var(--ac)'/><circle cx='302' cy='55' r='5' fill='var(--ac)'/><line x1='280' y1='47' x2='280' y2='55' stroke='var(--tx)' stroke-width='1.5'/><line x1='274' y1='44' x2='263' y2='53' stroke='var(--tx)' stroke-width='1.5'/><line x1='286' y1='44' x2='297' y2='53' stroke='var(--tx)' stroke-width='1.5'/><text x='280' y='80' font-size='9' text-anchor='middle' fill='var(--mu)'>NH₃</text><text x='60' y='130' font-size='10' text-anchor='middle' fill='var(--tx)'>Tetraédrica</text><circle cx='60' cy='150' r='7' fill='var(--am)'/><circle cx='40' cy='170' r='5' fill='var(--ac)'/><circle cx='80' cy='170' r='5' fill='var(--ac)'/><circle cx='50' cy='130' r='5' fill='var(--ac)'/><circle cx='70' cy='130' r='5' fill='var(--ac)'/><line x1='55' y1='146' x2='45' y2='165' stroke='var(--tx)' stroke-width='1.5'/><line x1='65' y1='146' x2='75' y2='165' stroke='var(--tx)' stroke-width='1.5'/><line x1='57' y1='144' x2='52' y2='135' stroke='var(--tx)' stroke-width='1.5'/><line x1='63' y1='144' x2='68' y2='135' stroke='var(--tx)' stroke-width='1.5'/><text x='60' y='190' font-size='9' text-anchor='middle' fill='var(--mu)'>CH₄</text></svg><figcaption>Formas típicas VSEPR.</figcaption></figure>",
+"Qual a geometria de cada uma?",
+["CH₄ linear; NH₃ angular","CH₄ tetraédrica; NH₃ piramidal","CH₄ angular; NH₃ linear","CH₄ tetraédrica; NH₃ angular","CH₄ piramidal; NH₃ tetraédrica"],1,
+"CH₄ tem 4 ligantes e nenhum par livre: tetraédrica. NH₃ tem 3 ligantes e 1 par livre: piramidal. As demais opções erram a contagem de pares livres."],
+"Forças dipolo e London":[
+"Forças intermoleculares são atrações entre moléculas. Dipolo-dipolo (ou dipolo permanente) ocorre entre moléculas polares. Forças de London (dipolo induzido) ocorrem entre moléculas apolares e são mais fracas. Ambas são mais fracas que ligações químicas.",
+["Polares: dipolo-dipolo","Apolares: London","Intensidade: London < dipolo < ligação H"],
+"As forças de London crescem com a massa molecular (mais elétrons). Por isso, em uma série, o mais pesado tem maior PF.",
+"Considere F₂, Cl₂, Br₂ e I₂ (apolares).",
+"O que explica o aumento do ponto de ebulição de F₂ para I₂?",
+["Aumento da polaridade","Aumento da massa molecular e das forças de London","Formação de ligações de hidrogênio","Aumento da eletronegatividade","Formação de ligações covalentes"],1,
+"Moléculas apolares interagem por forças de London, que aumentam com o tamanho da nuvem eletrônica (massa). Assim, o I₂ tem maior ponto de ebulição. As demais opções não se aplicam a apolares."],
+"Ligação de hidrogênio":[
+"Ligação de hidrogênio é a interação mais forte entre as forças intermoleculares. Ocorre quando H está ligado a F, O ou N (elementos muito eletronegativos e pequenos) e interage com outro F, O ou N. Explica o alto ponto de ebulição da água e a estrutura das proteínas e do DNA.",
+["H ligado a F, O ou N","Interação entre moléculas polares","Δeletronegatividade alta + H pequeno"],
+"Só vale com F, O ou N. HCl NÃO faz ligação de hidrogênio. Apesar do nome, é interação intermolecular, não ligação covalente.",
+"A água (H₂O) tem ponto de ebulição 100 °C, enquanto o H₂S (massa molar maior) ferve a −60 °C. O esquema mostra as pontes de H entre moléculas de água.<figure class='fig'><svg viewBox='0 0 340 160'><circle cx='60' cy='80' r='14' fill='var(--am)' fill-opacity='0.35'/><text x='60' y='85' font-size='12' text-anchor='middle' fill='var(--tx)'>O</text><circle cx='40' cy='55' r='8' fill='var(--ac)' fill-opacity='0.4'/><text x='40' y='59' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><circle cx='80' cy='55' r='8' fill='var(--ac)' fill-opacity='0.4'/><text x='80' y='59' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><line x1='40' y1='55' x2='52' y2='72' stroke='var(--tx)' stroke-width='1.5'/><line x1='80' y1='55' x2='68' y2='72' stroke='var(--tx)' stroke-width='1.5'/><line x1='40' y1='55' x2='25' y2='40' stroke='var(--er)' stroke-width='2' stroke-dasharray='3,3'/><text x='35' y='32' font-size='9' fill='var(--er)'>ponte de H</text><circle cx='220' cy='80' r='14' fill='var(--am)' fill-opacity='0.35'/><text x='220' y='85' font-size='12' text-anchor='middle' fill='var(--tx)'>O</text><circle cx='200' cy='55' r='8' fill='var(--ac)' fill-opacity='0.4'/><text x='200' y='59' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><circle cx='240' cy='55' r='8' fill='var(--ac)' fill-opacity='0.4'/><text x='240' y='59' font-size='9' text-anchor='middle' fill='var(--tx)'>H</text><line x1='200' y1='55' x2='212' y2='72' stroke='var(--tx)' stroke-width='1.5'/><line x1='240' y1='55' x2='228' y2='72' stroke='var(--tx)' stroke-width='1.5'/><line x1='234' y1='80' x2='280' y2='80' stroke='var(--er)' stroke-width='2' stroke-dasharray='3,3'/><text x='300' y='83' font-size='10' fill='var(--mu)'>… H₂O</text><text x='170' y='140' font-size='11' text-anchor='middle' fill='var(--mu)'>H₂O ⋯ H₂O (ponte de hidrogênio)</text></svg><figcaption>Pontes de hidrogênio entre moléculas de água explicam seu alto ponto de ebulição.</figcaption></figure>",
+"A explicação está em:",
+["Ligações covalentes mais fortes no H₂O","Ligações de hidrogênio entre moléculas de água","Forças de London mais intensas no H₂O","Diferença de massa atômica","Polaridade do H₂S"],1,
+"H₂O faz ligação de hidrogênio (H ligado a O); H₂S não faz (S não é tão eletronegativo nem tão pequeno). Isso eleva muito o PE da água. As demais opções erram a natureza das interações."],
+"Ácidos — conceitos e nomenclatura":[
+"Arrhenius: ácido libera H⁺ em água. Brønsted-Lowry: ácido doa próton (H⁺). Lewis: ácido recebe par de elétrons. Nomenclatura: ácido + nome do ânion (ácido clorídrico, sulfúrico, nítrico). Ácidos inorgânicos mais comuns: HCl, H₂SO₄, HNO₃, H₃PO₄.",
+["Arrhenius: H⁺ em água","Brønsted: doa H⁺","Lewis: recebe par de e⁻","HCl, H₂SO₄, HNO₃"],
+"Não confunda: o conceito de Brønsted é mais amplo que o de Arrhenius (não exige meio aquoso). Ácido de Lewis pode não ter H.",
+"Os conceitos de ácido variam conforme o autor. Na reação NH₃ + H⁺ → NH₄⁺, o NH₃ recebe o próton.",
+"Segundo Brønsted-Lowry, nessa reação o NH₃ é:",
+["Ácido de Arrhenius","Base de Brønsted","Ácido de Lewis","Sal","Óxido"],1,
+"Brønsted-Lowry: base é quem recebe H⁺. Como NH₃ recebe H⁺, é base. As demais opções misturam conceitos ou funções."],
+"Bases — conceitos e nomenclatura":[
+"Arrhenius: base libera OH⁻ em água. Brønsted-Lowry: base recebe próton (H⁺). Lewis: base doa par de elétrons. Nomenclatura: hidróxido de + cátion (NaOH, Ca(OH)₂, Al(OH)₃). Bases fortes: metais alcalinos e alcalino-terrosos.",
+["Arrhenius: OH⁻ em água","Brønsted: recebe H⁺","Lewis: doa par de e⁻","NaOH, Ca(OH)₂, NH₄OH"],
+"NH₃ é base de Brønsted, mas não tem OH⁻ na fórmula. Só o conceito de Arrhenius exige OH⁻.",
+"O hidróxido de sódio (NaOH) é uma base forte, usada em limpeza e na produção de sabão.",
+"Segundo Arrhenius, a característica que define uma base é:",
+["Liberar H⁺ em água","Liberar OH⁻ em água","Receber par de elétrons","Ser sólida","Ter sabor azedo"],1,
+"Arrhenius definiu base como substância que, em água, libera OH⁻. As demais opções se referem a outros conceitos ou a propriedades organolépticas."],
+"Sais — conceitos e nomenclatura":[
+"Sais são compostos iônicos formados por cátion (de base) e ânion (de ácido), resultantes de reações de neutralização. Nomenclatura: nome do ânion + de + nome do cátion (cloreto de sódio, sulfato de cálcio, nitrato de prata). Conduzem corrente em solução ou fundidos.",
+["Cátion + ânion","Sal + água, na neutralização","Ex.: NaCl, CaCO₃, KNO₃"],
+"Sal normal vem de neutralização total; sal ácido tem H na fórmula (NaHCO₃); sal básico tem OH (Al(OH)Cl₂).",
+"O bicarbonato de sódio (NaHCO₃) é usado como antiácido estomacal.",
+"A fórmula NaHCO₃ corresponde a um:",
+["Sal normal","Sal ácido","Óxido","Base","Ácido"],1,
+"A presença de H ionizável na fórmula caracteriza sal ácido. NaCl é normal; HCl, ácido; NaOH, base; CO₂, óxido."],
+"Óxidos — conceitos e nomenclatura":[
+"Óxidos são compostos binários com oxigênio como elemento mais eletronegativo. Classificam-se em básicos (metais alcalinos/terrosos), ácidos (ametais), anfóteros (Al₂O₃, ZnO), neutros (CO, NO) e peróxidos (H₂O₂). Nomenclatura: óxido de + elemento.",
+["Metal + O → óxido básico","Ametal + O → óxido ácido","Ex.: Na₂O, CO₂, Al₂O₃, CO"],
+"Não confunda óxido com peróxido (O₂²⁻). CO e NO são neutros; CO₂ e SO₂, ácidos.",
+"O CO₂ é um gás liberado na respiração e na queima de combustíveis.",
+"A que classe de óxidos pertence o CO₂?",
+["Básico","Ácido","Anfótero","Neutro","Peróxido"],1,
+"CO₂ é formado por ametal + O: óxido ácido. Reage com água formando H₂CO₃ (ácido carbônico). Óxidos básicos são de metais; anfóteros têm comportamento misto; neutros não reagem; peróxidos têm O₂²⁻."],
+"Reações de neutralização":[
+"Neutralização é a reação entre ácido e base, produzindo sal e água. É exotérmica. Está presente em antiácidos estomacais (base + HCl do estômago), no tratamento de solos ácidos (cal) e na titulação. Em proporções estequiométricas, o pH final depende da força do ácido e da base.",
+["Ácido + base → sal + água","Exotérmica","Ex.: HCl + NaOH → NaCl + H₂O"],
+"Se o ácido e a base são fortes, pH final = 7. Se um é fraco, o pH final pode ser ácido ou básico.",
+"Um comprimido antiácido contém hidróxido de magnésio, Mg(OH)₂, que reage com o HCl do estômago: Mg(OH)₂ + 2 HCl → MgCl₂ + 2 H₂O.",
+"A função do antiácido é:",
+["Aumentar a acidez estomacal","Neutralizar o excesso de HCl","Produzir mais HCl","Reduzir a temperatura do estômago","Formar óxidos"],1,
+"A base neutraliza o HCl em excesso, formando sal e água, aliviando a azia. As demais opções não descrevem a ação do antiácido."],
+"Indicadores ácido-base":[
+"Indicadores são substâncias que mudam de cor conforme o pH. Fenolftaleína: incolor em meio ácido/neutro e rosa em meio básico. Papel de tornassol: azul em base, vermelho em ácido. Azul de bromotimol: amarelo em ácido, azul em base.",
+["Fenolftaleína: incolor → rosa (pH > 8,2)","Tornassol: vermelho em ácido","Bromotimol: amarelo a azul"],
+"Fenolftaleína não muda em meio ácido. Cuidado para não decorar sem entender o intervalo de viragem.",
+"Em uma titulação, a solução titulada é incolor até certo ponto e, ao adicionar a última gota de base, fica rosada.",
+"O indicador mais provável é:",
+["Azul de bromotimol","Fenolftaleína","Papel de tornassol azul","Metil orange em base","Indicador universal em pH 7"],1,
+"A mudança incolor → rosa em meio básico é típica da fenolftaleína. As demais opções têm cores ou intervalos diferentes."],
+"Pilhas e potenciais de redução":[
+"Pilha é um dispositivo que converte energia química em elétrica, por meio de reação espontânea de oxirredução. Ânodo (oxidação, polo negativo), cátodo (redução, polo positivo). A ddp (ΔE) é a diferença entre potenciais-padrão de redução: ΔE = E°maior − E°menor.",
+["Ânodo: oxida (perde e⁻)","Cátodo: reduz (ganha e⁻)","ΔE = E°cátodo − E°ânodo"],
+"Não confunda oxidação com redução: oxida perde, reduz ganha. ΔE positivo → reação espontânea.",
+"Considere uma pilha de zinco e cobre, conforme o esquema.<figure class='fig'><svg viewBox='0 0 320 180'><rect x='30' y='60' width='70' height='90' fill='none' stroke='var(--ac)' stroke-width='2'/><rect x='220' y='60' width='70' height='90' fill='none' stroke='var(--am)' stroke-width='2'/><text x='65' y='110' font-size='11' text-anchor='middle' fill='var(--tx)'>Zn</text><text x='255' y='110' font-size='11' text-anchor='middle' fill='var(--tx)'>Cu</text><line x1='65' y1='60' x2='65' y2='30' stroke='var(--mu)' stroke-width='2'/><line x1='255' y1='60' x2='255' y2='30' stroke='var(--mu)' stroke-width='2'/><line x1='65' y1='30' x2='255' y2='30' stroke='var(--mu)' stroke-width='2'/><text x='160' y='22' font-size='11' text-anchor='middle' fill='var(--tx)'>Voltímetro → 1,10 V</text><text x='160' y='172' font-size='11' text-anchor='middle' fill='var(--mu)'>Ponte salina (KCl)</text><line x1='100' y1='160' x2='220' y2='160' stroke='var(--mu)' stroke-width='1'/></svg><figcaption>Célula eletroquímica Zn/Cu (pilha de Daniell).</figcaption></figure>Potenciais-padrão de redução: Zn²⁺/Zn = −0,76 V; Cu²⁺/Cu = +0,34 V.",
+"Qual a ddp da pilha e qual é o cátodo?",
+["1,10 V; cátodo = Zn","1,10 V; cátodo = Cu","−1,10 V; cátodo = Zn","0,42 V; cátodo = Cu","2,10 V; cátodo = Zn"],1,
+"O maior potencial de redução é o Cu (cátodo). ΔE = 0,34 − (−0,76) = 1,10 V. As demais opções erram a atribuição ou a subtração."],
+"Baterias e acumuladores":[
+"Baterias e acumuladores são pilhas recarregáveis. A bateria de chumbo-ácido (automóveis) e a de íons lítio (celulares) são exemplos. Ao carregar, ocorre eletrólise (não espontânea), revertendo a reação.",
+["Pilha: espontânea","Eletrólise: forçada","Recarregável: reversível"],
+"Cuidado: recarregar exige aplicar tensão externa maior que a ddp da bateria (eletrólise).",
+"A bateria de um celular moderno usa íons de lítio. Ela pode ser recarregada várias vezes.",
+"Durante a recarga, o processo que ocorre é:",
+["Uma reação espontânea","Uma eletrólise (reação não espontânea forçada)","Uma combustão","Uma neutralização","Uma polimerização"],1,
+"Recarregar exige forçar a reação no sentido inverso, aplicando tensão externa: é eletrólise. As demais opções não descrevem o processo."],
+"Eletrólise ígnea":[
+"Eletrólise ígnea é a decomposição de um composto iônico fundido (sem água) por corrente elétrica. Exemplo: eletrólise do NaCl fundido produz sódio metálico (cátodo) e gás cloro (ânodo). Usada na metalurgia do alumínio (eletrólise da alumina fundida).",
+["Composto fundido","Cátodo: metal","Ânodo: gás"],
+"Não há água no sistema: os íons vêm do próprio composto fundido. Compare com eletrólise aquosa, onde a água pode participar.",
+"Na produção de alumínio, a alumina (Al₂O₃) é fundida e eletrolisada, gerando alumínio metálico.",
+"No cátodo, ocorre:",
+["Oxidação do oxigênio","Redução do Al³⁺ a Al","Redução do oxigênio","Oxidação do alumínio","Formação de água"],1,
+"No cátodo, cátions são reduzidos: Al³⁺ + 3e⁻ → Al. As demais opções invertem o processo ou envolvem outras espécies."],
+"Eletrólise aquosa":[
+"Eletrólise aquosa ocorre em solução com água. Como a água pode ser oxidada ou reduzida, é preciso comparar potenciais. Ex.: eletrólise de solução de NaCl produz H₂ no cátodo, Cl₂ no ânodo e NaOH na solução.",
+["H₂ no cátodo (mais fácil que Na)","Cl₂ no ânodo (mais fácil que O₂)","Água pode participar"],
+"Não confunda com eletrólise ígnea. Em solução, a água compete com os íons.",
+"Na eletrólise de solução aquosa de NaCl, formam-se hidrogênio no cátodo, cloro no ânodo e hidróxido de sódio na solução.",
+"O hidrogênio se forma no cátodo porque:",
+["O Na⁺ tem maior potencial de redução","A água tem maior facilidade de redução que o Na⁺","O Cl⁻ é reduzido","A água é oxidada","O Na⁺ não se move"],1,
+"A água (E° = −0,83 V) se reduz mais facilmente que o Na⁺ (E° = −2,71 V). As demais opções erram o processo ou a espécie."],
+"Corrosão e proteção catódica":[
+"Corrosão é a deterioração de metais por reações de oxirredução, geralmente com o oxigênio. A ferrugem é o produto da oxidação do ferro na presença de água e O₂. Proteção catódica: usar metal mais reativo (como Zn) para ser oxidado no lugar do ferro (galvanização).",
+["Ferrugem: Fe → Fe²⁺ → Fe₂O₃·xH₂O","Metal de sacrifício: mais reativo","Zn protege Fe"],
+"Metais com maior potencial de oxidação (mais reativos) sacrificam-se. Zn é mais reativo que Fe; por isso o aço galvanizado resiste.",
+"Para proteger estruturas de aço, blocos de zinco são fixados nas partes submersas (proteção catódica).",
+"O zinco atua porque:",
+["É menos reativo que o ferro","Se oxida no lugar do ferro (metal de sacrifício)","Impede o contato com a água","Aumenta a temperatura","Forma liga com o ferro"],1,
+"O Zn é mais reativo: oxida-se preferencialmente, poupando o Fe. As demais opções não descrevem o mecanismo."],
+"Espontaneidade e ddp":[
+"Uma reação de oxirredução é espontânea (forma pilha) quando a ddp é positiva: ΔE = E°cátodo − E°ânodo > 0. Se ΔE < 0, a reação não é espontânea (precisa de eletrólise). ΔE > 0 → energia química → elétrica.",
+["ΔE > 0: espontânea (pilha)","ΔE < 0: forçada (eletrólise)","ΔE = E°maior − E°menor"],
+"Compare potenciais de redução. Quem tem maior E° se reduz (cátodo). Compare sempre com os mesmos valores tabelados.",
+"Dados: E°(Ag⁺/Ag) = +0,80 V; E°(Cu²⁺/Cu) = +0,34 V.",
+"Uma pilha formada por Ag e Cu tem ddp de:",
+["+0,46 V, espontânea","−0,46 V, não espontânea","+1,14 V, espontânea","+0,34 V, espontânea","0 V"],0,
+"ΔE = 0,80 − 0,34 = +0,46 V. Positivo → espontânea. As demais opções erram o sinal, a subtração ou a classificação."],
+"Emissões alfa, beta e gama":[
+"Emissão alfa (α) é um núcleo de hélio (2 prótons, 2 nêutrons), pouco penetrante (papel barra). Beta (β) é um elétron, penetração média (alumínio). Gama (γ) é radiação eletromagnética, muito penetrante (chumbo/concreto).",
+["α: 2p + 2n; barrada por papel","β: elétron; barrada por Al","γ: onda EM; barrada por Pb"],
+"α diminui Z em 2 e A em 4; β aumenta Z em 1 sem mudar A; γ não muda Z nem A.",
+"Uma amostra radioativa emite partículas que atravessam uma folha de papel, mas são barradas por uma placa de alumínio de alguns mm.",
+"O tipo de radiação é:",
+["Alfa (α)","Beta (β)","Gama (γ)","Neutrônica","Não é radiação"],1,
+"Partículas alfa são barradas por papel; gama atravessa alumínio; beta é barrada por alumínio. As demais opções não correspondem ao comportamento descrito."],
+"Leis de Soddy":[
+"As leis de Soddy (ou leis do deslocamento radioativo) descrevem a mudança de Z e A após a emissão. Emissão alfa: Z diminui 2, A diminui 4. Emissão beta: Z aumenta 1, A permanece igual. Essas leis permitem equilibrar equações nucleares.",
+["α: A − 4, Z − 2","β: A igual, Z + 1","Balanço de massa e carga"],
+"Nunca altere A em emissão beta. Sempre conserve A e Z nos dois lados da equação.",
+"O urânio-238 (Z = 92) emite uma partícula alfa.",
+"Qual o nuclídeo formado?",
+["Th-234 (Z = 90)","Pa-234 (Z = 91)","U-234 (Z = 92)","Th-238 (Z = 90)","Ra-234 (Z = 88)"],0,
+"Emissão α: A − 4 e Z − 2. 238 − 4 = 234; 92 − 2 = 90 → Th-234. As demais opções erram A ou Z."],
+"Meia-vida":[
+"Meia-vida (T½) é o tempo necessário para que metade dos núcleos radioativos de uma amostra decaia. Não depende da massa inicial nem de fatores externos (temperatura, pressão). Após n meias-vidas, resta m₀/2ⁿ.",
+["n = t / T½","m = m₀ / 2ⁿ","Não depende de condições externas"],
+"Contar quantas meias-vidas passaram é a chave. Após 3 meias-vidas, resta 1/8 da massa inicial.",
+"O carbono-14 tem meia-vida de aproximadamente 5 730 anos. Uma amostra contém 8 g de C-14. A curva abaixo mostra o decaimento.<figure class='fig'><svg viewBox='0 0 340 180'><line x1='40' y1='150' x2='320' y2='150' stroke='var(--ln)' stroke-width='1.5'/><line x1='40' y1='15' x2='40' y2='150' stroke='var(--ln)' stroke-width='1.5'/><path d='M50,40 Q120,40 130,60 Q180,90 200,100 Q250,120 300,130' fill='none' stroke='var(--ac)' stroke-width='2.5'/><circle cx='50' cy='40' r='3' fill='var(--ac)'/><circle cx='130' cy='72' r='3' fill='var(--ac)'/><circle cx='200' cy='108' r='3' fill='var(--ac)'/><circle cx='270' cy='127' r='3' fill='var(--ac)'/><text x='46' y='34' font-size='9' text-anchor='end' fill='var(--tx)'>8 g</text><text x='134' y='68' font-size='9' fill='var(--tx)'>4 g</text><text x='204' y='104' font-size='9' fill='var(--tx)'>2 g</text><text x='274' y='123' font-size='9' fill='var(--tx)'>1 g</text><text x='50' y='168' font-size='9' text-anchor='middle' fill='var(--mu)'>0</text><text x='130' y='168' font-size='9' text-anchor='middle' fill='var(--mu)'>1</text><text x='200' y='168' font-size='9' text-anchor='middle' fill='var(--mu)'>2</text><text x='270' y='168' font-size='9' text-anchor='middle' fill='var(--mu)'>3</text><text x='180' y='178' font-size='10' text-anchor='middle' fill='var(--mu)'>nº de meias-vidas</text><text x='14' y='85' font-size='10' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 14 85)'>massa →</text></svg><figcaption>Decaimento radioativo: após n meias-vidas, resta m₀/2ⁿ.</figcaption></figure>",
+"Após 17 190 anos, qual a massa de C-14 restante?",
+["4 g","2 g","1 g","0,5 g","Zero"],2,
+"17 190/5 730 = 3 meias-vidas. 8 → 4 → 2 → 1 g. As demais opções erram a contagem ou supõem desaparecimento total."],
+"Fissão nuclear":[
+"Fissão nuclear é a divisão de um núcleo pesado (como U-235) em núcleos menores, liberando grande quantidade de energia e nêutrons, que podem provocar novas fissões (reação em cadeia). É a base das usinas nucleares e de bombas atômicas.",
+["U-235 + n → núcleos menores + n + energia","Reação em cadeia","Usinas e bombas"],
+"Fissão = quebra de núcleo pesado; fusão = união de núcleos leves. São opostas.",
+"Nas usinas nucleares, a fissão do urânio-235 libera energia térmica, usada para gerar vapor e mover turbinas.",
+"O processo de fissão nuclear é caracterizado por:",
+["União de núcleos leves","Divisão de núcleo pesado com liberação de energia e nêutrons","Emissão de radiação gama apenas","Reação espontânea sempre controlada","Produção de elétrons"],1,
+"Fissão: núcleo pesado se divide, liberando energia e nêutrons que sustentam a reação em cadeia. As demais opções descrevem fusão, outro fenômeno ou erram o mecanismo."],
+"Fusão nuclear":[
+"Fusão nuclear é a união de núcleos leves para formar um núcleo mais pesado, com liberação de energia. É o processo que ocorre no Sol e nas estrelas: hidrogênio se funde em hélio. Exige temperaturas altíssimas para vencer a repulsão elétrica. Ainda não é usada comercialmente na Terra.",
+["Núcleos leves → núcleo maior","Sol e estrelas","Temperaturas altíssimas"],
+"Fusão ≠ fissão: fusão une, fissão divide. A fusão libera MAIS energia por grama, mas exige condições extremas.",
+"O Sol produz energia pela fusão de núcleos de hidrogênio em hélio.",
+"Sobre esse processo, é correto afirmar:",
+["É uma fissão de núcleos pesados","É uma fusão que libera energia e forma núcleos mais pesados","Não libera energia","Ocorre à temperatura ambiente","Produz apenas radiação gama"],1,
+"Fusão: núcleos leves se unem formando núcleos mais pesados, com liberação de energia. As demais opções confundem com fissão ou erram o mecanismo."],
+"Datação radioativa":[
+"A datação radioativa usa a meia-vida de isótopos para estimar a idade de materiais. O carbono-14 (T½ ≈ 5 730 anos) data materiais orgânicos até ~50 mil anos. O urânio-238 e o potássio-40 datam rochas e minerais com milhões ou bilhões de anos.",
+["C-14: orgânicos (até ~50 mil anos)","U-238: rochas (bilhões de anos)","K-40: minerais antigos"],
+"C-14 só serve para matéria orgânica recente; para rochas antigas, use U-238 ou K-40.",
+"Arqueólogos encontraram um fragmento de madeira antiga e querem estimar sua idade por meio de isótopos radioativos.",
+"O isótopo mais adequado é:",
+["Urânio-238","Carbono-14","Potássio-40","Tório-232","Iodo-131"],1,
+"Para material orgânico com dezenas de milhares de anos, usa-se C-14. U-238, K-40 e Th-232 são usados em rochas muito antigas; I-131 tem meia-vida de dias."],
+"Poluição atmosférica":[
+"Poluentes atmosféricos são gases e partículas que degradam a qualidade do ar. Principais: CO (combustão incompleta, tóxico), NOₓ e SO₂ (chuva ácida), material particulado (doenças respiratórias), COV e ozônio troposférico (smog). Fontes: veículos, indústrias, queimadas.",
+["CO: combustão incompleta","NOₓ e SO₂: chuva ácida","MP: saúde respiratória","O₃ troposférico: smog"],
+"Não confunda ozônio estratosférico (bom, filtra UV) com troposférico (ruim, poluente).",
+"Dados hipotéticos de uma cidade: 70% das emissões vêm de veículos, com altos níveis de NOₓ, CO e material particulado.",
+"O poluente que causa diretamente intoxicação por ligação à hemoglobina é:",
+["NO₂","SO₂","Monóxido de carbono (CO)","O₃","Material particulado"],2,
+"CO se liga à hemoglobina com afinidade muito maior que o O₂, formando carboxihemoglobina e impedindo o transporte de oxigênio. As demais opções têm outros efeitos."],
+"Chuva ácida":[
+"Chuva ácida é a precipitação com pH abaixo de 5,6, causada por óxidos de enxofre (SO₂) e de nitrogênio (NOₓ), que reagem com água formando H₂SO₄ e HNO₃. Corrói monumentos, acidifica lagos e prejudica plantações. Fontes: queima de combustíveis fósseis.",
+["SO₂ + H₂O → H₂SO₃ → H₂SO₄","NOₓ + H₂O → HNO₃","pH < 5,6"],
+"Chuva normal tem pH ≈ 5,6 (devido ao CO₂). Ácida é pH abaixo disso. Cal e calcário neutralizam solos.",
+"Uma região industrial registra chuva com pH 4,0. Análise mostra alto teor de sulfato.",
+"A principal causa é:",
+["Excesso de CO₂ atmosférico","Emissão de SO₂ da queima de combustíveis com enxofre","Emissão de CH₄ de aterros","Aumento do ozônio estratosférico","Excesso de vapor d'água"],1,
+"SO₂ da queima de combustíveis fósseis (com enxofre) forma H₂SO₄ na atmosfera, gerando chuva ácida. CO₂ e CH₄ são gases estufa, não causadores principais de chuva ácida."],
+"Efeito estufa e CO₂":[
+"Efeito estufa é a retenção de parte do calor emitido pela Terra, causada por gases como CO₂, CH₄, N₂O e vapor d'água. O efeito natural é essencial à vida; o aumento antrópico, desde a Revolução Industrial, intensifica o fenômeno e provoca aquecimento global.",
+["Luz solar atravessa; IV é retido","Gases: CO₂, CH₄, N₂O, H₂O","Aumento antrópico → aquecimento"],
+"Não confunda efeito estufa com buraco na camada de ozônio: são fenômenos diferentes, com causas e efeitos distintos.",
+"Dados hipotéticos: a concentração de CO₂ na atmosfera passou de ~280 ppm (pré-industrial) para ~420 ppm (2020).",
+"O principal mecanismo pelo qual o CO₂ aquece o planeta é:",
+["Destruir a camada de ozônio","Absorver radiação ultravioleta","Absorver e reemitir radiação infravermelha emitida pela superfície","Refletir a luz visível do Sol","Aumentar o calor interno da Terra"],2,
+"O CO₂ absorve IV emitido pela superfície e o reemite (inclusive para baixo), retendo calor. As demais opções descrevem outros fenômenos ou erros conceituais."],
+"Tratamento de água":[
+"O tratamento de água para consumo segue etapas: captação, coagulação (sais de alumínio ou ferro), floculação, decantação, filtração, desinfecção (cloro, ozônio ou UV) e fluoretação. Cada etapa remove impurezas progressivamente menores.",
+["Coagulação → floculação → decantação","Filtração → desinfecção","Cloro: elimina micro-organismos"],
+"Não confunda tratamento de água (consumo) com tratamento de esgoto (efluentes). O cloro é desinfetante; flúor previne cáries.",
+"Uma estação de tratamento adiciona sulfato de alumínio, forma flocos, deixa sedimentar, filtra em areia e adiciona cloro.",
+"A função do sulfato de alumínio é:",
+["Desinfetar a água","Aglutinar partículas em suspensão (coagulação)","Fluoretar","Ajustar o pH","Filtrar metais pesados"],1,
+"Sais de Al ou Fe atuam como coagulantes: neutralizam cargas das partículas e formam flocos maiores, que decantam. As demais funções são de outras etapas."],
+"Reciclagem e resíduos":[
+"Reciclagem é o reprocessamento de resíduos para novos produtos, reduzindo o consumo de matéria-prima e energia. Códigos de reciclagem identificam plásticos (1 a 7): PET (1), PEAD (2), PVC (3), PEBD (4), PP (5), PS (6), outros (7). Metais, vidros e papéis têm ampla reciclagem.",
+["PET, PEAD, PP, PS etc.","Reciclar economiza energia","Coleta seletiva"],
+"Reciclagem não é a única opção: reduzir e reutilizar vêm primeiro na hierarquia dos resíduos.",
+"Um frasco traz o símbolo com o número 1 e as letras PET.",
+"Esse material corresponde a:",
+["Polietileno de alta densidade","Politereftalato de etileno (garrafas)","Policloreto de vinila","Polipropileno","Poliestireno"],1,
+"Código 1 = PET (politereftalato de etileno), típico de garrafas de refrigerante. Os demais códigos são 2 (PEAD), 3 (PVC), 5 (PP) e 6 (PS)."],
+"Química verde":[
+"Química verde é um conjunto de princípios que busca reduzir ou eliminar o uso e a geração de substâncias perigosas em processos químicos. Seus 12 princípios incluem economia de átomos, uso de matérias-primas renováveis, catálise em vez de reagentes estequiométricos, design para degradação e prevenção de resíduos.",
+["12 princípios","Prevenção, economia de átomos","Catálise e renováveis"],
+"Química verde não é apenas 'ambiental': inclui eficiência e segurança. Economia de átomos é um conceito central.",
+"Uma indústria substitui um processo que gerava muito resíduo por outro que usa catalisador e matéria-prima renovável, com maior economia de átomos.",
+"Essa mudança é um exemplo de:",
+["Aumento de emissões","Aplicação dos princípios da Química Verde","Redução da segurança","Aumento de resíduos","Processo puramente econômico"],1,
+"Prevenção, catálise, renováveis e economia de átomos são princípios da Química Verde. As demais opções contradizem o movimento."],
+"Combustíveis e biocombustíveis":[
+"Combustíveis fósseis (gasolina, diesel, carvão, gás natural) são não renováveis e emitem CO₂. Biocombustíveis (etanol, biodiesel, biogás) são renováveis e, em geral, têm balanço de CO₂ mais favorável. O Brasil se destaca pelo etanol de cana e pelo biodiesel.",
+["Fósseis: não renováveis","Biocombustíveis: renováveis","Etanol, biodiesel, biogás"],
+"Biodiesel é obtido por transesterificação de óleos/gordura com álcool. Etanol, por fermentação de açúcares.",
+"O Brasil usa amplamente o etanol de cana como combustível veicular.",
+"O processo de obtenção do etanol a partir da cana envolve:",
+["Destilação do petróleo","Fermentação de açúcares seguida de destilação","Hidrólise de proteínas","Eletrólise da água","Combustão direta da cana"],1,
+"Açúcares da cana fermentam (leveduras) produzindo etanol e CO₂, e a mistura é destilada. As demais opções descrevem outros processos."],
+"Isomeria plana":[
+"Isomeria plana ocorre entre compostos com a mesma fórmula molecular, mas fórmulas estruturais diferentes (sem considerar arranjo espacial). Tipos: cadeia, posição, função, metameria e tautomeria.",
+["Mesma fórmula molecular","Estrutura plana diferente","Tipos: cadeia, posição, função…"],
+"Isômeros têm a MESMA fórmula molecular. Fórmula diferente não é isomeria.",
+"O etanol (CH₃CH₂OH) e o éter dimetílico (CH₃OCH₃) têm a mesma fórmula molecular C₂H₆O.",
+"Esses compostos são isômeros de:",
+["Cadeia","Posição","Função","Metameria","Tautomeria"],2,
+"Mesma fórmula molecular, funções diferentes (álcool e éter): isomeria de função. As demais envolvem cadeia, posição ou outros rearranjos."],
+"Isomeria espacial (geométrica)":[
+"Isomeria espacial (estereoisomeria) considera o arranjo tridimensional dos átomos. A isomeria geométrica (cis-trans) ocorre em alcenos com substituintes diferentes em cada carbono da dupla, ou em ciclanos. Cis: iguais do mesmo lado; trans: lados opostos.",
+["Cis: mesmo lado","Trans: lados opostos","Requer dupla ou ciclo com substituintes diferentes"],
+"Não confunda com isomeria óptica (que exige carbono assimétrico). Cis-trans exige dupla ou anel com substituintes adequados.",
+"O 2-buteno (CH₃−CH=CH−CH₃) apresenta dois isômeros geométricos, mostrados abaixo.<figure class='fig'><svg viewBox='0 0 340 150'><text x='80' y='20' font-size='11' text-anchor='middle' fill='var(--tx)'>cis-2-buteno</text><text x='70' y='55' font-size='10' fill='var(--tx)'>CH₃</text><text x='70' y='105' font-size='10' fill='var(--tx)'>CH₃</text><text x='130' y='55' font-size='10' fill='var(--tx)'>H</text><text x='130' y='105' font-size='10' fill='var(--tx)'>H</text><line x1='100' y1='80' x2='100' y2='50' stroke='var(--tx)' stroke-width='1.5'/><line x1='100' y1='80' x2='100' y2='110' stroke='var(--tx)' stroke-width='1.5'/><line x1='120' y1='50' x2='120' y2='80' stroke='var(--tx)' stroke-width='1.5'/><line x1='120' y1='80' x2='120' y2='110' stroke='var(--tx)' stroke-width='1.5'/><line x1='100' y1='80' x2='120' y2='80' stroke='var(--ac)' stroke-width='2.5'/><text x='260' y='20' font-size='11' text-anchor='middle' fill='var(--tx)'>trans-2-buteno</text><text x='250' y='55' font-size='10' fill='var(--tx)'>CH₃</text><text x='250' y='105' font-size='10' fill='var(--tx)'>H</text><text x='310' y='55' font-size='10' fill='var(--tx)'>H</text><text x='310' y='105' font-size='10' fill='var(--tx)'>CH₃</text><line x1='280' y1='80' x2='280' y2='50' stroke='var(--tx)' stroke-width='1.5'/><line x1='280' y1='80' x2='280' y2='110' stroke='var(--tx)' stroke-width='1.5'/><line x1='300' y1='50' x2='300' y2='80' stroke='var(--tx)' stroke-width='1.5'/><line x1='300' y1='80' x2='300' y2='110' stroke='var(--tx)' stroke-width='1.5'/><line x1='280' y1='80' x2='300' y2='80' stroke='var(--ac)' stroke-width='2.5'/></svg><figcaption>Isomeria geométrica cis-trans do 2-buteno.</figcaption></figure>",
+"Eles são classificados como:",
+["Enantiômeros","Cis e trans","Diastereoisômeros não geométricos","Tautômeros","Metâmeros"],1,
+"O 2-buteno tem dupla com substituintes diferentes em cada carbono, gerando cis (CH₃ do mesmo lado) e trans (lados opostos). As demais opções envolvem outros tipos de isomeria."],
+"Carbono assimétrico e enantiômeros":[
+"Carbono assimétrico (quiral) é aquele que se liga a quatro grupos diferentes. Moléculas com carbono assimétrico são quirais e existem em dois enantiômeros (imagens especulares não sobreponíveis), que desviam a luz polarizada em sentidos opostos. A isomeria óptica tem grande importância farmacêutica.",
+["C* = carbono com 4 grupos diferentes","Enantiômeros: imagens especulares","Desviam luz polarizada"],
+"Isomeria óptica ≠ geométrica. A óptica exige carbono assimétrico; a geométrica exige dupla ou ciclo com substituintes adequados.",
+"Um fármaco tem dois enantiômeros: um é ativo e o outro pode ser inativo ou até prejudicial.",
+"O enantiômero ativo é distinguido do inativo por:",
+["Sua fórmula molecular diferente","Seu arranjo espacial em torno do carbono assimétrico","Seu ponto de fusão","Seu número de carbonos","Sua massa molar"],1,
+"Enantiômeros têm a mesma fórmula molecular e mesmas propriedades físicas, mas arranjo espacial diferente (imagens especulares). Podem ter efeitos biológicos distintos."],
+"Carboidratos":[
+"Carboidratos (glicídios) são polihidroxialdeídos ou polihidroxicetonas. Classificam-se em monossacarídeos (glicose, frutose), dissacarídeos (sacarose, lactose) e polissacarídeos (amido, celulose, glicogênio). São a principal fonte de energia da dieta.",
+["Glicose: C₆H₁₂O₆","Sacarose: glicose + frutose","Amido e celulose: polímeros de glicose"],
+"Amido e celulose são ambos polímeros de glicose, mas com ligações diferentes: o ser humano digere amido, não celulose.",
+"Uma pessoa com intolerância à lactose não digere a lactose (açúcar do leite).",
+"A lactose é um:",
+["Monossacarídeo","Dissacarídeo","Polissacarídeo","Ácido graxo","Aminoácido"],1,
+"Lactose é um dissacarídeo (glicose + galactose). Monossacarídeos são glicose e frutose; polissacarídeos são amido e celulose; ácidos graxos e aminoácidos são de outras classes."],
+"Lipídios":[
+"Lipídios são substâncias insolúveis em água e solúveis em solventes orgânicos. Incluem gorduras, óleos, fosfolipídios, esteroides (colesterol, hormônios) e ceras. Funções: reserva energética, isolamento térmico, componentes de membranas. Triglicerídeos são ésteres de glicerol com ácidos graxos.",
+["Insolúveis em água","Gorduras: saturadas (sólidas)","Óleos: insaturadas (líquidas)","Colesterol: esteroide"],
+"Gorduras saturadas têm cadeia reta (sólidas); insaturadas, cadeias com duplas (líquidas, óleos). Hidrogenar óleo produz margarina (mais saturada).",
+"Uma manteiga é sólida à temperatura ambiente; um óleo vegetal, líquido.",
+"A diferença está principalmente em:",
+["Número de carbonos","Presença de duplas ligações (insaturações) nos ácidos graxos","Presença de nitrogênio","Açúcares associados","Presença de fosfato"],1,
+"Gorduras saturadas (sem duplas) empacotam-se melhor (sólidas). Óleos têm insaturações (cis), que impedem empacotamento (líquidos). As demais opções não explicam a diferença."],
+"Proteínas e aminoácidos":[
+"Proteínas são polímeros de aminoácidos unidos por ligações peptídicas. Cada aminoácido tem grupo amina (−NH₂) e carboxila (−COOH). A sequência de aminoácidos (estrutura primária) determina a estrutura e a função da proteína. Funções: enzimática, estrutural, transporte, defesa.",
+["Ligação peptídica: −CO−NH−","20 aminoácidos principais","Enzimas: catalisadores biológicos"],
+"Não confunda aminoácido (monômero) com proteína (polímero). A ligação peptídica une o grupo carboxila de um ao grupo amina de outro, com perda de água.",
+"A insulina é um hormônio proteico formado por duas cadeias de aminoácidos.",
+"A ligação que une os aminoácidos na insulina é do tipo:",
+["Glicosídica","Peptídica","Éster","Éter","Iônica"],1,
+"A ligação peptídica (amida) une aminoácidos em proteínas. Glicosídica une açúcares; éster, ácidos e álcoois; éter, dois carbonos via O."],
+"Ácidos nucleicos":[
+"Ácidos nucleicos (DNA e RNA) são polímeros de nucleotídeos. Cada nucleotídeo tem base nitrogenada, pentose e fosfato. DNA: dupla hélice, bases A-T e C-G, desoxirribose. RNA: fita simples, bases A-U, C-G, ribose. Armazenam e transmitem informação genética.",
+["DNA: A-T, C-G; desoxirribose","RNA: A-U, C-G; ribose","Nucleotídeo = base + pentose + fosfato"],
+"Não confunda: DNA tem timina (T); RNA tem uracila (U). A pentose também muda (desoxirribose vs. ribose).",
+"Em uma análise de uma molécula de DNA, observou-se que 30% das bases são adenina (A).",
+"Qual a porcentagem de citosina (C) nessa molécula?",
+["30%","20%","70%","15%","40%"],1,
+"No DNA, A=T e C=G. Se A = 30%, T = 30%. Somam 60%. Restam 40% para C+G, então C = 20%. As demais opções erram o emparelhamento ou a proporção."],
+"Leis dos gases (Boyle, Charles, Gay-Lussac)":[
+"As leis dos gases relacionam P, V e T (em kelvin). Boyle (T constante): P·V = constante — hipérbole em P×V. Charles (P constante): V/T = constante — reta em V×T. Gay-Lussac (V constante): P/T = constante. Combinadas, resultam em P₁V₁/T₁ = P₂V₂/T₂.",
+["Boyle: P₁V₁ = P₂V₂","Charles: V₁/T₁ = V₂/T₂","Gay-Lussac: P₁/T₁ = P₂/T₂","T sempre em K"],
+"A temperatura SEMPRE em kelvin. A pegadinha número um é usar °C.",
+"Um gás ocupa 4 L a 27 °C e 1 atm. Ele é aquecido a 127 °C, mantendo a pressão constante. Os gráficos abaixo representam as leis de Boyle e Charles.<figure class='fig'><svg viewBox='0 0 340 170'><text x='90' y='16' font-size='10' text-anchor='middle' fill='var(--tx)'>Boyle: P × V (T fixa)</text><line x1='20' y1='140' x2='170' y2='140' stroke='var(--ln)' stroke-width='1.5'/><line x1='20' y1='25' x2='20' y2='140' stroke='var(--ln)' stroke-width='1.5'/><path d='M30,35 Q50,60 70,80 Q100,105 160,125' fill='none' stroke='var(--ac)' stroke-width='2.5'/><text x='95' y='162' font-size='9' text-anchor='middle' fill='var(--mu)'>V →</text><text x='12' y='85' font-size='9' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 12 85)'>P →</text><text x='260' y='16' font-size='10' text-anchor='middle' fill='var(--tx)'>Charles: V × T (P fixa)</text><line x1='190' y1='140' x2='330' y2='140' stroke='var(--ln)' stroke-width='1.5'/><line x1='190' y1='25' x2='190' y2='140' stroke='var(--ln)' stroke-width='1.5'/><line x1='195' y1='135' x2='325' y2='35' stroke='var(--am)' stroke-width='2.5'/><text x='260' y='162' font-size='9' text-anchor='middle' fill='var(--mu)'>T (K) →</text><text x='182' y='85' font-size='9' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 182 85)'>V →</text></svg><figcaption>Boyle: hipérbole (P×V constante). Charles: reta crescente (V ∝ T).</figcaption></figure>",
+"Qual o novo volume?",
+["2,7 L","4,0 L","5,3 L","6,0 L","8,0 L"],2,
+"Charles: V₁/T₁ = V₂/T₂. T₁ = 300 K; T₂ = 400 K. V₂ = 4 × 400/300 ≈ 5,3 L. As demais opções erram a conversão de temperatura ou a proporção."],
+"Equação de Clapeyron":[
+"A equação de Clapeyron (ou equação de estado dos gases ideais) é P·V = n·R·T, em que R = 0,082 L·atm/(mol·K) ou 8,31 J/(mol·K). Relaciona as quatro variáveis de estado com a quantidade de matéria. É muito usada no ENEM.",
+["P·V = n·R·T","R = 0,082 L·atm/(mol·K)","T em K; n em mol"],
+"Confira as unidades: R depende delas. Se P em atm e V em L, use R = 0,082. Se P em Pa e V em m³, use R = 8,31.",
+"Em um cilindro de 10 L, há 0,5 mol de gás ideal a 27 °C. Use R = 0,082 L·atm/(mol·K).",
+"Qual a pressão no interior do cilindro?",
+["0,12 atm","1,0 atm","1,23 atm","2,46 atm","12,3 atm"],2,
+"T = 300 K. P = nRT/V = 0,5 × 0,082 × 300 / 10 = 12,3/10 = 1,23 atm. As demais opções erram as conversões ou as operações."],
+"Misturas gasosas":[
+"Em misturas gasosas sem reação, cada gás ocupa o volume total, como se estivesse só (Lei de Dalton). A pressão total é a soma das pressões parciais. A fração em mol de um gás é a razão entre os mols desse gás e o total.",
+["P_total = ΣP_parciais","P_i = X_i·P_total","X_i = n_i/n_total"],
+"A fração em mol (X) é o mesmo que a fração em volume, para gases ideais. Útil em misturas como o ar atmosférico.",
+"O ar atmosférico contém, aproximadamente, 21% em mol de O₂ e 79% de N₂. Considere pressão total de 1 atm.",
+"Qual a pressão parcial de O₂?",
+["0,21 atm","0,79 atm","0,42 atm","1,0 atm","0,50 atm"],0,
+"P(O₂) = X(O₂) × P_total = 0,21 × 1 = 0,21 atm. As demais opções usam a fração do N₂, dobram ou confundem com a pressão total."],
+"Teoria cinética dos gases":[
+"A teoria cinética explica as propriedades macroscópicas dos gases a partir do movimento das partículas. Postulados: gases são formados por partículas em movimento aleatório; colisões são elásticas; a energia cinética média é proporcional à temperatura absoluta. A pressão resulta das colisões com as paredes.",
+["Movimento aleatório","Colisões elásticas","E_c média ∝ T (K)"],
+"Aumentar a temperatura aumenta a energia cinética média das moléculas e, portanto, a velocidade. A massa das moléculas também influencia.",
+"Em um recipiente fechado, um gás é aquecido de 27 °C para 127 °C, mantendo o volume constante.",
+"Sobre a energia cinética média das moléculas, é correto afirmar:",
+["Não se altera","Aumenta, pois a temperatura absoluta aumentou","Diminui","Depende da massa molecular","Zera em 127 °C"],1,
+"A energia cinética média é proporcional à temperatura absoluta (kelvin). Aumentando T de 300 K para 400 K, aumenta na proporção 4/3. As demais opções contradizem a teoria."],
+"Efusão e difusão":[
+"Efusão é a passagem de um gás por um pequeno orifício; difusão é a mistura espontânea de gases. A Lei de Graham diz que a velocidade de efusão é inversamente proporcional à raiz quadrada da massa molar. Gases mais leves se difundem mais rápido.",
+["v₁/v₂ = √(M₂/M₁)","Mais leve → mais rápido","Lei de Graham"],
+"Cuidado com a raiz: a velocidade varia com o INVERSO da raiz da massa. Gás 4× mais leve tem velocidade 2× maior.",
+"Considere H₂ (MM = 2 g/mol) e O₂ (MM = 32 g/mol) em um mesmo recipiente com um pequeno orifício.",
+"A razão entre as velocidades de efusão (H₂/O₂) é:",
+["1/4","1/2","2","4","16"],3,
+"v(H₂)/v(O₂) = √(M(O₂)/M(H₂)) = √(32/2) = √16 = 4. As demais opções erram a raiz ou invertem a razão."],
+"Filtração e decantação":[
+"Filtração separa sólido de líquido/gás usando um meio poroso (papel de filtro). Decantação separa líquidos imiscíveis ou sólido de líquido por diferença de densidade, deixando repousar. São métodos de separação de misturas heterogêneas.",
+["Filtração: sólido + líquido","Decantação: diferença de densidade","Ambas: misturas heterogêneas"],
+"Não confunda com destilação (usa pontos de ebulição). Filtração e decantação são mecânicas.",
+"Em uma estação de tratamento de água, após a floculação, as partículas sólidas se depositam no fundo do tanque.",
+"O processo de separação é:",
+["Filtração","Decantação","Destilação","Cromatografia","Extração"],1,
+"A deposição espontânea de sólidos no fundo, por diferença de densidade, é decantação. Filtração forçaria a passagem por um meio poroso; destilação usa calor."],
+"Destilação":[
+"Destilação separa misturas homogêneas (soluções) com base na diferença de pontos de ebulição. Simples: separa sólido dissolvido de líquido ou líquidos com PE muito diferente. Fracionária: separa líquidos miscíveis com PE próximos (petróleo, ar).",
+["Simples: 1 etapa","Fracionária: várias etapas","Diferença de PE"],
+"Não confunda destilação simples com fracionária. No petróleo, usa-se fracionária; na obtenção de água destilada, simples.",
+"Em uma refinaria, o petróleo é aquecido e seus componentes são separados em torres, por faixas de temperatura (gás, gasolina, diesel, etc.). O esquema abaixo mostra um aparelho de destilação.<figure class='fig'><svg viewBox='0 0 340 170'><rect x='20' y='90' width='60' height='60' fill='none' stroke='var(--ac)' stroke-width='1.5'/><rect x='20' y='120' width='60' height='30' fill='var(--ac)' fill-opacity='0.3'/><text x='50' y='168' font-size='9' text-anchor='middle' fill='var(--mu)'>Balão</text><path d='M80,100 L120,70 L120,40 L180,40 L180,60' fill='none' stroke='var(--ac)' stroke-width='1.5'/><text x='130' y='30' font-size='9' text-anchor='middle' fill='var(--mu)'>Coluna de fracionamento</text><path d='M180,60 L240,60' stroke='var(--ac)' stroke-width='1.5'/><text x='245' y='64' font-size='9' fill='var(--mu)'>→ vapor</text><path d='M180,60 Q200,60 200,80' fill='none' stroke='var(--am)' stroke-width='1.5'/><text x='210' y='100' font-size='9' fill='var(--am)'>condensação</text><path d='M200,80 L200,110 L260,110' stroke='var(--am)' stroke-width='1.5'/><text x='270' y='114' font-size='9' fill='var(--am)'>destilado</text></svg><figcaption>Destilação: aquecimento, vaporização e condensação para separar por ponto de ebulição.</figcaption></figure>",
+"O processo é uma:",
+["Filtração","Decantação","Destilação fracionária","Cromatografia","Extração"],2,
+"A separação de líquidos miscíveis com PE diferentes em uma torre de fracionamento é destilação fracionária. As demais opções não usam calor e diferença de PE."],
+"Extração e cromatografia":[
+"Extração separa um componente de uma mistura por solubilidade em um solvente. Cromatografia separa por diferença de afinidade com a fase estacionária e a móvel: componentes mais retidos sobem mais devagar. É muito usada em análises.",
+["Extração: solubilidade","Cromatografia: afinidade","Separação analítica"],
+"Cromatografia separa por afinidade, não por PE ou densidade. É essencial para análise de misturas complexas.",
+"Em uma análise forense, uma mistura de tintas é separada em uma placa de sílica, onde cada componente sobe uma distância diferente, formando o cromatograma abaixo.<figure class='fig'><svg viewBox='0 0 340 180'><rect x='100' y='20' width='80' height='140' fill='none' stroke='var(--ln)' stroke-width='1.5'/><line x1='100' y1='40' x2='180' y2='40' stroke='var(--mu)' stroke-width='1' stroke-dasharray='3,3'/><text x='190' y='44' font-size='9' fill='var(--mu)'>frente do solvente</text><ellipse cx='140' cy='70' rx='28' ry='4' fill='#e11d48' fill-opacity='0.7'/><ellipse cx='140' cy='100' rx='22' ry='4' fill='#0ea5e9' fill-opacity='0.7'/><ellipse cx='140' cy='125' rx='18' ry='4' fill='#f59e0b' fill-opacity='0.7'/><text x='200' y='74' font-size='10' fill='var(--tx)'>componente 1</text><text x='200' y='104' font-size='10' fill='var(--tx)'>componente 2</text><text x='200' y='129' font-size='10' fill='var(--tx)'>componente 3</text><text x='140' y='176' font-size='9' text-anchor='middle' fill='var(--mu)'>fase estacionária (sílica)</text></svg><figcaption>Cromatograma: componentes com maior afinidade pela fase móvel sobem mais alto.</figcaption></figure>",
+"O método é:",
+["Destilação","Cromatografia","Filtração","Decantação","Extração líquido-líquido"],1,
+"A separação de componentes por diferença de afinidade com a fase estacionária (sílica) e a fase móvel (solvente) é cromatografia. As demais opções usam propriedades diferentes."],
+"Análise qualitativa e quantitativa":[
+"Análise qualitativa identifica quais substâncias estão presentes (testes de chama, reações com indicadores, espectros). Análise quantitativa mede quanto (titulação, gravimetria, espectrofotometria, cromatografia com detecção). Ambas são essenciais na química analítica.",
+["Qualitativa: identifica","Quantitativa: mede","Ex.: titulação, espectrofotometria"],
+"A presença de um íon pode ser indicada pelo teste de chama (cor) — qualitativa. A quantidade é obtida por titulação ou outra técnica quantitativa.",
+"Um laudo de água mineral informa: 'Não foram detectados metais pesados; cálcio: 20 mg/L'. O esquema abaixo ilustra cores típicas de testes de chama.<figure class='fig'><svg viewBox='0 0 340 100'><text x='40' y='20' font-size='10' text-anchor='middle' fill='var(--tx)'>Na⁺</text><rect x='20' y='30' width='40' height='15' fill='#fbbf24'/><text x='120' y='20' font-size='10' text-anchor='middle' fill='var(--tx)'>K⁺</text><rect x='100' y='30' width='40' height='15' fill='#a855f7'/><text x='200' y='20' font-size='10' text-anchor='middle' fill='var(--tx)'>Cu²⁺</text><rect x='180' y='30' width='40' height='15' fill='#22d3ee'/><text x='280' y='20' font-size='10' text-anchor='middle' fill='var(--tx)'>Ca²⁺</text><rect x='260' y='30' width='40' height='15' fill='#f97316'/><text x='170' y='80' font-size='10' text-anchor='middle' fill='var(--mu)'>cores típicas em teste de chama (dados didáticos)</text></svg><figcaption>Teste de chama: cores características identificam cátions (análise qualitativa).</figcaption></figure>",
+"A primeira informação é típica de análise ______, e a segunda, de análise ______.",
+["Qualitativa / quantitativa","Quantitativa / qualitativa","Ambas qualitativas","Ambas quantitativas","Nenhuma das duas"],0,
+"'Não detectados metais pesados' é informação qualitativa (presença/ausência). 'Cálcio: 20 mg/L' é quantitativa (quanto). As demais opções trocam os conceitos."],
+"Tonoscopia e ebuliometria":[
+"Propriedades coligativas dependem apenas do número de partículas do soluto, não da natureza. Tonoscopia: diminuição da pressão de vapor do solvente pela adição de soluto. Ebuliometria: aumento do ponto de ebulição. Quanto mais partículas dissolvidas, maior o efeito.",
+["Δp/p = Kt·m","ΔT_eb = Ke·m","Depende do número de partículas"],
+"Solutos iônicos se dissociam, gerando mais partículas e maior efeito. NaCl gera 2 partículas; CaCl₂, 3.",
+"Duas panelas com água: uma com sal dissolvido e outra pura. A primeira ferve em temperatura mais alta.",
+"A explicação é:",
+["O sal aumenta a pressão de vapor","O sal diminui a pressão de vapor, exigindo maior temperatura para ferver (ebuliometria)","O sal evapora mais rápido","O sal reage com a água","O sal diminui o ponto de ebulição"],1,
+"A presença de soluto diminui a pressão de vapor do solvente; para que ela iguale a pressão atmosférica, é preciso atingir temperatura mais alta: aumenta o ponto de ebulição. As demais opções invertem ou erram o mecanismo."],
+"Criometria":[
+"Criometria (ou crioscopia) é o abaixamento do ponto de congelamento de um solvente pela adição de soluto. ΔT_c = Kc·m. Aplica-se em anticongelantes em radiadores e no sal em estradas geladas. Depende do número de partículas.",
+["ΔT_c = Kc·m","Quanto mais partículas, menor o ponto de congelamento"],
+"Íons dissociados multiplicam o efeito. NaCl (2 partículas) abaixa mais o ponto de congelamento que a mesma molalidade de glicose (1 partícula).",
+"No inverno, sal de cozinha é espalhado em estradas para derreter gelo.",
+"Isso funciona porque o sal:",
+["Aumenta o ponto de congelamento","Diminui o ponto de congelamento da água (criometria)","Reage com o gelo formando outra substância","Aumenta a pressão de vapor","Não influencia o congelamento"],1,
+"O sal dissolvido diminui o ponto de congelamento da água (criometria), fazendo o gelo derreter em temperaturas próximas de 0 °C. As demais opções invertem ou erram o fenômeno."],
+"Osmometria":[
+"Osmometria (pressão osmótica) é a pressão necessária para impedir a passagem de solvente por uma membrana semipermeável. É calculada por π = M·R·T (para solutos moleculares) ou com fator de van't Hoff (i) para iônicos. A osmose é essencial em células vivas.",
+["π = M·R·T (i = 1, não eletrólito)","π = i·M·R·T (eletrólitos)","Membrana semipermeável"],
+"A osmose é o movimento do solvente do meio menos concentrado para o mais concentrado. Soro fisiológico é isotônico ao sangue.",
+"Um soro fisiológico é uma solução de NaCl 0,9% (m/v). Ele pode ser aplicado na veia sem causar hemólise.",
+"Isso ocorre porque o soro é:",
+["Hipotônico em relação ao sangue","Isotônico em relação ao sangue","Hipertônico em relação ao sangue","Puro","Apenas uma solução de glicose"],1,
+"Soro fisiológico é isotônico em relação ao sangue, evitando movimento de água por osmose e, assim, hemólise ou crenação. As demais opções causariam alterações nas células."],
+"Efeito do soluto nas propriedades":[
+"A presença de soluto não volátil em um solvente altera quatro propriedades: diminui a pressão de vapor (tonoscopia), aumenta o ponto de ebulição (ebuliometria), diminui o ponto de congelamento (criometria) e aumenta a pressão osmótica (osmometria). Todas dependem do número de partículas, não da natureza química.",
+["Quatro propriedades coligativas","Dependem do número de partículas","Solutos iônicos: efeito × i (van't Hoff)"],
+"Soluto iônico gera mais partículas que soluto molecular, na mesma molalidade. Compare sempre as quantidades de partículas.",
+"Em três panelas idênticas com 1 L de água cada, foram adicionados, separadamente: (I) 1 mol de glicose; (II) 1 mol de NaCl; (III) 1 mol de CaCl₂. O gráfico ilustra o número de partículas geradas.<figure class='fig'><svg viewBox='0 0 320 160'><line x1='40' y1='130' x2='300' y2='130' stroke='var(--ln)' stroke-width='1.5'/><line x1='40' y1='20' x2='40' y2='130' stroke='var(--ln)' stroke-width='1.5'/><rect x='70' y='100' width='40' height='30' fill='var(--ac)'/><rect x='150' y='70' width='40' height='60' fill='var(--ac)'/><rect x='230' y='40' width='40' height='90' fill='var(--ac)'/><text x='90' y='145' font-size='11' text-anchor='middle' fill='var(--tx)'>Glicose</text><text x='170' y='145' font-size='11' text-anchor='middle' fill='var(--tx)'>NaCl</text><text x='250' y='145' font-size='11' text-anchor='middle' fill='var(--tx)'>CaCl₂</text><text x='90' y='95' font-size='11' text-anchor='middle' fill='var(--tx)'>1</text><text x='170' y='65' font-size='11' text-anchor='middle' fill='var(--tx)'>2</text><text x='250' y='35' font-size='11' text-anchor='middle' fill='var(--tx)'>3</text><text x='18' y='75' font-size='10' text-anchor='middle' fill='var(--mu)' transform='rotate(-90 18 75)'>nº de partículas</text></svg><figcaption>Número de partículas geradas por soluto em solução.</figcaption></figure>",
+"A ordem CRESCENTE do ponto de ebulição é:",
+["I < II < III","III < II < I","I < III < II","II < I < III","Todas iguais"],0,
+"Glicose → 1 partícula; NaCl → 2; CaCl₂ → 3. Mais partículas → maior ebuliometria. Portanto I < II < III. As demais opções invertem a ordem."]
+};
+
+/* =================== PERIÓDICA — 118 elementos =================== */
+/* [símbolo, nome, classe, config-eletrônica, massa] */
+var ELS=[
+["H","Hidrogênio","nm","1s¹",1.008],["He","Hélio","gn","1s²",4.003],
+["Li","Lítio","ma","[He] 2s¹",6.94],["Be","Berílio","at","[He] 2s²",9.012],["B","Boro","sm","[He] 2s² 2p¹",10.81],["C","Carbono","nm","[He] 2s² 2p²",12.011],["N","Nitrogênio","nm","[He] 2s² 2p³",14.007],["O","Oxigênio","nm","[He] 2s² 2p⁴",15.999],["F","Flúor","hl","[He] 2s² 2p⁵",18.998],["Ne","Neônio","gn","[He] 2s² 2p⁶",20.180],
+["Na","Sódio","ma","[Ne] 3s¹",22.990],["Mg","Magnésio","at","[Ne] 3s²",24.305],["Al","Alumínio","mn","[Ne] 3s² 3p¹",26.982],["Si","Silício","sm","[Ne] 3s² 3p²",28.085],["P","Fósforo","nm","[Ne] 3s² 3p³",30.974],["S","Enxofre","nm","[Ne] 3s² 3p⁴",32.06],["Cl","Cloro","hl","[Ne] 3s² 3p⁵",35.45],["Ar","Argônio","gn","[Ne] 3s² 3p⁶",39.948],
+["K","Potássio","ma","[Ar] 4s¹",39.098],["Ca","Cálcio","at","[Ar] 4s²",40.078],["Sc","Escândio","tr","[Ar] 3d¹ 4s²",44.956],["Ti","Titânio","tr","[Ar] 3d² 4s²",47.867],["V","Vanádio","tr","[Ar] 3d³ 4s²",50.942],["Cr","Cromo","tr","[Ar] 3d⁵ 4s¹",51.996],["Mn","Manganês","tr","[Ar] 3d⁵ 4s²",54.938],["Fe","Ferro","tr","[Ar] 3d⁶ 4s²",55.845],["Co","Cobalto","tr","[Ar] 3d⁷ 4s²",58.933],["Ni","Níquel","tr","[Ar] 3d⁸ 4s²",58.693],["Cu","Cobre","tr","[Ar] 3d¹⁰ 4s¹",63.546],["Zn","Zinco","tr","[Ar] 3d¹⁰ 4s²",65.38],["Ga","Gálio","mn","[Ar] 3d¹⁰ 4s² 4p¹",69.723],["Ge","Germânio","sm","[Ar] 3d¹⁰ 4s² 4p²",72.630],["As","Arsênio","sm","[Ar] 3d¹⁰ 4s² 4p³",74.922],["Se","Selênio","nm","[Ar] 3d¹⁰ 4s² 4p⁴",78.971],["Br","Bromo","hl","[Ar] 3d¹⁰ 4s² 4p⁵",79.904],["Kr","Criptônio","gn","[Ar] 3d¹⁰ 4s² 4p⁶",83.798],
+["Rb","Rubídio","ma","[Kr] 5s¹",85.468],["Sr","Estrôncio","at","[Kr] 5s²",87.62],["Y","Ítrio","tr","[Kr] 4d¹ 5s²",88.906],["Zr","Zircônio","tr","[Kr] 4d² 5s²",91.224],["Nb","Nióbio","tr","[Kr] 4d⁴ 5s¹",92.906],["Mo","Molibdênio","tr","[Kr] 4d⁵ 5s¹",95.95],["Tc","Tecnécio","tr","[Kr] 4d⁵ 5s²",98],["Ru","Rutênio","tr","[Kr] 4d⁷ 5s¹",101.07],["Rh","Ródio","tr","[Kr] 4d⁸ 5s¹",102.906],["Pd","Paládio","tr","[Kr] 4d¹⁰",106.42],["Ag","Prata","tr","[Kr] 4d¹⁰ 5s¹",107.868],["Cd","Cádmio","tr","[Kr] 4d¹⁰ 5s²",112.414],["In","Índio","mn","[Kr] 4d¹⁰ 5s² 5p¹",114.818],["Sn","Estanho","mn","[Kr] 4d¹⁰ 5s² 5p²",118.710],["Sb","Antimônio","sm","[Kr] 4d¹⁰ 5s² 5p³",121.760],["Te","Telúrio","sm","[Kr] 4d¹⁰ 5s² 5p⁴",127.60],["I","Iodo","hl","[Kr] 4d¹⁰ 5s² 5p⁵",126.904],["Xe","Xenônio","gn","[Kr] 4d¹⁰ 5s² 5p⁶",131.293],
+["Cs","Césio","ma","[Xe] 6s¹",132.905],["Ba","Bário","at","[Xe] 6s²",137.327],
+["La","Lantânio","ln","[Xe] 5d¹ 6s²",138.905],["Ce","Cério","ln","[Xe] 4f¹ 5d¹ 6s²",140.116],["Pr","Praseodímio","ln","[Xe] 4f³ 6s²",140.908],["Nd","Neodímio","ln","[Xe] 4f⁴ 6s²",144.242],["Pm","Promécio","ln","[Xe] 4f⁵ 6s²",145],["Sm","Samário","ln","[Xe] 4f⁶ 6s²",150.36],["Eu","Európio","ln","[Xe] 4f⁷ 6s²",151.964],["Gd","Gadolínio","ln","[Xe] 4f⁷ 5d¹ 6s²",157.25],["Tb","Térbio","ln","[Xe] 4f⁹ 6s²",158.925],["Dy","Disprósio","ln","[Xe] 4f¹⁰ 6s²",162.500],["Ho","Hólmio","ln","[Xe] 4f¹¹ 6s²",164.930],["Er","Érbio","ln","[Xe] 4f¹² 6s²",167.259],["Tm","Túlio","ln","[Xe] 4f¹³ 6s²",168.934],["Yb","Itérbio","ln","[Xe] 4f¹⁴ 6s²",173.045],["Lu","Lutécio","ln","[Xe] 4f¹⁴ 5d¹ 6s²",174.967],
+["Hf","Háfnio","tr","[Xe] 4f¹⁴ 5d² 6s²",178.49],["Ta","Tântalo","tr","[Xe] 4f¹⁴ 5d³ 6s²",180.948],["W","Tungstênio","tr","[Xe] 4f¹⁴ 5d⁴ 6s²",183.84],["Re","Rênio","tr","[Xe] 4f¹⁴ 5d⁵ 6s²",186.207],["Os","Ósmio","tr","[Xe] 4f¹⁴ 5d⁶ 6s²",190.23],["Ir","Irídio","tr","[Xe] 4f¹⁴ 5d⁷ 6s²",192.217],["Pt","Platina","tr","[Xe] 4f¹⁴ 5d⁹ 6s¹",195.084],["Au","Ouro","tr","[Xe] 4f¹⁴ 5d¹⁰ 6s¹",196.967],["Hg","Mercúrio","tr","[Xe] 4f¹⁴ 5d¹⁰ 6s²",200.592],["Tl","Tálio","mn","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",204.38],["Pb","Chumbo","mn","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²",207.2],["Bi","Bismuto","mn","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³",208.980],["Po","Polônio","sm","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴",209],["At","Astato","hl","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",210],["Rn","Radônio","gn","[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶",222],
+["Fr","Frâncio","ma","[Rn] 7s¹",223],["Ra","Rádio","at","[Rn] 7s²",226],
+["Ac","Actínio","ac","[Rn] 6d¹ 7s²",227],["Th","Tório","ac","[Rn] 6d² 7s²",232.038],["Pa","Protactínio","ac","[Rn] 5f² 6d¹ 7s²",231.036],["U","Urânio","ac","[Rn] 5f³ 6d¹ 7s²",238.029],["Np","Netúnio","ac","[Rn] 5f⁴ 6d¹ 7s²",237],["Pu","Plutônio","ac","[Rn] 5f⁶ 7s²",244],["Am","Amerício","ac","[Rn] 5f⁷ 7s²",243],["Cm","Cúrio","ac","[Rn] 5f⁷ 6d¹ 7s²",247],["Bk","Berquélio","ac","[Rn] 5f⁹ 7s²",247],["Cf","Califórnio","ac","[Rn] 5f¹⁰ 7s²",251],["Es","Einstênio","ac","[Rn] 5f¹¹ 7s²",252],["Fm","Férmio","ac","[Rn] 5f¹² 7s²",257],["Md","Mendelévio","ac","[Rn] 5f¹³ 7s²",258],["No","Nobélio","ac","[Rn] 5f¹⁴ 7s²",259],["Lr","Laurêncio","ac","[Rn] 5f¹⁴ 7s² 7p¹",266],
+["Rf","Rutherfórdio","tr","[Rn] 5f¹⁴ 6d² 7s²",267],["Db","Dúbnio","tr","[Rn] 5f¹⁴ 6d³ 7s²",268],["Sg","Seabórgio","tr","[Rn] 5f¹⁴ 6d⁴ 7s²",269],["Bh","Bóhrio","tr","[Rn] 5f¹⁴ 6d⁵ 7s²",270],["Hs","Hássio","tr","[Rn] 5f¹⁴ 6d⁶ 7s²",269],["Mt","Meitnério","tr","[Rn] 5f¹⁴ 6d⁷ 7s²",278],["Ds","Darmstádtio","tr","[Rn] 5f¹⁴ 6d⁸ 7s²",281],["Rg","Roentgênio","tr","[Rn] 5f¹⁴ 6d⁹ 7s²",282],["Cn","Copernício","tr","[Rn] 5f¹⁴ 6d¹⁰ 7s²",285],["Nh","Nihônio","mn","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹",286],["Fl","Fleróvio","mn","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²",289],["Mc","Moscóvio","mn","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³",290],["Lv","Livermório","mn","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴",293],["Ts","Tenessino","hl","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵",294],["Og","Oganessônio","gn","[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶",294]
+];
+/* posição no grid: 18 colunas, 9 linhas (7 do bloco principal + 2 do bloco f) */
+function pos(Z){
+  if(Z===1)return[1,1];
+  if(Z===2)return[1,18];
+  if(Z>=3&&Z<=10){var g=[1,2,13,14,15,16,17,18][Z-3];return[2,g];}
+  if(Z>=11&&Z<=18){var g=[1,2,13,14,15,16,17,18][Z-11];return[3,g];}
+  if(Z>=19&&Z<=36)return[4,Z-18];
+  if(Z>=37&&Z<=54)return[5,Z-36];
+  if(Z>=55&&Z<=56)return[6,Z-54];
+  if(Z>=57&&Z<=71)return[8,Z-57+3];
+  if(Z>=72&&Z<=86)return[6,Z-72+4];
+  if(Z>=87&&Z<=88)return[7,Z-86];
+  if(Z>=89&&Z<=103)return[9,Z-89+3];
+  if(Z>=104&&Z<=118)return[7,Z-104+4];
+  return[0,0];
+}
+var CLSN={ma:"Metal alcalino",at:"Alcalino-terroso",tr:"Metal de transição",mn:"Metal",sm:"Semimetal",nm:"Não-metal",hl:"Halogênio",gn:"Gás nobre",ln:"Lantanídeo",ac:"Actinídeo"};
+
+/* =================== ESTADO / PERSISTÊNCIA =================== */
+const q=s=>document.querySelector(s),L={A:"Alta",M:"Média",B:"Baixa"},IC=["💧","🧬","🔥","⚖️","⇌","⚛️","🔗","🧪","🔋","☢️","🌍","🧫","💨","🔬","🧊"];
+let S={fav:{},res:{},wrong:{},sims:[],theme:"",t:0},D={};
+try{Object.assign(S,JSON.parse(localStorage.getItem("quimenem")||"{}"))}catch(e){}
+try{D=JSON.parse(localStorage.getItem("quimenem_prog")||"{}")||{}}catch(e){}
+const sv=()=>{try{localStorage.setItem("quimenem",JSON.stringify(S))}catch(e){}},svD=()=>{try{localStorage.setItem("quimenem_prog",JSON.stringify(D))}catch(e){}};
+const SUB=M.map(m=>m.s.split(";").map(x=>{const p=x.split("|");return{n:p[0],l:p[1]}})),FLAT=[];
+SUB.forEach((a,i)=>a.forEach((x,j)=>FLAT.push({i,j,n:x.n,l:x.l})));
+const uniq=a=>{const s={};return a.filter(x=>s[x.n]?0:(s[x.n]=1))},nz=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const pad=n=>String(n).padStart(2,"0"),fmt=s=>(s>=3600?Math.floor(s/3600)+":":"")+pad(Math.floor(s%3600/60))+":"+pad(s%60);
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const pr=i=>Math.round(100*SUB[i].filter((x,j)=>D[i+"."+j]).length/SUB[i].length),doneN=()=>Object.keys(D).filter(k=>D[k]).length,favN=()=>Object.keys(S.fav).filter(k=>S.fav[k]).length;
+const ms=i=>{let a=0,e=0;SUB[i].forEach(x=>{const r=S.res[x.n];if(r){a+=r.a;e+=r.e}});return{a,e,t:a+e,p:a+e?Math.round(100*a/(a+e)):0}};
+const bar=p=>`<div class="pb"><i data-w="${p}"></i></div>`,ring=p=>`<div class="rg"><svg viewBox="0 0 120 120"><circle class="r0" cx="60" cy="60" r="52"/><circle class="r1" cx="60" cy="60" r="52" data-ring="${p}"/></svg><b>${p}%</b></div>`;
+const go=p=>{location.hash="#/"+p},bars=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{document.querySelectorAll("[data-w]").forEach(e=>e.style.width=e.dataset.w+"%");document.querySelectorAll("[data-ring]").forEach(e=>e.style.strokeDashoffset=327-3.27*e.dataset.ring)}));
+function rec(n,ok){const r=S.res[n]||(S.res[n]={a:0,e:0});if(ok){r.a++;delete S.wrong[n]}else{r.e++;S.wrong[n]=1}sv()}
+let view="",cur={i:0,j:0},st={f:"T",qs:"",q:null},Q=null,FC=null,run=false;
+const row=(x,k)=>{const key=x.i+"."+x.j;return`<div class="rw a" style="--i:${k%12}" onclick="go('s/${x.i}/${x.j}')"><span class="nm">${x.j+1}</span><span class="rt">${x.n}<small>${M[x.i].n}</small></span><span class="bd ${x.l}">${L[x.l]}</span>${D[key]?"<em>✓</em>":""}<button class="fv${S.fav[key]?" on":""}" aria-label="Favoritar" onclick="event.stopPropagation();fav(${x.i},${x.j},this)">★</button></div>`};
+function fav(i,j,el){const k=i+"."+j;S.fav[k]=!S.fav[k];sv();el.classList.toggle("on",!!S.fav[k]);if(view=="fv")el.closest(".rw").remove()}
+function tg(i,j,el){const k=i+"."+j;D[k]=D[k]?0:1;svD();el.classList.toggle("on",!!D[k]);el.textContent=D[k]?"✓ Concluído":"Marcar como concluído"}
+function vHome(){const A=Object.values(S.res).reduce((s,r)=>s+r.a,0),T=A+Object.values(S.res).reduce((s,r)=>s+r.e,0),p=Math.round(100*doneN()/FLAT.length);
+return`<section class="hero a">${ring(p)}<div><span class="k">Estudos de Química para o ENEM</span><h1>Vamos nessa?</h1><p>${doneN()} de ${FLAT.length} assuntos concluídos · ${T?Math.round(100*A/T)+"% de acerto":"nenhuma questão respondida ainda"} · ${favN()} favoritos</p><div class="row"><button class="bt" onclick="startSim(10)">▶ Simulado rápido</button><a class="bt gh" href="#/rv">Revisar erros (${Object.keys(S.wrong).length})</a></div></div></section><div class="srch a" style="--i:2"><input id="sq" type="search" placeholder="Buscar assunto ou módulo (atalho: /)" value="${st.qs}" oninput="st.qs=this.value;hlr()" autocomplete="off"></div><div id="hl">${hl()}</div>`}
+function hl(){const t=nz(st.qs.trim());let h=`<div class="chs">${[["T","Todos"],["A","Alta incidência"],["M","Média"],["B","Baixa"]].map(c=>`<button class="ch${st.f==c[0]?" on":""}" onclick="st.f='${c[0]}';hlr()">${c[1]}</button>`).join("")}</div>`;
+const mods=M.map((m,i)=>({m,i})).filter(({m,i})=>(st.f=="T"||m.l==st.f)&&(!t||nz(m.n+" "+m.d).includes(t)||SUB[i].some(x=>nz(x.n).includes(t))));
+h+=mods.length?`<div class="g">${mods.map(({m,i},k)=>`<div class="cd a" style="--i:${k};--h:${i*24}" onclick="go('m/${i}')"><div class="ci">${IC[i]}</div><span class="bd ${m.l}">${L[m.l]} · ~${m.p}%</span><h3>${m.n}</h3><p>${m.d}</p><div class="ft"><span>${SUB[i].length} assuntos</span><span>${pr(i)}% concluído</span></div>${bar(pr(i))}</div>`).join("")}</div>`:`<p class="mu">Nenhum módulo encontrado.</p>`;
+if(t){const r=uniq(FLAT).filter(x=>nz(x.n).includes(t));h+=`<h2>Assuntos encontrados (${r.length})</h2>`+r.map(row).join("")}return h}
+const hlr=()=>{q("#hl").innerHTML=hl();bars()};
+function vMod(i){if(!M[i])return vHome();const m=M[i],s=ms(i);
+return`<div class="bc a"><a href="#/">Química</a> › ${m.n}</div><div class="mh hu a" style="--h:${i*24}"><div class="ci big">${IC[i]}</div><div><h1>${m.n}</h1><span class="bd ${m.l}">Incidência ${L[m.l]} · ~${m.p}% das questões de Química</span><p>${m.d}</p></div></div><div class="hu a" style="--h:${i*24};--i:1"><div class="ft"><b>${pr(i)}% concluído</b><span>${s.t?`${s.p}% de acerto (${s.a} certas, ${s.e} erradas)`:"sem questões respondidas"}</span></div>${bar(pr(i))}</div><div class="row a" style="--i:2"><button class="bt" onclick="startMod(${i})">▶ Quiz do módulo</button><a class="bt gh" href="#/fc/${i}">🃏 Flashcards</a></div>${SUB[i].map((x,j)=>row({i,j,n:x.n,l:x.l},j)).join("")}`}
+function qb(n,sel,quiz){const c=C[n];if(!c)return "<p>Conteúdo não disponível.</p>";let h=`<p>${c[3]}</p><p><b>${c[4]}</b></p>`+c[5].map((o,k)=>`<button class="op${sel==null?"":k==c[6]?" ok":k==sel?" er":""}"${sel==null?"":" disabled"} onclick="pick(${k})"><b>${"ABCDE"[k]}</b><span>${o}</span></button>`).join("");
+if(sel!=null){const ok=sel==c[6];h+=`<div class="fb ${ok?"":"erb"}"><b>${ok?"🎉 Você acertou!":"😕 Não foi dessa vez."}</b>${ok?"":` A correta é a ${"ABCDE"[c[6]]}.`}<p>${c[7]}</p></div>`;if(quiz)h+=`<div class="row"><button class="bt" onclick="nextQ()">${Q.k+1<Q.list.length?"Próxima questão →":"Ver resultado 🏁"}</button></div>`}return h}
+function pick(n){if(view=="s"){if(st.q!=null)return;const x=SUB[cur.i][cur.j];st.q=n;rec(x.n,n==C[x.n][6]);q("#qb").innerHTML=qb(x.n,n)}
+else if(view=="q"&&Q&&Q.k<Q.list.length){if(Q.sel!=null)return;const nm=Q.list[Q.k].n,ok=n==C[nm][6];Q.sel=n;if(ok)Q.score++;Q.ans[Q.k]={ok};rec(nm,ok);q("#qb").innerHTML=qb(nm,n,1);q("#qs").textContent="✔ "+Q.score}}
+function vSub(i,j){if(!SUB[i]||!SUB[i][j])return vHome();const x=SUB[i][j],c=C[x.n],k=i+"."+j,ix=FLAT.findIndex(f=>f.i==i&&f.j==j),pv=FLAT[ix-1],nx=FLAT[ix+1];
+let h=`<div class="bc a"><a href="#/">Química</a> › <a href="#/m/${i}">${M[i].n}</a> › ${x.n}</div><div class="hd a"><div><h1>${x.n}</h1><span class="bd ${x.l}">Incidência ${L[x.l]}</span></div><button class="fv big${S.fav[k]?" on":""}" aria-label="Favoritar" onclick="fav(${i},${j},this)">★</button></div>`;
+h+=c?`<section class="bx a" style="--i:1"><h2>Resumo</h2><p>${c[0]}</p><div class="fm">${c[1].map(f=>`<code>${f}</code>`).join("")}</div><p class="dc">💡 ${c[2]}</p></section><section class="bx a" style="--i:2"><h2>Questão no estilo ENEM</h2><div id="qb">${qb(x.n,null)}</div></section>`:`<section class="bx"><h2>Conteúdo ainda não incluído</h2></section>`;
+return h+`<button class="dn${D[k]?" on":""}" onclick="tg(${i},${j},this)">${D[k]?"✓ Concluído":"Marcar como concluído"}</button><div class="pn">${pv?`<a class="bt gh" href="#/s/${pv.i}/${pv.j}">← ${pv.n}</a>`:"<span></span>"}${nx?`<a class="bt gh" href="#/s/${nx.i}/${nx.j}">${nx.n} →</a>`:"<span></span>"}</div><p class="mu">Atalhos: A–E responde · ← → troca de assunto</p>`}
+function navS(d){const t=FLAT[FLAT.findIndex(f=>f.i==cur.i&&f.j==cur.j)+d];if(t)go(`s/${t.i}/${t.j}`)}
+function vSim(){return`<h1 class="a">📝 Simulado</h1><p class="a mu">Sequência de questões no estilo ENEM, com cronômetro e placar.</p><div class="g3">${[10,20,30,100].map((n,k)=>`<button class="cd sm a" style="--i:${k}" onclick="startSim(${n})"><b>${n>=100?"Completo":n}</b><span class="mu">${n>=100?"todos os assuntos":"questões"}</span></button>`).join("")}</div><h2 class="a">Quiz por módulo</h2><div class="chs a">${M.map((m,i)=>`<button class="ch" onclick="startMod(${i})">${IC[i]} ${m.n}</button>`).join("")}</div>`}
+function startQuiz(list,title){Q={list,k:0,sel:null,score:0,t0:Date.now(),ans:[],title,saved:0};if(location.hash=="#/q")render();else go("q")}
+const startSim=n=>startQuiz(shuf(uniq(FLAT)).slice(0,n),"Simulado · "+(n>=100?"completo":n+" questões")),startMod=i=>startQuiz(shuf(SUB[i].map((x,j)=>({i,j,n:x.n}))),"Quiz · "+M[i].n);
+function startRev(){const l=uniq(FLAT).filter(x=>S.wrong[x.n]);if(l.length)startQuiz(shuf(l),"Revisão dos erros")}
+const redo=()=>startQuiz(shuf(Q.list.filter((x,k)=>!Q.ans[k].ok)),"Refazendo os erros"),nextQ=()=>{Q.k++;Q.sel=null;render()};
+function vQ(){if(!Q){location.replace("#/sim");return null}if(Q.k>=Q.list.length)return vRes();const it=Q.list[Q.k];
+return`<div class="bc a"><a href="#/sim">← Sair</a> · ${Q.title}</div><div class="qh a"><b>Questão ${Q.k+1} de ${Q.list.length}</b><span id="qs">✔ ${Q.score}</span><span id="qt">⏱ ${fmt(Math.floor((Date.now()-Q.t0)/1000))}</span></div>${bar(100*Q.k/Q.list.length)}<section class="bx a"><span class="bd ${SUB[it.i][it.j].l}">${M[it.i].n}</span><div id="qb">${qb(it.n,null,1)}</div></section><p class="mu">Atalhos: A–E responde · Enter ou → avança</p>`}
+function vRes(){const n=Q.list.length,pc=Math.round(100*Q.score/n),by={};
+if(!Q.saved){Q.saved=1;Q.sec=Math.floor((Date.now()-Q.t0)/1000);S.sims.unshift({d:Date.now(),t:Q.title,s:Q.score,n,sec:Q.sec});S.sims=S.sims.slice(0,15);sv()}
+Q.ans.forEach((a,k)=>{const m=Q.list[k].i,o=by[m]||(by[m]={a:0,t:0});o.t++;if(a.ok)o.a++});const wr=n-Q.score;
+return`<div class="res a">${ring(pc).replace('class="rg"','class="rg big"')}<h1>${pc>=70?"Mandou bem! 🎉":pc>=40?"Bom caminho! 💪":"Vale revisar! 📚"}</h1><p class="mu">${Q.score} de ${n} acertos em ${fmt(Q.sec)} · ${Q.title}</p><div class="row" style="justify-content:center">${wr?`<button class="bt" onclick="redo()">Refazer as ${wr} erradas</button>`:""}<a class="bt gh" href="#/sim">Novo simulado</a><a class="bt gh" href="#/st">Estatísticas</a></div></div><div class="bx a" style="--i:1"><h2>Resultado por módulo</h2>${Object.keys(by).map(m=>`<div class="mr hu" style="--h:${m*24}"><span>${IC[m]} ${M[m].n}</span>${bar(100*by[m].a/by[m].t)}<small>${by[m].a}/${by[m].t}</small></div>`).join("")}</div>`}
+function vFc(s){const sc=s===undefined||s===""?-1:+s;if(!FC||FC.sc!=sc)FC={sc,k:0,f:0,list:uniq(FLAT.filter(x=>sc<0||x.i==sc))};
+return`<h1 class="a">🃏 Flashcards de fórmulas</h1><div class="chs a"><a class="ch${sc<0?" on":""}" href="#/fc">Todos</a>${M.map((m,i)=>`<a class="ch${sc==i?" on":""}" href="#/fc/${i}" title="${m.n}">${IC[i]}</a>`).join("")}</div><div id="fcx" class="a" style="--i:1">${fcHtml()}</div><div class="row fcb a" style="--i:2"><button class="bt gh" onclick="fcGo(-1)">←</button><button class="bt" onclick="flipFc()">Virar</button><button class="bt gh" onclick="fcGo(1)">→</button><button class="bt gh" onclick="fcShuf()">🔀 Embaralhar</button></div>`}
+function fcHtml(){const x=FC.list[FC.k],c=x&&C[x.n];if(!c)return "<p>Vazio.</p>";return`<div class="fcnt">${FC.k+1} / ${FC.list.length}</div><div class="fcw"><div class="fcard${FC.f?" flip":""}" onclick="flipFc()"><div class="face"><span class="bd ${x.l}">${M[x.i].n}</span><h2>${x.n}</h2><small class="mu">Toque para ver as fórmulas</small></div><div class="face bk2">${c[1].map(f=>`<code>${f}</code>`).join("")}</div></div></div>`}
+const fcGo=d=>{FC.k=(FC.k+d+FC.list.length)%FC.list.length;FC.f=0;q("#fcx").innerHTML=fcHtml()},flipFc=()=>{FC.f^=1;q(".fcard").classList.toggle("flip",!!FC.f)},fcShuf=()=>{FC.list=shuf(FC.list);FC.k=0;FC.f=0;q("#fcx").innerHTML=fcHtml()};
+function vSt(){let A=0,E=0;Object.values(S.res).forEach(r=>{A+=r.a;E+=r.e});const T=A+E,cs=[["✅",doneN()+"/"+FLAT.length,"assuntos concluídos"],["🎯",T?Math.round(100*A/T)+"%":"—","de acerto"],["✔",A,"acertos"],["✘",E,"erros"],["⏱",fmt(S.t),"tempo de estudo"],["📝",S.sims.length,"simulados feitos"]];
+return`<h1 class="a">📊 Estatísticas</h1><div class="g3">${cs.map((c,k)=>`<div class="bx stat a" style="--i:${k}"><span>${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></div>`).join("")}</div><h2 class="a">Acertos e erros por módulo</h2><div class="bx a">${M.map((m,i)=>{const s=ms(i);return`<div class="mr"><span>${IC[i]} ${m.n}</span><div class="sb"><i class="g1" data-w="${s.t?100*s.a/s.t:0}"></i><i class="e1" data-w="${s.t?100*s.e/s.t:0}"></i></div><small>${s.t?`${s.a}·${s.e} · ${s.p}%`:"—"}</small></div>`}).join("")}</div><h2 class="a">Últimos simulados</h2>${S.sims.length?`<div class="bx a">${S.sims.map(x=>`<div class="mr2"><span>${new Date(x.d).toLocaleDateString("pt-BR")} · ${x.t}</span><b>${x.s}/${x.n} (${Math.round(100*x.s/x.n)}%)</b><small>${fmt(x.sec)}</small></div>`).join("")}</div>`:`<p class="mu">Nenhum simulado ainda.</p>`}<button class="bt gh" onclick="rst()">Zerar estatísticas</button>`}
+function rst(){if(confirm("Zerar acertos, erros, simulados e tempo de estudo?")){S.res={};S.wrong={};S.sims=[];S.t=0;sv();render()}}
+function vRv(){const l=uniq(FLAT).filter(x=>S.wrong[x.n]);return`<h1 class="a">🔁 Revisão de erros</h1>`+(l.length?`<p class="a mu">Questões que você errou na última tentativa.</p><div class="row a"><button class="bt" onclick="startRev()">▶ Refazer as ${l.length} erradas</button></div>`+l.map(row).join(""):`<div class="bx empty a">🎉<p>Nenhum erro pendente.</p><a class="bt" href="#/sim">Fazer simulado</a></div>`)}
+function vFv(){const l=FLAT.filter(x=>S.fav[x.i+"."+x.j]);return`<h1 class="a">⭐ Favoritos</h1>`+(l.length?l.map(row).join(""):`<div class="bx empty a">⭐<p>Toque na estrela de um assunto para guardá-lo aqui.</p><a class="bt" href="#/">Ver assuntos</a></div>`)}
+function vMapa(){const nodes=[
+{t:"Conceitos básicos",x:60,y:50,i:5,j:2},{t:"Atomística",x:230,y:50,i:5,j:2},{t:"Ligações",x:400,y:50,i:6,j:0},
+{t:"Funções inorg.",x:400,y:140,i:7,j:0},{t:"Estequiometria",x:230,y:140,i:3,j:0},
+{t:"Soluções",x:60,y:230,i:0,j:0},{t:"Equilíbrio",x:230,y:230,i:4,j:0},{t:"Eletroquímica",x:400,y:230,i:8,j:0},
+{t:"Termoquímica",x:60,y:320,i:2,j:0},{t:"Orgânica",x:230,y:320,i:1,j:0},{t:"Radioatividade",x:400,y:320,i:9,j:0}];
+const edges=[[0,1],[1,2],[2,3],[3,4],[4,5],[4,6],[6,7],[5,6],[8,4],[9,1],[9,8],[10,1]];
+return`<h1 class="a">🗺️ Mapa de conexões</h1><p class="a mu">Trilha de estudos sugerida. Clique em um nó para abrir o assunto.</p><div class="bx a"><svg viewBox="0 0 520 400" style="width:100%;height:auto">
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="var(--ln)"/></marker></defs>
+<text x="260" y="20" font-size="11" text-anchor="middle" fill="var(--mu)">Fundamentos → Estrutura → Quantitativa → Aplicada</text>
+${edges.map(([a,b])=>`<line class="edge" x1="${nodes[a].x}" y1="${nodes[a].y+20}" x2="${nodes[b].x}" y2="${nodes[b].y-20}"/>`).join("")}
+${nodes.map(n=>`<g onclick="go('s/${n.i}/${n.j}')"><circle class="node" cx="${n.x}" cy="${n.y}" r="26"/><text x="${n.x}" y="${n.y+4}" text-anchor="middle" font-size="9" font-family="Figtree" fill="var(--tx)">${n.t.slice(0,12)}</text></g>`).join("")}
+</svg></div>`}
+/* ====== TABELA PERIÓDICA COMPLETA (118) ====== */
+function tpGrid(){
+  let h='';
+  for(let z=1;z<=118;z++){
+    const p=pos(z),[r,c]=p,e=ELS[z-1];
+    h+=`<div class="pt-el pt-${e[2]}" style="grid-row:${r};grid-column:${c}" onclick="showEl(${z})" title="${e[0]} — ${e[1]}"><i>${z}</i><b>${e[0]}</b><small>${e[1].slice(0,7)}</small></div>`;
+  }
+  h+=`<div class="pt-el ph" style="grid-row:6;grid-column:3">57–71</div>`;
+  h+=`<div class="pt-el ph" style="grid-row:7;grid-column:3">89–103</div>`;
+  return h;
+}
+function vTP(){
+  return`<h1 class="a">⚗️ Tabela Periódica</h1><p class="a mu">Os 118 elementos. Clique em qualquer elemento para ver as propriedades.</p>
+  <div class="srch a"><input id="tpq" type="search" placeholder="Buscar elemento (nome, símbolo ou Z) — atalho: /" value="" oninput="tpSearch(this.value)" autocomplete="off"></div>
+  <div class="pt-legend a"><span class="pt-ma">Metal alcalino</span><span class="pt-at">Alcalino-terroso</span><span class="pt-tr">Transição</span><span class="pt-mn">Metal</span><span class="pt-sm">Semimetal</span><span class="pt-nm">Não-metal</span><span class="pt-hl">Halogênio</span><span class="pt-gn">Gás nobre</span><span class="pt-ln">Lantanídeo</span><span class="pt-ac">Actinídeo</span></div>
+  <div class="bx a" style="padding:12px"><div class="pt-wrap"><div class="pt">${tpGrid()}</div></div><p class="mu" style="text-align:center;font-size:12px;margin:6px 0 0">Lantanídeos (linha 8) e actinídeos (linha 9) mostrados em blocos separados, como na tabela tradicional.</p></div>
+  <div id="elinfo"></div>`;
+}
+function tpSearch(v){
+  const t=nz(v||"").trim();
+  if(!t){q("#elinfo").innerHTML="";return;}
+  const found=[];
+  for(let z=1;z<=118;z++){const e=ELS[z-1];if(nz(e[0]).includes(t)||nz(e[1]).includes(t)||String(z)===t)found.push(z);}
+  if(!found.length){q("#elinfo").innerHTML=`<div class="bx a"><p class="mu">Nenhum elemento encontrado.</p></div>`;return;}
+  if(found.length===1)return showEl(found[0]);
+  q("#elinfo").innerHTML=`<div class="bx a"><p class="mu">${found.length} resultados — clique para ver:</p><div class="chs">${found.map(z=>`<button class="ch" onclick="showEl(${z})">${ELS[z-1][0]} (${z}) — ${ELS[z-1][1]}</button>`).join("")}</div></div>`;
+}
+function showEl(Z){
+  if(Z<1||Z>118)return;const e=ELS[Z-1];
+  const cls=CLSN[e[2]]||e[2];
+  q("#elinfo").innerHTML=`<div class="bx a pt-detail">
+    <div class="hd"><div><h2 style="margin:0;color:var(--ac)">${e[1]} <span style="font-size:26px">${e[0]}</span></h2><span class="bd ${Z<=2?'A':Z<=18?'M':'B'}" style="background:color-mix(in srgb,var(--ac) 18%,transparent);color:var(--ac)">${cls}</span></div><div style="text-align:right"><b style="font-family:'Bricolage Grotesque';font-size:32px;line-height:1">${Z}</b><div class="mu" style="font-size:11px">número atômico</div></div></div>
+    <div class="grid">
+      <b>Símbolo</b><span>${e[0]}</span>
+      <b>Nome</b><span>${e[1]}</span>
+      <b>Z</b><span>${Z}</span>
+      <b>Classe</b><span>${cls}</span>
+      <b>Config. eletrônica</b><span>${e[3]}</span>
+      <b>Massa atômica</b><span>${e[4]} u</span>
+    </div>
+    <div class="row"><a class="bt gh" href="#/s/5/2">📚 Ver Atomística</a><a class="bt gh" href="#/s/5/3">⚙️ Ver Distribuição eletrônica</a><a class="bt" href="#/tp">← Voltar à tabela</a></div>
+  </div>`;
+  q("#elinfo").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function vGlos(){st.qs=st.qs||"";const f=glosList();return`<h1 class="a">📖 Glossário químico</h1><div class="srch a"><input id="gq" type="search" placeholder="Buscar conceito (atalho: /)" value="${st.qs}" oninput="st.qs=this.value;glosR()" autocomplete="off"></div><div id="glx">${f.map(g=>`<div class="gl"><b>${g.n}</b>: ${g.t}<button onclick="cp(this)">Copiar</button></div>`).join("")||'<p class="mu">Nenhum conceito encontrado.</p>'}</div>`}
+function glosList(){const t=nz(st.qs||"");const items=[];uniq(FLAT).forEach(x=>{const c=C[x.n];if(!c||!Array.isArray(c[1]))return;c[1].forEach(v=>{if(!t||nz(v).includes(t))items.push({n:x.n,t:v})})});return items.slice(0,400)}
+const glosR=()=>{const f=glosList();q("#glx").innerHTML=f.map(g=>`<div class="gl"><b>${g.n}</b>: ${g.t}<button onclick="cp(this)">Copiar</button></div>`).join("")||'<p class="mu">Nada.</p>'};
+function cp(b){const t=b.parentNode.textContent.replace("Copiar","").trim();try{navigator.clipboard&&navigator.clipboard.writeText(t)}catch(e){}b.textContent="✓"}
+function vErros(){const erros=[
+["Concentração comum ≠ densidade","C = massa de SOLUTO / volume de solução. d = massa de SOLUÇÃO / volume de solução."],
+["Massa ≠ mol","1 mol de qualquer substância tem 6,02 × 10²³ entidades, mas massas diferentes. Confira sempre MM."],
+["Calor ≠ temperatura","Calor é energia em trânsito; temperatura mede agitação. Na fusão, adicionar calor não muda T."],
+["Ácido de Arrhenius ≠ Brønsted","Arrhenius exige água e H⁺; Brønsted-Lowry fala em doar próton, em qualquer meio."],
+["Kc só varia com T","Concentração, pressão e volume podem deslocar equilíbrio, mas NÃO alteram Kc. Só a temperatura altera."],
+["Catalisador não desloca equilíbrio","Catalisador acelera a reação, mas não muda a posição final de equilíbrio nem o rendimento."],
+["Pilha ≠ eletrólise","Pilha: espontânea (ΔE > 0). Eletrólise: forçada (ΔE < 0, precisa de fonte externa)."],
+["Molaridade ≠ molalidade","M = mol/L de SOLUÇÃO. m = mol/kg de SOLVENTE. São diferentes."],
+["Isomeria plana ≠ espacial","Plana: fórmula estrutural diferente. Espacial: mesmo arranjo plano, diferente arranjo 3D."],
+["Lei de Hess: cuidado com sinais","Inverter equação troca sinal de ΔH. Multiplicar coeficientes multiplica ΔH."],
+["Óxido ácido ≠ óxido básico","Ametal + O → ácido (CO₂, SO₂). Metal + O → básico (Na₂O, CaO)."],
+["Ligação de H só com F, O, N","HCl NÃO faz ligação de hidrogênio."],
+["pH é logarítmico","Cada unidade é fator 10. pH 3 é 10× mais ácida que pH 4."],
+["Coligativas dependem do nº de partículas","NaCl gera 2 partículas; CaCl₂, 3. Não dependem da natureza química."],
+["Rendimento ≠ pureza","Pureza é sobre o reagente; rendimento é sobre o produto obtido/teórico."],
+["Radiação: massa ≠ carga","Alfa tem massa e carga; beta tem massa pequena e carga; gama não tem massa nem carga."],
+["Tabela Periódica: 4s antes de 3d","Use o diagrama de Pauling. Nunca a ordem numérica simples."],
+["Elementos sintéticos usam massa do isótopo mais estável","Tc, Pm, e Z≥93 têm massa entre colchetes no padrão IUPAC, representando o isótopo mais estável."]
+];
+return`<h1 class="a">⚠️ Erros mais comuns</h1><p class="a mu">Pegadinhas clássicas do ENEM de Química.</p>${erros.map((e,k)=>`<div class="bx a" style="--i:${k}"><h2>${e[0]}</h2><p>${e[1]}</p></div>`).join("")}`}
+function render(){const p=location.hash.replace(/^#\/?/,"").split("/"),v=p[0];view=v;st.q=null;let o;
+if(v=="m")o=vMod(+p[1]);else if(v=="s"){cur={i:+p[1],j:+p[2]};o=vSub(cur.i,cur.j)}else if(v=="sim")o=vSim();else if(v=="q")o=vQ();else if(v=="fc")o=vFc(p[1]);else if(v=="st")o=vSt();else if(v=="rv")o=vRv();else if(v=="fv")o=vFv();else if(v=="mapa")o=vMapa();else if(v=="tp")o=vTP();else if(v=="glos")o=vGlos();else if(v=="erros")o=vErros();else{view="";o=vHome()}
+if(o==null)return;q("#app").innerHTML=o;bars();const act=["m","s",""].includes(view)?"":view=="q"?"sim":view;document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.r==act));scrollTo(0,0)}
+function th(){const d=document.documentElement,dark=d.dataset.theme?d.dataset.theme=="dark":matchMedia("(prefers-color-scheme: dark)").matches;S.theme=dark?"light":"dark";d.dataset.theme=S.theme;sv()}
+if(S.theme)document.documentElement.dataset.theme=S.theme;
+const tick=()=>{const e=q("#tm");if(e)e.textContent=(run?"⏸ ":"⏱ ")+fmt(S.t);const t=q("#qt");if(t&&Q&&Q.k<Q.list.length)t.textContent="⏱ "+fmt(Math.floor((Date.now()-Q.t0)/1000))};
+function tmT(){run=!run;tick()}
+setInterval(()=>{if(run){S.t++;if(S.t%5==0)sv()}tick()},1000);
+addEventListener("keydown",e=>{if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){if(e.key=="Escape")e.target.blur();return}if(e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key;
+if(k=="/"){const s=q("#sq")||q("#gq")||q("#tpq");if(s){e.preventDefault();s.focus()}return}
+const oi=k.length==1&&"abcde".includes(k.toLowerCase())?"abcde".indexOf(k.toLowerCase()):"12345".indexOf(k);
+if((view=="s"||view=="q")&&oi>=0&&k.length==1){pick(oi);return}
+if(k=="ArrowRight"){if(view=="s")navS(1);else if(view=="q"&&Q&&Q.sel!=null)nextQ();else if(view=="fc")fcGo(1)}
+else if(k=="ArrowLeft"){if(view=="s")navS(-1);else if(view=="fc")fcGo(-1)}
+else if(k==" "&&view=="fc"){e.preventDefault();flipFc()}
+else if(k=="Enter"&&view=="q"&&Q&&Q.sel!=null)nextQ();
+else if(k=="Escape"&&view!="")go("")});
+addEventListener("pagehide",sv);addEventListener("hashchange",render);render();tick();
+try{const keys=FLAT.map(f=>f.n),dups=keys.filter((k,i)=>keys.indexOf(k)!==i);const total=M.reduce((s,m)=>s+m.p,0);const g={0:0,1:0,2:0,3:0,4:0};let fixas=0,faltando=0;
+Object.keys(C).forEach(k=>{const c=C[k];if(!Array.isArray(c)||c.length!==8)fixas++;else if(!Array.isArray(c[1]))fixas++;else if(!Array.isArray(c[5])||c[5].length!==5)fixas++;else if(typeof c[6]!=="number"||c[6]<0||c[6]>4)fixas++;else g[c[6]]++});
+FLAT.forEach(f=>{if(!C[f.n])faltando++});
+console.log("[Química ENEM] assuntos:",FLAT.length,"| elementos:",ELS.length,"| duplicados:",[...new Set(dups)],"| soma p:",total,"| C com problema:",fixas,"| sem C:",faltando,"| gabaritos:",g)}catch(e){}
+</script></body></html>
