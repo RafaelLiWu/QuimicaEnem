@@ -462,7 +462,160 @@ function vSt(){
   const cs=[["✅",doneN()+"/"+FLAT.length,"assuntos concluídos"],["🎯",T?Math.round(100*A/T)+"%":"—","taxa de acerto"],["✔",A,"acertos"],["✘",E,"erros"],["⏱",fmt(S.t),"tempo de estudo"],["📝",S.sims.length,"simulados feitos"]];
   return`<h1 class="a">📊 Estatísticas e Histórico</h1><div class="g3">${cs.map((c,k)=>`<div class="bx stat a" style="--i:${k}"><span>${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></div>`).join("")}</div><h2 class="a">Acertos e Erros por Módulo</h2><div class="bx a">${M.map((m,i)=>{const s=ms(i);return`<div class="mr"><span>${IC[i]} ${m.n}</span><div class="sb"><i class="g1" data-w="${s.t?100*s.a/s.t:0}"></i><i class="e1" data-w="${s.t?100*s.e/s.t:0}"></i></div><small>${s.t?`${s.a} certas · ${s.e} erradas · ${s.p}%`:"—"}</small></div>`}).join("")}</div><h2 class="a">Últimos Simulados Realizados</h2>${S.sims.length?`<div class="bx a">${S.sims.map(x=>`<div class="mr2"><span>${new Date(x.d).toLocaleDateString("pt-BR")} · ${x.t}</span><b>${x.s}/${x.n} (${Math.round(100*x.s/x.n)}%)</b><small>${fmt(x.sec)}</small></div>`).join("")}</div>`:`<p class="mu">Nenhum simulado registrado ainda. Inicie um simulado na aba Simulado.</p>`}<div class="row" style="margin-top:20px"><a class="bt gh" href="#/rv">🔁 Revisar questões erradas (${Object.keys(S.wrong).length})</a><button class="bt gh" onclick="rst()">Zerar estatísticas</button></div>`;
 }
-
+(function(){
+  'use strict';
+  
+  const DISCIPLINAS = [
+    {nome:'Física',     icon:'⚛️', url:'https://rafaelliwu.github.io/FisicaEnem/#/'},
+    {nome:'Biologia',   icon:'🧬', url:'https://rafaelliwu.github.io/BiologiaEnem/#/'},
+    {nome:'Filosofia',  icon:'🤔', url:'https://rafaelliwu.github.io/FilosofiaEnem/#/'},
+    {nome:'Matemática', icon:'📐', url:'https://rafaelliwu.github.io/MatematicaEnem/#/'},
+    {nome:'Português',  icon:'📚', url:'https://rafaelliwu.github.io/PortuguesEnem/#/'},
+    {nome:'Sociologia', icon:'👥', url:'https://rafaelliwu.github.io/SociologiaEnem/#/'},
+    {nome:'História',   icon:'🏛️', url:'https://rafaelliwu.github.io/HistoriaEnem/#/'},
+    {nome:'Geografia',  icon:'🌎', url:'https://rafaelliwu.github.io/GeografiaEnem/#/'},
+    {nome:'Química',    icon:'🧪', url:'https://rafaelliwu.github.io/QuimicaEnem/#/'}
+  ];
+  
+  function init(){
+    const nav = document.querySelector('nav');
+    if(!nav || nav.querySelector('[data-disc]')) return;
+    
+    // injetar estilos
+    const style = document.createElement('style');
+    style.textContent = `
+      .disc-pop{
+        position:fixed; z-index:100;
+        background:var(--cd,#fff);
+        border:1.5px solid var(--ln,#ccc);
+        border-radius:16px;
+        padding:8px;
+        box-shadow:0 10px 32px rgba(0,0,0,.22), 0 3px 0 var(--ln,#ccc);
+        display:none; flex-wrap:wrap;
+        max-width:min(92vw,420px);
+        gap:6px;
+        animation:discUp .2s ease both;
+      }
+      .disc-pop.on{display:flex}
+      @keyframes discUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+      .disc-pop a{
+        display:flex; align-items:center; gap:8px;
+        padding:9px 12px; border-radius:10px;
+        background:var(--bg,#f5f5f5); color:var(--tx,#111);
+        font-size:13px; font-weight:600; text-decoration:none;
+        border:1.5px solid var(--ln,#ddd);
+        transition:transform .15s, border-color .15s, background .15s;
+        white-space:nowrap;
+      }
+      .disc-pop a:hover{
+        transform:translateY(-2px);
+        border-color:var(--ac,#0D9488);
+        background:var(--hi,#e6fffb);
+      }
+      .disc-pop a .ic{font-size:16px}
+      .disc-pop .ttl{
+        flex-basis:100%; text-align:center; font-size:11px;
+        color:var(--mu,#666); font-weight:700; letter-spacing:.5px;
+        text-transform:uppercase; padding:2px 0 4px;
+      }
+      nav a[data-disc-on]{
+        position:relative;
+        cursor:pointer;
+      }
+      nav a[data-disc-on].open{background:var(--hi,#e6fffb);color:var(--ht,#065F55)}
+      @media(max-width:520px){
+        .disc-pop a{font-size:12px; padding:8px 10px}
+      }
+      @media(prefers-reduced-motion:reduce){
+        .disc-pop,.disc-pop a{animation:none!important;transition:none!important}
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // botão na navbar
+    const btn = document.createElement('a');
+    btn.href = 'javascript:void 0';
+    btn.setAttribute('data-disc-on','');
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-expanded','false');
+    btn.innerHTML = '<i>📚</i><span>Disciplinas</span>';
+    nav.appendChild(btn);
+    
+    // popover
+    const pop = document.createElement('div');
+    pop.className = 'disc-pop';
+    pop.setAttribute('role','menu');
+    pop.innerHTML = '<div class="ttl">Ir para outra disciplina</div>' +
+      DISCIPLINAS.map(d => 
+        `<a href="${d.url}" target="_blank" rel="noopener" role="menuitem">
+           <span class="ic">${d.icon}</span>${d.nome}
+         </a>`
+      ).join('');
+    document.body.appendChild(pop);
+    
+    function posicionar(){
+      const r = btn.getBoundingClientRect();
+      // acima do botão
+      pop.style.left = '50%';
+      pop.style.transform = 'translateX(-50%)';
+      // primeiro mede
+      pop.style.visibility = 'hidden';
+      pop.classList.add('on');
+      const pw = pop.offsetWidth;
+      const ph = pop.offsetHeight;
+      // clamp horizontal
+      let left = r.left + r.width/2 - pw/2;
+      const vw = window.innerWidth;
+      if(left < 8) left = 8;
+      if(left + pw > vw - 8) left = vw - pw - 8;
+      pop.style.left = left + 'px';
+      pop.style.transform = 'none';
+      pop.style.top = Math.max(8, r.top - ph - 10) + 'px';
+      pop.style.visibility = 'visible';
+    }
+    
+    function abrir(){
+      posicionar();
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+    function fechar(){
+      pop.classList.remove('on');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+    function toggle(e){
+      e.preventDefault(); e.stopPropagation();
+      if(pop.classList.contains('on')) fechar();
+      else abrir();
+    }
+    
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', e=>{
+      if(e.key==='Enter' || e.key===' '){ toggle(e); }
+    });
+    
+    // fecha ao clicar fora
+    document.addEventListener('click', e=>{
+      if(!pop.classList.contains('on')) return;
+      if(pop.contains(e.target) || btn.contains(e.target)) return;
+      fechar();
+    });
+    document.addEventListener('keydown', e=>{
+      if(e.key==='Escape') fechar();
+    });
+    
+    // fecha ao redimensionar/scroll (mobile)
+    window.addEventListener('resize', ()=>{ if(pop.classList.contains('on')) posicionar(); });
+    window.addEventListener('scroll', ()=>{ if(pop.classList.contains('on')) posicionar(); }, true);
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 function rst(){
   if(confirm("Deseja realmente zerar acertos, erros, simulados e tempo de estudo? Seus tópicos concluídos e favoritos permanecerão salvos.")){
     S.res={};S.wrong={};S.sims=[];S.t=0;sv();render();
